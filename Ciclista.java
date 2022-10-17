@@ -11,7 +11,7 @@ public class Ciclista
     
     private String nombre;
     private Bicicleta bicicleta;
-    private int habilidad;
+    private double habilidad;
     private double energia;
     private ArrayList<Resultados> resultado;
     private Equipo equipo;
@@ -39,7 +39,7 @@ public class Ciclista
      * @param resultado es el resultado del ciclista
      * 
      */
-    public Ciclista(String nombre, int habilidad, double energia)
+    public Ciclista(String nombre, double habilidad, double energia)
     {        
         this.nombre=nombre;
         this.habilidad=habilidad;
@@ -76,7 +76,7 @@ public class Ciclista
      * 
      * @param  habilidad es el nuevo valor del campo habilidad
      */
-    public void setHabilidad(int habilidad)
+    public void setHabilidad(double habilidad)
     {
         
         this.habilidad=habilidad;
@@ -87,7 +87,7 @@ public class Ciclista
      * 
      * @return   habilidad del ciclista
      */
-    public int getHabilidad()
+    public double getHabilidad()
     {
         
         return habilidad;
@@ -173,6 +173,8 @@ public class Ciclista
         else
         return false;
     }
+    
+    
 
      
     public void setResultado(Etapa E, double tiempo){
