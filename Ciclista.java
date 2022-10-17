@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /** Guarda la informacion del nombre, la bicicleta, la habilidad, la energía,
  * los resultados y el equipo de la clase ciclista
  *
@@ -12,8 +12,8 @@ public class Ciclista
     private String nombre;
     private Bicicleta bicicleta;
     private int habilidad;
-    private int energia;
-    private int resultado;
+    private double energia;
+    private ArrayList<Resultados> resultado;
     private Equipo equipo;
     
 
@@ -26,7 +26,7 @@ public class Ciclista
         nombre=" ";
         habilidad=0;
         energia=0;
-        resultado=0;
+        this.resultado=new ArrayList<Resultados>();
     }
     
     /**
@@ -39,12 +39,12 @@ public class Ciclista
      * @param resultado es el resultado del ciclista
      * 
      */
-    public Ciclista(String nombre, int habilidad, int energia, int resultado)
+    public Ciclista(String nombre, int habilidad, double energia)
     {        
         this.nombre=nombre;
         this.habilidad=habilidad;
         this.energia=energia;
-        this.resultado=resultado;
+        this.resultado=new ArrayList<Resultados>();
     }
 
     /**
@@ -99,7 +99,7 @@ public class Ciclista
      * 
      * @param  energia es el nuevo valor del campo energia
      */
-     public void setEnergia(int energia)
+     public void setEnergia(double energia)
     {
         
         this.energia=energia;
@@ -111,36 +111,14 @@ public class Ciclista
      * 
      * @return     energía restante
      */
-    public int getEnergia()
+    public double getEnergia()
     {
         
         return energia;
         
     }
     
-    /**
-     * Establece el valor del campo resultado al dado como entrada
-     * 
-     * @param  resultado es el nuevo valor del campo resultado
-     */
-     public void setResultado(int resultado)
-    {
-        
-        this.resultado=resultado;
-        
-    }
-    
-    /**
-     * Devuelve el valor del campo resultado
-     * 
-     * @return     resultado del ciclista
-     */
-    public int getResultado()
-    {
-        
-        return resultado;
-        
-    }
+
     
     /**
      * Establece el valor del campo bicicleta al dado como entrada
@@ -162,12 +140,90 @@ public class Ciclista
     public Bicicleta getBicicleta()
     {
         
+        if(bicicleta==null){
+            System.out.printf("El ciclista no tiene bicicleta asignada");
+        }
+        
         return bicicleta;
         
     }
-
+    
+      
     /**
-     * Establece el valor del campo equipo al dado como entrada
+     * Devuelve el valor del campo bicicleta
+     * 
+     * @return     bicicleta del ciclista
+     */
+    public Bicicleta cambiarBicicletaEquipo(Bicicleta bicicletaB)
+    {
+        
+        if(bicicleta==null){
+            System.out.printf("El ciclista no tiene bicicleta asignada");
+        }
+        
+        return bicicleta;
+        
+        
+    }
+    
+    public boolean abandono(){
+        if(energia<=0){
+            return true;
+        }
+        else
+        return false;
+    }
+
+     
+    public void setResultado(Etapa E, double tiempo){
+        resultado.add(new Resultados(tiempo, E));
+    }
+    
+    public int totalEtapas(){
+        return resultado.size();
+    }
+    
+    public double tiempoTotalAcumulado(){
+        int index=0;   
+        double tiempoTotal=0;
+        while(index<=resultado.size()){
+            Resultados res=resultado.get(index);
+            tiempoTotal = tiempoTotal + res.getTiempo();
+            index++;
+        }
+        return tiempoTotal;
+    }
+    
+    public int etapasTerminadas(){
+        return resultado.size();
+    }
+    
+    public Etapa etapaAbandonada(){
+        int index=0;
+        Etapa etapa=new Etapa();
+
+        while(index<=resultado.size()){
+            Resultados res=resultado.get(index);
+            if(res.getTiempo()<0){
+                etapa=res.getEtapa();
+            }
+        }
+        return etapa;
+    }
+    
+    public void actualizarResultadoEnergia(Etapa etp, Bicicleta bic){
+        double tiempo=bic.calcularTiempoNecesario(this, etp);
+        if(abandono()==false){
+            setResultado(etp, tiempo);
+            energia=energia-tiempo;
+        }
+        else{
+            double tiempoRestante = energia-tiempo;
+            setResultado(etp, tiempoRestante);
+        }
+    }
+    
+    /** * Establece el valor del campo equipo al dado como entrada
      * 
      * @param  equipo es el nuevo valor del campo equipo
      
@@ -177,7 +233,7 @@ public class Ciclista
         this.equipo=equipo;
         
     }
-    */
+    
     
     /**
      * Devuelve el valor del campo equipo

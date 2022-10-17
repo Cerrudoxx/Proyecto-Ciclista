@@ -11,6 +11,7 @@ public class Bicicleta
     private String nombre;
     
     private double peso;
+    
 
     /**
      * Constructor de objetos de la clase Bicicleta
@@ -21,6 +22,7 @@ public class Bicicleta
         // initialise instance variables
         nombre=" ";
         peso=0;
+     
         
        
     }
@@ -108,8 +110,7 @@ public class Bicicleta
     {
         // put your code here
         double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*60 ;
-        return tiempo;
-        
+        return tiempo;        
     }
     
 }

@@ -14,6 +14,8 @@ public class Etapa
     private double dificultad;
     
     private int distancia;
+    
+    private double tiempoCiclista;
 
     /**
      * Constructor de objetos de la clase Etapa
@@ -123,6 +125,10 @@ public class Etapa
     {
         // put your code here
         System.out.printf("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
+        
+    }
+    
+    public void ponerTiempoCiclista(double tiempo, Ciclista c){
         
     }
 }
