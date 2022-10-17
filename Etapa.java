@@ -13,7 +13,7 @@ public class Etapa
     
     private double dificultad;
     
-    private double distancia;
+    private int distancia;
 
     /**
      * Constructor de objetos de la clase Etapa
@@ -36,7 +36,7 @@ public class Etapa
      * @param distancia es la distancia en kilometros de la etapa
      * 
      */
-    public Etapa(String nombre, double dificultad, double distancia){
+    public Etapa(String nombre, double dificultad, int distancia){
         this.nombre=nombre;
         this.dificultad=dificultad;
         this.distancia=distancia;
@@ -95,7 +95,7 @@ public class Etapa
      * 
      * @return     distancia de la etapa 
      */
-    public double getDistancia()
+    public int getDistancia()
     {
         // put your code here
         return distancia;
@@ -107,10 +107,22 @@ public class Etapa
      * 
      * @param  distancia es el nuevo valor del campo nombre
      */
-    public void setDistancia(double distancia)
+    public void setDistancia(int distancia)
     {
         // put your code here
         this.distancia=distancia;
+        
+    }
+    
+        /**
+     * Muestra la informacion de la etapa por pantalla
+     * 
+     * 
+     */
+    public void mostrarEtapa()
+    {
+        // put your code here
+        System.out.printf("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
         
     }
 }
