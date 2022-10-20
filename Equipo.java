@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @version 1.0
 */
 public class Equipo
-{
+{  
     // instance variables - replace the example below with your own
     private String nombre;
     

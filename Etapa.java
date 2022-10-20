@@ -7,7 +7,7 @@
  * @version 1.0
 */
 public class Etapa
-{
+{  
     // instance variables - replace the example below with your own
     private String nombre;
     

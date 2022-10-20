@@ -5,7 +5,7 @@
  * @author Jesús Cerrudo, Pablo Polo y Marco Vega. 
  * @version 1.0
 */
-public class Bicicleta
+public class Bicicleta  
 {
     // instance variables - replace the example below with your own
     private String nombre;
