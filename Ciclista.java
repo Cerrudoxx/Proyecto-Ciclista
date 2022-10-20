@@ -15,6 +15,7 @@ public class Ciclista
     private double energia;
     private ArrayList<Resultados> resultado;
     private Equipo equipo;
+    private boolean abandono;
     
 
     /**
@@ -27,6 +28,7 @@ public class Ciclista
         habilidad=0;
         energia=0;
         this.resultado=new ArrayList<Resultados>();
+        abandono=false;
     }
     
     /**
@@ -45,6 +47,7 @@ public class Ciclista
         this.habilidad=habilidad;
         this.energia=energia;
         this.resultado=new ArrayList<Resultados>();
+        this.abandono=false;
     }
 
     /**
@@ -157,6 +160,7 @@ public class Ciclista
     public Bicicleta cambiarBicicletaEquipo(Bicicleta bicicletaB)
     {
         
+        //TO DO
         if(bicicleta==null){
             System.out.printf("El ciclista no tiene bicicleta asignada");
         }
@@ -165,30 +169,31 @@ public class Ciclista
         
         
     }
-    
+
     public boolean abandono(){
         if(energia<=0){
-            return true;
+            this.abandono = true;
         }
-        else
-        return false;
+        return this.abandono;
     }
+
     
     
 
      
     public void setResultado(Etapa E, double tiempo){
-        resultado.add(new Resultados(tiempo, E));
+        resultado.add(new Resultados(tiempo, E));//COMPROBAR
+        
     }
     
     public int totalEtapas(){
-        return resultado.size();
+        return resultado.size();//COMPROBAR
     }
     
     public double tiempoTotalAcumulado(){
         int index=0;   
         double tiempoTotal=0;
-        while(index<=resultado.size()){
+        while(index<resultado.size()){
             Resultados res=resultado.get(index);
             tiempoTotal = tiempoTotal + res.getTiempo();
             index++;
@@ -252,3 +257,4 @@ public class Ciclista
     
    
 }
+   
