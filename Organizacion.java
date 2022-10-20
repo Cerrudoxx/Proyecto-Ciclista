@@ -14,6 +14,9 @@ public class Organizacion
     
     private ArrayList<Ciclista> ciclistas;
     
+    //listaEquipos;
+    //listaEtapa;
+    
 
     /**
      * Constructor for objects of class Organizacion
@@ -32,10 +35,24 @@ public class Organizacion
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    /**public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
-    */
+   public void gestionarCampeonato(){
+   // mostrarEtapas();//for each llamando etapas
+   // mostrarEquipos();//for each llamando equipos
+   // hacerCarreras();
+   // mostrarClasificacionFinal();
+   }
+   
+   private void hacerCarreras(){
+       //mientras haya ciclistas para competir sigo
+       //recorrer etapas y traer ciclitas de cada equipo
+       //para cada ciclista y mostrar resuktado estapa
+       
+       // mientras(){
+           // obtener ciclistas a competir paara cada ciclista:
+           // ciclista.correr(etapa
+           // mostrar resul etapa
+           // devolcer ciclistas a equipos)
+       // }
+   }
+    
 }

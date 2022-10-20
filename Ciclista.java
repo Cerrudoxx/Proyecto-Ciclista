@@ -85,6 +85,7 @@ public class Ciclista
         this.habilidad=habilidad;
         
     }
+    
      /**
      * Devuelve el valor del campo habilidad
      * 

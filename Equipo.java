@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Comparator;
+
 /**
  * Guarda la informacion del nombre y el peso de la bicicleta 
  * etapa
@@ -15,7 +17,10 @@ public class Equipo
     
     private ArrayList<Ciclista> ciclistasAbandonado;
     
-    private ArrayList<Bicicleta> bicicletasEquipo;    
+    private ArrayList<Bicicleta> bicicletasEquipo;  
+    
+    Comparator<Ciclista> compCiclista;
+    boolean ordenCiclista;
     
 
     /**
