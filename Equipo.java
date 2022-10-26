@@ -79,12 +79,28 @@ public class Equipo
         
     }
     
+<<<<<<< HEAD
     public void ordenarCiclistas()
     {
      //   if(ordenCiclista)
      //   Collections.sort(ciclistas,CompCiclista);
      //   else
      //   "reserveOrder"
+=======
+    public double tiempoTotalAcumuladoCiclistas(){
+        int index=0;   
+        double tiempoTotal=0;
+        while(index<ciclistasEquipo.size()){
+            Ciclista ciclista=ciclistasEquipo.get(index);
+            tiempoTotal = tiempoTotal + ciclista.tiempoTotalAcumulado();
+            index++;
+        }
+        return tiempoTotal;
+    }
+    
+    public void enviarAEtapa(Etapa e){
+        
+>>>>>>> 36596e5eea4ed8915f5f68254cb345a470c9e10b
     }
     /**
      * Devuelve el valor del campo nombre

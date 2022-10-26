@@ -54,5 +54,9 @@ public class Organizacion
            // devolcer ciclistas a equipos)
        // }
    }
+   
+   public void anadirEtapa(Etapa e){
+       
+   }
     
 }
