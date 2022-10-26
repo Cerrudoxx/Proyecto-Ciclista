@@ -79,6 +79,20 @@ public class Equipo
         
     }
     
+    public double tiempoTotalAcumuladoCiclistas(){
+        int index=0;   
+        double tiempoTotal=0;
+        while(index<ciclistasEquipo.size()){
+            Ciclista ciclista=ciclistasEquipo.get(index);
+            tiempoTotal = tiempoTotal + ciclista.tiempoTotalAcumulado();
+            index++;
+        }
+        return tiempoTotal;
+    }
+    
+    public void enviarAEtapa(Etapa e){
+        
+    }
     /**
      * Devuelve el valor del campo nombre
      * 
