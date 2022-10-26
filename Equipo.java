@@ -79,6 +79,13 @@ public class Equipo
         
     }
     
+    public void ordenarCiclistas()
+    {
+     //   if(ordenCiclista)
+     //   Collections.sort(ciclistas,CompCiclista);
+     //   else
+     //   "reserveOrder"
+    }
     /**
      * Devuelve el valor del campo nombre
      * 
