@@ -104,10 +104,12 @@ public class Equipo
     }
     
 
+
     public void enviarAEtapa(Etapa e){
         
     }
     
+
     public Ciclista enviarAEtapa(){
         Ciclista c=new Ciclista();
         if(!ciclistasEquipo.isEmpty()){

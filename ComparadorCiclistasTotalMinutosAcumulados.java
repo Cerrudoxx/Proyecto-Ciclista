@@ -16,4 +16,3 @@ class ComparadorCiclistasTotalMinutosAcumulados implements Comparator<Ciclista>{
     }  
 }   
 
-
