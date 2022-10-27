@@ -47,11 +47,13 @@ public class Equipo
      * @param peso es el peso (en kg) de la bicicleta 
      * 
      
-    public Equipo(String nombre){
+    public Equipo(String nombre, Comparator<Ciclista> cc, boolean oc){
          this.nombre=nombre;
         ciclistasEquipo = new ArrayList<Ciclista>();
         ciclistasAbandonado= new ArrayList<Ciclista>();
         bicicletasEquipo= new ArrayList<Bicicleta>();
+        compCiclista=cc;
+        orderCiclista=oc;
     }
     */
 
@@ -82,7 +84,7 @@ public class Equipo
     public void ordenarCiclistas()
     {
      //   if(ordenCiclista)
-     //   Collections.sort(ciclistas,CompCiclista);
+     //   Collections.sort(ciclistas,compCiclista);
      //   else
      //   "reserveOrder"
     }
@@ -98,24 +100,10 @@ public class Equipo
         return tiempoTotal;
     }
     
-    public void enviarAEtapa(Etapa e){
+    public Ciclista enviarAEtapa(Etapa e){
         
     }
-    
-    public double tiempoTotalAcumuladoCiclistas(){
-        int index=0;   
-        double tiempoTotal=0;
-        while(index<ciclistasEquipo.size()){
-            Ciclista ciclista=ciclistasEquipo.get(index);
-            tiempoTotal = tiempoTotal + ciclista.tiempoTotalAcumulado();
-            index++;
-        }
-        return tiempoTotal;
-    }
-    
-    public void enviarAEtapa(Etapa e){
-        
-    }
+  
     /**
      * Devuelve el valor del campo nombre
      * 
