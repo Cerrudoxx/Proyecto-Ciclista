@@ -48,15 +48,22 @@ public class Organizacion
        //para cada ciclista y mostrar resuktado estapa
        
        // mientras(){
-           // obtener ciclistas a competir paara cada ciclista:
+           // obtener ciclistas a competir para cada ciclista:
            // ciclista.correr(etapa
            // mostrar resul etapa
-           // devolcer ciclistas a equipos)
+           // devolver ciclistas a equipos)
        // }
    }
    
    public void anadirEtapa(Etapa e){
        
+   }
+   
+   public void devolverCiclista(){
+       for(int i=0; i<ciclistas.size(); i++){
+           Ciclista c = ciclistas.get(i);
+           c.getEquipo().insertarCiclista(c);          
+       }
    }
     
 }

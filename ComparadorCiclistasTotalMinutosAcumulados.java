@@ -14,5 +14,5 @@ class ComparadorCiclistasTotalMinutosAcumulados implements Comparator<Ciclista>{
         else  
             return -1;  
     }  
-}  
+}   
 

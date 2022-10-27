@@ -234,7 +234,7 @@ public class Ciclista
     /** * Establece el valor del campo equipo al dado como entrada
      * 
      * @param  equipo es el nuevo valor del campo equipo
-     
+     */
      public void setEquipo(Equipo equipo)
     {
         
@@ -247,14 +247,14 @@ public class Ciclista
      * Devuelve el valor del campo equipo
      * 
      * @return     equipo del ciclista
-    
+    */
     public Equipo getEquipo()
     {
         
         return equipo;
         
     }
-     */
+     
     
    
 }
