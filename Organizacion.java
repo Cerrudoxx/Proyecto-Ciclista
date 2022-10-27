@@ -1,4 +1,6 @@
-import java.util.ArrayList;   
+import java.util.ArrayList;  
+import java.util.Comparator;
+import java.util.*; 
 /**
  * Write a description of class Organizacion here.
  * 
@@ -14,6 +16,18 @@ public class Organizacion
     
     private ArrayList<Ciclista> ciclistas;
     
+    Comparator<Etapa> compEtapa;
+    
+    Comparator<Equipo> compEquipo;
+    
+    Comparator<Ciclista> compCiclistasCarrera;
+    
+    boolean ordenEtapa;
+    
+    boolean ordenEquipo;
+    
+    boolean ordenCiclistas;
+    
     //listaEquipos;
     //listaEtapa;
     
@@ -28,6 +42,33 @@ public class Organizacion
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
     }
+    
+    
+    /**
+     * Constructor for objects of class Organizacion
+     */
+    public Organizacion(Comparator<Etapa> ce)
+    {
+        // initialise instance variables
+        etapas=new ArrayList<Etapa>();
+        equipos=new ArrayList<Equipo>();
+        ciclistas=new ArrayList<Ciclista>();
+        compEtapa=ce;
+    }
+    
+    /**
+     * Constructor for objects of class Organizacion
+     */
+    public Organizacion(Comparator<Equipo> ce, boolean oe)
+    {
+        // initialise instance variables
+        etapas=new ArrayList<Etapa>();
+        equipos=new ArrayList<Equipo>();
+        ciclistas=new ArrayList<Ciclista>();
+        compEquipo=ce;
+    }
+    
+    
 
     /**
      * An example of a method - replace this comment with your own
