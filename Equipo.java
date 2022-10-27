@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.*;
 
 /**
  * Guarda la informacion del nombre y el peso de la bicicleta 
@@ -39,21 +40,25 @@ public class Equipo
        
     }
     
-    /**
-     * Constructor parametrizado de objetos de la clase Bicicleta
+    
+    /** Constructor parametrizado de objetos de la clase Bicicleta
      * Crea una nueva bicicleta inicializando con parametros pasados por teclado
      * 
      * @param nombre es el nombre de la bicicleta
      * @param peso es el peso (en kg) de la bicicleta 
-     * 
+     *
+     *
+     */
      
-    public Equipo(String nombre){
+    public Equipo(String nombre, Comparator<Ciclista> cc, boolean oc){
          this.nombre=nombre;
         ciclistasEquipo = new ArrayList<Ciclista>();
         ciclistasAbandonado= new ArrayList<Ciclista>();
         bicicletasEquipo= new ArrayList<Bicicleta>();
+        compCiclista=cc;
+        ordenCiclista=oc;
     }
-    */
+    
 
     /**
      * Devuelve el valor del campo nombre
@@ -81,10 +86,10 @@ public class Equipo
 
     public void ordenarCiclistas()
     {
-     //   if(ordenCiclista)
-     //   Collections.sort(ciclistas,CompCiclista);
-     //   else
-     //   "reserveOrder"
+       if(ordenCiclista)
+        Collections.sort(ciclistasEquipo,compCiclista);
+        else
+        Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
     }
     
     public double tiempoTotalAcumuladoCiclistas(){
@@ -98,8 +103,50 @@ public class Equipo
         return tiempoTotal;
     }
     
+
     public void enviarAEtapa(Etapa e){
         
+    }
+    
+    public Ciclista enviarAEtapa(){
+        Ciclista c=new Ciclista();
+        if(!ciclistasEquipo.isEmpty()){
+        c=ciclistasEquipo.get(0);
+        asignarBici(c);
+        ciclistasEquipo.remove (0);
+        }
+        return c;
+        
+    }
+    
+    public void insertarCiclista(Ciclista c){
+        if(c.getEnergia()>0){
+            ciclistasEquipo.add(c);
+        }
+        else{
+            ciclistasAbandonado.add(c);
+        }
+    }
+  
+    private void asignarBici(Ciclista c){
+        if(!bicicletasEquipo.isEmpty()){
+        c.setBicicleta(bicicletasEquipo.get(0));
+    }
+    }
+    
+    
+    
+    public int getNumeroCiclistas(){
+        return ciclistasEquipo.size();
+    }
+    
+    public void mostrarCiclistasEquipo(){
+        Ciclista c= new Ciclista();
+        for(int i=0; i<ciclistasEquipo.size(); i++){
+            c=ciclistasEquipo.get(i);
+            c.mostrarCiclista();
+        }
+
     }
     /**
      * Devuelve el valor del campo nombre

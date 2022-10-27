@@ -1,4 +1,6 @@
-import java.util.ArrayList;   
+import java.util.ArrayList;  
+import java.util.Comparator;
+import java.util.*; 
 /**
  * Write a description of class Organizacion here.
  * 
@@ -14,6 +16,18 @@ public class Organizacion
     
     private ArrayList<Ciclista> ciclistas;
     
+    Comparator<Etapa> compEtapa;
+    
+    Comparator<Equipo> compEquipo;
+    
+    Comparator<Ciclista> compCiclistasCarrera;
+    
+    boolean ordenEtapa;
+    
+    boolean ordenEquipo;
+    
+    boolean ordenCiclistas;
+    
     //listaEquipos;
     //listaEtapa;
     
@@ -28,6 +42,36 @@ public class Organizacion
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
     }
+    
+    
+    /**
+     * Constructor for objects of class Organizacion
+     */
+    public Organizacion(Comparator<Etapa> ce, boolean oe)
+    {
+        // initialise instance variables
+        etapas=new ArrayList<Etapa>();
+        equipos=new ArrayList<Equipo>();
+        ciclistas=new ArrayList<Ciclista>();
+        compEtapa=ce;
+    }
+    
+   
+    public void setCompEquipo(Comparator<Equipo> ce, boolean oe){
+         compEquipo=ce;
+         ordenEquipo=oe;
+    }
+    
+    public void mostrarEquipos(){
+        Equipo e=new Equipo();
+        for(int i=0; i<equipos.size(); i++){
+            e=equipos.get(i);
+            double tiempoMedio=e.tiempoTotalAcumuladoCiclistas()/e.getNumeroCiclistas();
+            System.out.printf("%%% " +e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+tiempoMedio+" %%% ");
+            e.mostrarCiclistasEquipo();
+        }
+    }
+    
 
     /**
      * An example of a method - replace this comment with your own
@@ -37,7 +81,7 @@ public class Organizacion
      */
    public void gestionarCampeonato(){
    // mostrarEtapas();//for each llamando etapas
-   // mostrarEquipos();//for each llamando equipos
+   // mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
    // hacerCarreras();
    // mostrarClasificacionFinal();
    }
@@ -48,15 +92,29 @@ public class Organizacion
        //para cada ciclista y mostrar resuktado estapa
        
        // mientras(){
-           // obtener ciclistas a competir paara cada ciclista:
+           // obtener ciclistas a competir para cada ciclista:
            // ciclista.correr(etapa
            // mostrar resul etapa
-           // devolcer ciclistas a equipos)
+           // devolver ciclistas a equipos)
        // }
    }
    
    public void anadirEtapa(Etapa e){
        
+   }
+   
+   public void devolverCiclista(){
+       for(int i=0; i<ciclistas.size(); i++){
+           Ciclista c = ciclistas.get(i);
+           c.getEquipo().insertarCiclista(c);          
+       }
+   }
+   
+   public void obtenerCiclista(Equipo e){
+       for(int i=0; i<e.getNumeroCiclistas(); i++){
+           Ciclista c= e.enviarAEtapa();
+           ciclistas.add(c);
+       }
    }
     
 }
