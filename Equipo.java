@@ -83,6 +83,10 @@ public class Equipo
         this.nombre=nombre;
         
     }
+    
+    public void anadirBicicleta(Bicicleta b){
+        bicicletasEquipo.add(b);
+    }
 
     public void ordenarCiclistas()
     {

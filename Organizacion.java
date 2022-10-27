@@ -100,7 +100,7 @@ public class Organizacion
    }
    
    public void anadirEtapa(Etapa e){
-       
+       etapas.add(e);
    }
    
    public void devolverCiclista(){

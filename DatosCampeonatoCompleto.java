@@ -26,9 +26,12 @@
         organizacion.anadirEtapa(etapa5);
         organizacion.anadirEtapa(etapa6);
         
-        /**
+        
+        
         //constructor de equipos pide (String nombre, comparador de ciclistas y si orden ascendente o descendente, comparador de bicicletas y si orden ascendente o descendente)
-        Equipo movistarWomen = new Equipo("Movistar Women",  new ComparadorCiclistaHabilidad(), true//ciclistas comparados ascendentemente por habilidad (si iguales por nombre), bicicletas comparadas ascendentemente por peso (si iguales por nombre));
+       
+        Equipo movistarWomen = new Equipo("Movistar Women",  new ComparadorCiclistasHabilidad(), true);//ciclistas comparados ascendentemente por habilidad (si iguales por nombre), bicicletas comparadas ascendentemente por peso (si iguales por nombre)
+       /**
         Equipo dSMWomen= new Equipo("DSM Women", //ciclistas comparados ascendentemente por energía (si iguales por nombre), bicicletas comparadas ascendentemente por peso (si iguales por nombre)););
         Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", //ciclistas comparados descendentemente por habilidad (si iguales por nombre), bicicletas comparadas descendentemente por peso (si iguales por nombre)););
         
@@ -37,6 +40,7 @@
         organizacion.inscribirEquipo(dSMWomen);
         
         //constructor de bicicletas pide ( String nombre, double peso)
+        
         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",7.4)); 
         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT 15",7.6));
         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",7.8));
@@ -55,7 +59,9 @@
         trekSegafredoWomen.anadirCiclista(new Ciclista("CORDON-RAGOT", 5.04, 1120,trekSegafredoWomen));
         
         //constructor de bicicletas pide ( String nombre, double peso)
+        */
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Ultimate CFR eTap",7.45));
+        /**
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",7.5));
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Endurace CF SLX 9 Di2",7.75));
         //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
