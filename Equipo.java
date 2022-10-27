@@ -134,6 +134,14 @@ public class Equipo
     public int getNumeroCiclistas(){
         return ciclistasEquipo.size();
     }
+    
+    public void mostrarCiclistasEquipo(){
+        Ciclista c= new Ciclista();
+        for(int i=0; i<ciclistasEquipo.size(); i++){
+            c=ciclistasEquipo.get(i);
+            c.mostrarCiclista();
+        }
+    }
     /**
      * Devuelve el valor del campo nombre
      * 

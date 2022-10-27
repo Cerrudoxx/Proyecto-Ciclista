@@ -68,7 +68,7 @@ public class Organizacion
             e=equipos.get(i);
             double tiempoMedio=e.tiempoTotalAcumuladoCiclistas()/e.getNumeroCiclistas();
             System.out.printf("%%% " +e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+tiempoMedio+" %%% ");
-            //mostrar los ciclistas de cada equipo
+            e.mostrarCiclistasEquipo();
         }
     }
     
