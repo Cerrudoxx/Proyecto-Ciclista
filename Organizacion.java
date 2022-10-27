@@ -65,5 +65,12 @@ public class Organizacion
            c.getEquipo().insertarCiclista(c);          
        }
    }
+   
+   public void obtenerCiclista(Equipo e){
+       for(int i=0; i<e.getNumeroCiclistas(); i++){
+           Ciclista c= e.enviarAEtapa();
+           ciclistas.add(c);
+       }
+   }
     
 }

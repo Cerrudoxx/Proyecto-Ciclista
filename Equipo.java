@@ -104,9 +104,14 @@ public class Equipo
     }
     
     public Ciclista enviarAEtapa(){
-        Ciclista c=ciclistasEquipo.get(0);
+        Ciclista c=new Ciclista();
+        if(!ciclistasEquipo.isEmpty()){
+        c=ciclistasEquipo.get(0);
+        asignarBici(c);
         ciclistasEquipo.remove (0);
+        }
         return c;
+        
     }
     
     public void insertarCiclista(Ciclista c){
@@ -118,6 +123,17 @@ public class Equipo
         }
     }
   
+    private void asignarBici(Ciclista c){
+        if(!bicicletasEquipo.isEmpty()){
+        c.setBicicleta(bicicletasEquipo.get(0));
+    }
+    }
+    
+    
+    
+    public int getNumeroCiclistas(){
+        return ciclistasEquipo.size();
+    }
     /**
      * Devuelve el valor del campo nombre
      * 
