@@ -47,7 +47,7 @@ public class Organizacion
     /**
      * Constructor for objects of class Organizacion
      */
-    public Organizacion(Comparator<Etapa> ce)
+    public Organizacion(Comparator<Etapa> ce, boolean oe)
     {
         // initialise instance variables
         etapas=new ArrayList<Etapa>();
@@ -56,18 +56,21 @@ public class Organizacion
         compEtapa=ce;
     }
     
-    /**
-     * Constructor for objects of class Organizacion
-     */
-    public Organizacion(Comparator<Equipo> ce, boolean oe)
-    {
-        // initialise instance variables
-        etapas=new ArrayList<Etapa>();
-        equipos=new ArrayList<Equipo>();
-        ciclistas=new ArrayList<Ciclista>();
-        compEquipo=ce;
+   
+    public void setCompEquipo(Comparator<Equipo> ce, boolean oe){
+         compEquipo=ce;
+         ordenEquipo=oe;
     }
     
+    public void mostrarEquipos(){
+        Equipo e=new Equipo();
+        for(int i=0; i<equipos.size(); i++){
+            e=equipos.get(i);
+            double tiempoMedio=e.tiempoTotalAcumuladoCiclistas()/e.getNumeroCiclistas();
+            System.out.printf("%%% " +e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+tiempoMedio+" %%% ");
+            //mostrar los ciclistas de cada equipo
+        }
+    }
     
 
     /**
@@ -78,7 +81,7 @@ public class Organizacion
      */
    public void gestionarCampeonato(){
    // mostrarEtapas();//for each llamando etapas
-   // mostrarEquipos();//for each llamando equipos
+   // mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
    // hacerCarreras();
    // mostrarClasificacionFinal();
    }
