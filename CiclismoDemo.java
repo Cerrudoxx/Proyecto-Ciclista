@@ -17,8 +17,10 @@ public class CiclismoDemo
         //Descomentar de las dos líneas siguientes, la prueba que se quiera ejecutar
         DatosCampeonatoCompleto initdata = new DatosCampeonatoCompleto(organizacion); 
         //DatosCampeonatoAbandonos initdata = new DatosCampeonatoAbandonos(organizacion); 
-         System.out.printf("main terminado");
+         organizacion.ordenarEtapas();
+         organizacion.mostrarEtapas();
          organizacion.mostrarEquipos();
+         
         //organizacion.gestionarCampeonato();
          
     }    

@@ -101,7 +101,7 @@ public class Equipo
     
     public void ordenarBicicletas()
     {
-       if(ordenBicicleta)
+       if(ordenBicicleta==false)
         Collections.sort(bicicletasEquipo,compBicicleta);
         else
         Collections.sort(bicicletasEquipo, Collections.reverseOrder(compBicicleta));
@@ -130,7 +130,7 @@ public class Equipo
         
     }
     
-    public void insertarCiclista(Ciclista c){
+    public void anadirCiclista(Ciclista c){
         if(c.getEnergia()>0){
             ciclistasEquipo.add(c);
         }

@@ -124,7 +124,7 @@ public class Etapa
     public void mostrarEtapa()
     {
         // put your code here
-        System.out.printf("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
+        System.out.println("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
         
     }
     

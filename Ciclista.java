@@ -41,13 +41,14 @@ public class Ciclista
      * @param resultado es el resultado del ciclista
      * 
      */
-    public Ciclista(String nombre, double habilidad, double energia)
+    public Ciclista(String nombre, double habilidad, double energia, Equipo e)
     {        
         this.nombre=nombre;
         this.habilidad=habilidad;
         this.energia=energia;
         this.resultado=new ArrayList<Resultados>();
         this.abandono=false;
+        this.equipo=e;
     }
 
     /**
@@ -145,7 +146,7 @@ public class Ciclista
     {
         
         if(bicicleta==null){
-            System.out.printf("El ciclista no tiene bicicleta asignada");
+            System.out.println("El ciclista no tiene bicicleta asignada");
         }
         
         return bicicleta;
@@ -163,7 +164,7 @@ public class Ciclista
         
         //TO DO
         if(bicicleta==null){
-            System.out.printf("El ciclista no tiene bicicleta asignada");
+            System.out.println("El ciclista no tiene bicicleta asignada");
         }
         
         return bicicleta;
@@ -256,7 +257,7 @@ public class Ciclista
     }
      
     public void mostrarCiclista(){
-        System.out.printf("<ciclista:"+nombre+"> <energía:"+energia+"> <tiempo acumulado sin abandonar:"+tiempoTotalAcumulado()+ "<abandonado:"+abandono+")>");
+        System.out.println("<ciclista:"+nombre+"> <energía:"+energia+"> <tiempo acumulado sin abandonar:"+tiempoTotalAcumulado()+ "<abandonado:"+abandono+")>");
     }
    
 }

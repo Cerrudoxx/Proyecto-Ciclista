@@ -62,16 +62,56 @@ public class Organizacion
          ordenEquipo=oe;
     }
     
-    public void mostrarEquipos(){
-        //Equipo e=new Equipo();
-        for (Equipo e: equipos){ //int i=0; i<equipos.size(); i++
-            //e=equipos.get(i);
-            double tiempoMedio=e.tiempoTotalAcumuladoCiclistas()/e.getNumeroCiclistas();
-            System.out.printf("%%% " +e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+tiempoMedio+" %%% ");
-            e.mostrarCiclistasEquipo();
-        }
+    public void ordenarEquipos(){
+         if(ordenEquipo==false)
+        Collections.sort(equipos, compEquipo);
+        else
+        Collections.sort(equipos, Collections.reverseOrder(compEquipo));
     }
     
+    
+    
+    public void mostrarEquipos(){
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%% EQUIPOS DEL CAMPEONATO %%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+       
+        for (Equipo e: equipos){
+            System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+            System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+            System.out.println("%%% " + e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+ tiempoMedio(e) +" %%% ");
+            System.out.println(" ");
+            e.mostrarCiclistasEquipo();
+        }
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+    }
+    
+    public void mostrarEtapas(){
+        System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        System.out.println("||||||||||||||||||| ETAPAS DEL CAMPEONATO |||||||||||||||||||");
+        System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        for (Etapa e: etapas){ 
+            e.mostrarEtapa();
+        }
+        System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+    }
+    
+    public void ordenarEtapas(){
+         if(ordenEtapa==false)
+        Collections.sort(etapas,compEtapa);
+        else
+        Collections.sort(etapas, Collections.reverseOrder(compEtapa));
+    }
+    
+    
+    private double tiempoMedio(Equipo e){
+        double tMedio=0;
+        if(e.getNumeroCiclistas()!=0){
+        tMedio=e.tiempoTotalAcumuladoCiclistas()/e.getNumeroCiclistas();
+        }
+        return tMedio;
+    }
 
     /**
      * An example of a method - replace this comment with your own
@@ -80,8 +120,11 @@ public class Organizacion
      * @return     the sum of x and y 
      */
    public void gestionarCampeonato(){
-   // mostrarEtapas();//for each llamando etapas
-   // mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
+   ordenarEtapas();
+   setCompEquipo(new ComparadorEquipoNombre(), false);
+   ordenarEquipos();
+   mostrarEtapas();//for each llamando etapas
+   mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
    // hacerCarreras();
    // mostrarClasificacionFinal();
    }
@@ -99,14 +142,22 @@ public class Organizacion
        // }
    }
    
+   private void mostrarClasificacionFinal(){
+       
+   }
+   
    public void anadirEtapa(Etapa e){
        etapas.add(e);
+   }
+   
+   public void inscribirEquipo(Equipo eq){
+       equipos.add(eq);
    }
    
    public void devolverCiclista(){
        for(int i=0; i<ciclistas.size(); i++){
            Ciclista c = ciclistas.get(i);
-           c.getEquipo().insertarCiclista(c);          
+           c.getEquipo().anadirCiclista(c);          
        }
    }
    
