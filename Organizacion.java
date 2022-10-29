@@ -125,12 +125,26 @@ public class Organizacion
    ordenarEquipos();
    mostrarEtapas();//for each llamando etapas
    mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
-   // hacerCarreras();
+   hacerCarreras();
    // mostrarClasificacionFinal();
    }
    
    private void hacerCarreras(){
        //mientras haya ciclistas para competir sigo
+        Etapa e= etapas.get(0);
+           etapas.remove(0);
+           //obtenerCiclista(eq);
+       while(!ciclistas.isEmpty() || ciclistas.size()==1){
+          
+           for (Equipo eq: equipos){
+               
+               for(int i=0; i<ciclistas.size(); i++){
+               Ciclista c=ciclistas.get(i);
+               c.actualizarResultadoEnergia(e);
+            }
+            devolverCiclista();
+            }
+       }
        //recorrer etapas y traer ciclitas de cada equipo
        //para cada ciclista y mostrar resuktado estapa
        

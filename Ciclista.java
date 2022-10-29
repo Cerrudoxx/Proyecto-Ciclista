@@ -220,8 +220,8 @@ public class Ciclista
         return etapa;
     }
     
-    public void actualizarResultadoEnergia(Etapa etp, Bicicleta bic){
-        double tiempo=bic.calcularTiempoNecesario(this, etp);
+    public void actualizarResultadoEnergia(Etapa etp){ //Bicicleta bic){
+        double tiempo=bicicleta.calcularTiempoNecesario(this, etp);
         if(abandono()==false){
             setResultado(etp, tiempo);
             energia=energia-tiempo;
