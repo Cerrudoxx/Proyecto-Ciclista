@@ -63,9 +63,9 @@ public class Organizacion
     }
     
     public void mostrarEquipos(){
-        Equipo e=new Equipo();
-        for(int i=0; i<equipos.size(); i++){
-            e=equipos.get(i);
+        //Equipo e=new Equipo();
+        for (Equipo e: equipos){ //int i=0; i<equipos.size(); i++
+            //e=equipos.get(i);
             double tiempoMedio=e.tiempoTotalAcumuladoCiclistas()/e.getNumeroCiclistas();
             System.out.printf("%%% " +e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+tiempoMedio+" %%% ");
             e.mostrarCiclistasEquipo();

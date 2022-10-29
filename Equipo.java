@@ -21,8 +21,9 @@ public class Equipo
     private ArrayList<Bicicleta> bicicletasEquipo;  
     
     Comparator<Ciclista> compCiclista;
+    Comparator<Bicicleta> compBicicleta;
     boolean ordenCiclista;
-    
+    boolean ordenBicicleta;
 
     /**
      * Constructor de objetos de la clase Bicicleta
@@ -50,13 +51,15 @@ public class Equipo
      *
      */
      
-    public Equipo(String nombre, Comparator<Ciclista> cc, boolean oc){
+    public Equipo(String nombre, Comparator<Ciclista> cc, boolean oc, Comparator<Bicicleta> cb, boolean ob){
          this.nombre=nombre;
         ciclistasEquipo = new ArrayList<Ciclista>();
         ciclistasAbandonado= new ArrayList<Ciclista>();
         bicicletasEquipo= new ArrayList<Bicicleta>();
         compCiclista=cc;
         ordenCiclista=oc;
+        compBicicleta=cb;
+        ordenBicicleta=ob;
     }
     
 
@@ -96,6 +99,14 @@ public class Equipo
         Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
     }
     
+    public void ordenarBicicletas()
+    {
+       if(ordenBicicleta)
+        Collections.sort(bicicletasEquipo,compBicicleta);
+        else
+        Collections.sort(bicicletasEquipo, Collections.reverseOrder(compBicicleta));
+    }
+    
     public double tiempoTotalAcumuladoCiclistas(){
         int index=0;   
         double tiempoTotal=0;
@@ -105,12 +116,6 @@ public class Equipo
             index++;
         }
         return tiempoTotal;
-    }
-    
-
-
-    public void enviarAEtapa(Etapa e){
-        
     }
     
 
