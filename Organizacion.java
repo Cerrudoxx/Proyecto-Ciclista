@@ -137,20 +137,18 @@ public class Organizacion
      * @return     the sum of x and y 
      */
    public void gestionarCampeonato(){
-   ordenarEtapas();
-   setCompEquipo(new ComparadorEquipoNombre(), false);
-   ordenarEquipos();
-   setCompCiclistas(new ComparadorCiclistasNombre(), true);
-   //cargarCiclistas();
-   //ordenarCiclistas();
-   mostrarEtapas();//for each llamando etapas
-   mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
+       ordenarEtapas();
+       setCompEquipo(new ComparadorEquipoNombre(), false);
+       ordenarEquipos();
+       setCompCiclistas(new ComparadorCiclistasNombre(), true);
+       //cargarCiclistas();
+       //ordenarCiclistas();
+       mostrarEtapas();//for each llamando etapas
+       mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
    
-   hacerCarreras();
-   // mostrarClasificacionFinal();
+       hacerCarreras();
+       // mostrarClasificacionFinal();
    }
-   
-  
    
    private void hacerCarreras(){
        //mientras haya ciclistas para competir sigo
@@ -202,9 +200,10 @@ public class Organizacion
     ///////////no carga los 9 ciclistas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///////////////////
     
    }
+   
    private void correrCarrera(){
        int numCicl = 1;
-    for (Ciclista c: ciclistas){
+        for (Ciclista c: ciclistas){
                System.out.println("@@@ "+ "ciclista "+ numCicl + " de "+ ciclistas.size());
                c.mostrarCiclista();
                c.getBicicleta().mostrarBicicleta();
@@ -244,14 +243,16 @@ public class Organizacion
            ciclistas.add(c);
        }
    }
+   
    private void cargarCiclistas(){
        if(ciclistas.isEmpty()){
        Equipo e= new Equipo();
+       
        for(int i=0; i<equipos.size(); i++){
            e=equipos.get(i);
            obtenerCiclista(e);
        }  
-    }
+     }
    }
    
     private void mostrarCiclistas(){

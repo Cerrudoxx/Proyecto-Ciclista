@@ -257,7 +257,7 @@ public class Ciclista
     }
      
     public void mostrarCiclista(){
-        System.out.println("<ciclista:"+nombre+"> <energía:"+energia+"> <tiempo acumulado sin abandonar:"+tiempoTotalAcumulado()+ "<abandonado:"+abandono+")>");
+        System.out.println("<ciclista:"+nombre+"> <energía:"+energia+"> <habilidad: "+habilidad+"> <tiempo acumulado sin abandonar:"+tiempoTotalAcumulado()+ "<abandonado:"+abandono+")>");
     }
    
 }

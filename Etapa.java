@@ -29,6 +29,7 @@ public class Etapa
         distancia=0;
        
     }
+    
     /**
      * Constructor parametrizado de objetos de la clase Etapa
      * Crea una nueva etapa inicializando con parametros pasados por teclado
@@ -116,10 +117,8 @@ public class Etapa
         
     }
     
-        /**
+    /**
      * Muestra la informacion de la etapa por pantalla
-     * 
-     * 
      */
     public void mostrarEtapa()
     {

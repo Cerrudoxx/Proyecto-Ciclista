@@ -3,8 +3,8 @@ import java.util.Comparator;
 import java.util.*;
 
 /**
- * Guarda la informacion del nombre y el peso de la bicicleta 
- * etapa
+ * Guarda la informacion del equipo: ciclistas que le pertenecen, ciclistas que abandonan y
+ * bicicletas que abandonan
  * 
  * @author Jesús Cerrudo, Pablo Polo y Marco Vega. 
  * @version 1.0
@@ -26,8 +26,13 @@ public class Equipo
     boolean ordenBicicleta;
 
     /**
-     * Constructor de objetos de la clase Bicicleta
-     * Crea una nueva bicicleta inicializando con parametros por defecto
+     * Constructor de objetos de la clase equipo
+     * Crea una nuevo equipo con valores por defecto
+     * 
+     * @param nombre es el nombre del equipo
+     * @param ciclistasEquipo es una lista con los ciclistas que pertenecen al equipo
+     * @param ciclistasAbandonado es una lista con los ciclistas que de un equipo que abandonaron 
+     * @param bicicletasEquipo es una lista de las bicicletas que pertenecen al equipo
      */
     public Equipo()
     {
@@ -42,12 +47,17 @@ public class Equipo
     }
     
     
-    /** Constructor parametrizado de objetos de la clase Bicicleta
-     * Crea una nueva bicicleta inicializando con parametros pasados por teclado
+    /** Constructor parametrizado de objetos de la clase Equipo
+     * Crea un nuevo equipo inicializando con parametros pasados por teclado
      * 
-     * @param nombre es el nombre de la bicicleta
-     * @param peso es el peso (en kg) de la bicicleta 
-     *
+     * @param nombre es el nombre del equipo
+     * @param ciclistasEquipo es una lista con los ciclistas que pertenecen al equipo
+     * @param ciclistasAbandonado es una lista con los ciclistas que de un equipo que abandonaron 
+     * @param bicicletasEquipo es una lista de las bicicletas que pertenecen al equipo
+     * @param cc es el comparador de ciclistas
+     * @param oc es el booleano que indica si los ciclistas se ordenan ascendente o descendentemente
+     * @param cb es el comparador de bicicletas
+     * @param ob es el booleano que indica si las bicicletas se ordenan ascendente o descendentemente
      *
      */
      
@@ -66,7 +76,7 @@ public class Equipo
     /**
      * Devuelve el valor del campo nombre
      * 
-     * @return     nombre de la bicicleta 
+     * @return nombre del equipo 
      */
     public String getName()
     {
@@ -87,10 +97,19 @@ public class Equipo
         
     }
     
+    /**
+     * Añade una bicicleta a la lista de bicicletas de un equipo
+     * 
+     * @param  b es la bicicleta que se quiere añadir
+     */
     public void anadirBicicleta(Bicicleta b){
         bicicletasEquipo.add(b);
     }
 
+    /**
+     * Ordena los ciclistas del equipo (se ordenará por el campo comparador al que se llame)
+     * 
+     */
     public void ordenarCiclistas()
     {
        if(ordenCiclista=false)
@@ -99,6 +118,10 @@ public class Equipo
         Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
     }
     
+    /**
+     * Ordena las bicicletas del equipo (se ordenará por el campo comparador al que se llame)
+     * 
+     */
     public void ordenarBicicletas()
     {
        if(ordenBicicleta==false)
@@ -107,6 +130,11 @@ public class Equipo
         Collections.sort(bicicletasEquipo, Collections.reverseOrder(compBicicleta));
     }
     
+    /**
+     * Calcula el tiempo acumulado de los ciclistas de un equipo
+     * 
+     * @return Tiempo ciclista 1 + Tiempo ciclista 2 + ... + Tiempo ciclista n
+     */
     public double tiempoTotalAcumuladoCiclistas(){
         int index=0;   
         double tiempoTotal=0;
@@ -118,7 +146,11 @@ public class Equipo
         return tiempoTotal;
     }
     
-
+     /**
+     * Envía a una etapa el primer ciclista de la lista del equipo con la primera bicileta y lo elimina de la lista
+     * 
+     * @return ciclista con bicicleta
+     */
     public Ciclista enviarAEtapa(){
         Ciclista c=new Ciclista();
         if(!ciclistasEquipo.isEmpty()){
@@ -130,6 +162,9 @@ public class Equipo
         
     }
     
+    /**
+     * Añade un ciclista a un equipo
+     */
     public void anadirCiclista(Ciclista c){
         if(c.getEnergia()>0){
             ciclistasEquipo.add(c);
@@ -139,18 +174,29 @@ public class Equipo
         }
     }
   
+    /**
+     * Asigna la primera bicicleta de la lista de bicicletas de un equipo a un ciclista
+     * 
+     * @param c es el ciclista al que se le va a asignar la bicileta
+     */
     private void asignarBici(Ciclista c){
         if(!bicicletasEquipo.isEmpty()){
         c.setBicicleta(bicicletasEquipo.get(0));
     }
     }
     
-    
-    
+    /**
+     * Calcula el numero de ciclistas de un equipo
+     * 
+     * @return numero de ciclistas de un equipo
+     */
     public int getNumeroCiclistas(){
         return ciclistasEquipo.size();
     }
     
+    /**
+     * Muestra cada uno de los ciclistas pertenecientes a un equipo
+     */
     public void mostrarCiclistasEquipo(){
         Ciclista c= new Ciclista();
         for(int i=0; i<ciclistasEquipo.size(); i++){
