@@ -113,4 +113,8 @@ public class Bicicleta
         return tiempo;        
     }
     
+     public void mostrarBicicleta(){
+        System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
+    }
+    
 }

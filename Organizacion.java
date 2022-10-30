@@ -62,6 +62,33 @@ public class Organizacion
          ordenEquipo=oe;
     }
     
+    public void setCompCiclistas(Comparator<Ciclista> c, boolean oc){
+         compCiclistasCarrera=c;
+         ordenCiclistas=oc;
+    } 
+    
+    private void cargarCiclistas(){
+        Equipo e= new Equipo();
+       for(int i=0; i<equipos.size(); i++){
+           e=equipos.get(i);
+           obtenerCiclista(e);
+       }    
+   }
+   
+   private void mostrarCiclistas(){
+       for (Ciclista c: ciclistas){
+           c.mostrarCiclista();
+       }
+   }
+   
+   private void ordenarCiclistas(){
+        if(ordenCiclistas==false)
+        Collections.sort(ciclistas, compCiclistasCarrera);
+        else
+        Collections.sort(ciclistas, Collections.reverseOrder(compCiclistasCarrera));
+    
+   }
+    
     public void ordenarEquipos(){
          if(ordenEquipo==false)
         Collections.sort(equipos, compEquipo);
@@ -123,28 +150,50 @@ public class Organizacion
    ordenarEtapas();
    setCompEquipo(new ComparadorEquipoNombre(), false);
    ordenarEquipos();
+   setCompCiclistas(new ComparadorCiclistasNombre(), true);
    mostrarEtapas();//for each llamando etapas
    mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
    hacerCarreras();
    // mostrarClasificacionFinal();
    }
    
+  
+   
    private void hacerCarreras(){
        //mientras haya ciclistas para competir sigo
-        Etapa e= etapas.get(0);
-           etapas.remove(0);
-           //obtenerCiclista(eq);
-       while(!ciclistas.isEmpty() || ciclistas.size()==1){
-          
-           for (Equipo eq: equipos){
-               
-               for(int i=0; i<ciclistas.size(); i++){
-               Ciclista c=ciclistas.get(i);
-               c.actualizarResultadoEnergia(e);
-            }
-            devolverCiclista();
-            }
-       }
+       
+       //while(!ciclistas.isEmpty() || ciclistas.size()==1){   
+      
+       int numCarr = 1;
+       
+       for(int index=0; index<etapas.size(); index++){
+       Etapa e= etapas.get(index);
+         cargarCiclistas();
+         ordenarCiclistas();
+           //etapas.remove(0);
+          System.out.println("********************************************************************************************************");
+           System.out.printf("*** " + "CARRERA<"+numCarr+"> EN ");
+           e.mostrarEtapa();
+           System.out.println(" ***");
+           
+           System.out.println("********************************************************************************************************");
+           System.out.println("********************************************************************************************************");
+           
+           System.out.println("******************************** Ciclistas que van a competir en "+ e.getName()+" *******************************");
+           System.out.println("********************************************************************************************************");
+           
+           mostrarCiclistas();
+           
+           System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+           System.out.println("+++++++++++++++++++++++++ Comienza la carrera en " +e.getName() +" ++++++++++++++++++++++++++"); 
+           System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+           correrCarrera();
+           devolverCiclista();
+           
+       numCarr++;
+       
+       
+           
        //recorrer etapas y traer ciclitas de cada equipo
        //para cada ciclista y mostrar resuktado estapa
        
@@ -154,6 +203,23 @@ public class Organizacion
            // mostrar resul etapa
            // devolver ciclistas a equipos)
        // }
+    }
+    
+    ///////////no carga los 9 ciclistas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///////////////////
+    
+   }
+   private void correrCarrera(){
+       int numCicl = 1;
+    for (Ciclista c: ciclistas){
+               System.out.println("@@@ "+ "ciclista "+ numCicl + " de "+ ciclistas.size());
+               c.mostrarCiclista();
+               c.getBicicleta().mostrarBicicleta();
+               
+               
+               System.out.println("@@@");
+               numCicl++;
+           }
+       
    }
    
    private void mostrarClasificacionFinal(){

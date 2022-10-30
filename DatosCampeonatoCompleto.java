@@ -14,13 +14,11 @@
     {
         //constructor de etapas pide ( String nombre, double dificultad, double distancia)
         Etapa etapa1 = new Etapa("sencilla larga", 0.9, 200);
-        etapa1.mostrarEtapa();
         Etapa etapa2 = new Etapa("compleja corta", 1.1, 150);
         Etapa etapa3 = new Etapa("normal intermedia", 1.0, 175);
         Etapa etapa4 = new Etapa("sencilla intermedia", 0.9, 175);
         Etapa etapa5 = new Etapa("compleja intermedia", 1.1, 175);
         Etapa etapa6 = new Etapa("normal larga", 1.0, 200);
-        etapa6.mostrarEtapa();
         organizacion.anadirEtapa(etapa1);
         organizacion.anadirEtapa(etapa2);
         organizacion.anadirEtapa(etapa3);
@@ -64,7 +62,6 @@
         //constructor de bicicletas pide ( String nombre, double peso)
         
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Ultimate CFR eTap",7.45));
-        
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",7.5));
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Endurace CF SLX 9 Di2",7.75));
         //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
