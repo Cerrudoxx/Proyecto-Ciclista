@@ -30,11 +30,11 @@
         
         //constructor de equipos pide (String nombre, comparador de ciclistas y si orden ascendente o descendente, comparador de bicicletas y si orden ascendente o descendente)
        
-        Equipo movistarWomen = new Equipo("Movistar Women", new ComparadorCiclistasHabilidad(), true, new ComparadorBicisPeso(), true);//ciclistas comparados ascendentemente por habilidad (si iguales por nombre), bicicletas comparadas ascendentemente por peso (si iguales por nombre)
+        Equipo movistarWomen = new Equipo("Movistar Women", new ComparadorCiclistasHabilidad(), false, new ComparadorBicisPeso(), true);//ciclistas comparados ascendentemente por habilidad (si iguales por nombre), bicicletas comparadas ascendentemente por peso (si iguales por nombre)
        
         Equipo dSMWomen= new Equipo("DSM Women", new ComparadorCiclistasEnergia(), true, new ComparadorBicisPeso(), true);
         
-        Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", new ComparadorCiclistasHabilidad(), true, new ComparadorBicisPeso(), false);
+        Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", new ComparadorCiclistasHabilidad(), false, new ComparadorBicisPeso(), false);
         
         organizacion.inscribirEquipo(movistarWomen);
         organizacion.inscribirEquipo(trekSegafredoWomen);

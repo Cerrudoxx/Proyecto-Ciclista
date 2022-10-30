@@ -93,7 +93,7 @@ public class Equipo
 
     public void ordenarCiclistas()
     {
-       if(ordenCiclista)
+       if(ordenCiclista=false)
         Collections.sort(ciclistasEquipo,compCiclista);
         else
         Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
