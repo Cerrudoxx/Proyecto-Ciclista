@@ -32,7 +32,7 @@
         //Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", //ciclistas comparados descendentemente por habilidad (si iguales por nombre), bicicletas comparadas descendentemente por peso (si iguales por nombre)););
         Equipo movistarWomen = new Equipo("Movistar Women", new ComparadorCiclistasHabilidad(), true, new ComparadorBicisPeso(), true);
         Equipo dSMWomen= new Equipo("DSM Women", new ComparadorCiclistasEnergia(), true, new ComparadorBicisPeso(), true);
-        Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", new ComparadorCiclistasHabilidad(), false, new ComparadorBicisPeso(), true);
+        Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", new ComparadorCiclistasHabilidad(), false, new ComparadorBicisPeso(), false);
         
         organizacion.inscribirEquipo(movistarWomen);
         organizacion.inscribirEquipo(trekSegafredoWomen);

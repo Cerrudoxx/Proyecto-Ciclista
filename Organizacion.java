@@ -68,11 +68,14 @@ public class Organizacion
     } 
     
         public void ordenarEtapas(){
-         if(ordenEtapa==false)
+         if(ordenEtapa==false){
         Collections.sort(etapas,compEtapa);
-        else
-        Collections.sort(etapas, Collections.reverseOrder(compEtapa));
     }
+        else{
+        Collections.sort(etapas, Collections.reverseOrder(compEtapa));
+    } 
+    }
+    
    
    
    
@@ -85,7 +88,7 @@ public class Organizacion
     }
     
     public void ordenarEquipos(){
-         if(ordenEquipo==false)
+         if(ordenEquipo==true)
         Collections.sort(equipos, compEquipo);
         else
         Collections.sort(equipos, Collections.reverseOrder(compEquipo));
@@ -135,7 +138,7 @@ public class Organizacion
        ordenarEtapas();
        setCompEquipo(new ComparadorEquipoNombre(), false);
        ordenarEquipos();
-       setCompCiclistas(new ComparadorCiclistasNombre(), true);
+       setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), true);
        //cargarCiclistas();
        ordenarCiclistas();
        mostrarEtapas();//for each llamando etapas
@@ -209,7 +212,9 @@ public class Organizacion
                System.out.println("+++ Con estas condiciones el ciclista "+ c.getName()+ " con la bicicleta "+c.getBicicleta().getName()+" alcanza una velocidad de "+ velocidad +" km/hora +++");
                System.out.println("+++ "+ c.getName()+ " termina la etapa en "+ tiempo +" minutos ++");
                c.actualizarResultadoEnergia(e);
-               System.out.println("+++ La energia del ciclista "+ c.getName()+" tras la carrera es "+ c.getEnergia()+" +++");
+               double energia=Math.round((c.getEnergia())*100d) / 100d;
+
+               System.out.println("+++ La energia del ciclista "+ c.getName()+" tras la carrera es "+ energia +" +++");
                
                System.out.println("@@@");
                numCicl++;
@@ -233,7 +238,8 @@ public class Organizacion
        int index=ciclistas.size();
        for(int i=0; i<index; i++){
            Ciclista c = ciclistas.get(0);
-           c.getEquipo().anadirCiclista(c);    
+           c.getEquipo().anadirCiclista(c); 
+           c.getEquipo().anadirBicicleta(c.getBicicleta());
            ciclistas.remove(0);
        }
    }

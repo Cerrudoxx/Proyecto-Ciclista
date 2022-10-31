@@ -113,7 +113,7 @@ public class Equipo
      */
     public void ordenarCiclistas()
     {
-       if(ordenCiclista==true)
+       if(ordenCiclista)
         Collections.sort(ciclistasEquipo, compCiclista);
         else
         Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
@@ -125,7 +125,7 @@ public class Equipo
      */
     public void ordenarBicicletas()
     {
-       if(ordenBicicleta==true)
+       if(ordenBicicleta)
         Collections.sort(bicicletasEquipo,compBicicleta);
         else
         Collections.sort(bicicletasEquipo, Collections.reverseOrder(compBicicleta));
@@ -174,6 +174,7 @@ public class Equipo
         else{
             ciclistasAbandonado.add(c);
         }
+        
         ordenarCiclistas();
     }
   
@@ -184,7 +185,8 @@ public class Equipo
      */
     private void asignarBici(Ciclista c){
         if(!bicicletasEquipo.isEmpty()){
-        c.setBicicleta(bicicletasEquipo.get(0));
+           c.setBicicleta(bicicletasEquipo.get(0));
+           bicicletasEquipo.remove(0);
     }
     }
     
