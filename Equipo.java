@@ -104,6 +104,7 @@ public class Equipo
      */
     public void anadirBicicleta(Bicicleta b){
         bicicletasEquipo.add(b);
+        ordenarBicicletas();
     }
 
     /**
@@ -112,8 +113,8 @@ public class Equipo
      */
     public void ordenarCiclistas()
     {
-       if(ordenCiclista)
-        Collections.sort(ciclistasEquipo,compCiclista);
+       if(ordenCiclista==true)
+        Collections.sort(ciclistasEquipo, compCiclista);
         else
         Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
     }    
@@ -124,7 +125,7 @@ public class Equipo
      */
     public void ordenarBicicletas()
     {
-       if(ordenBicicleta)
+       if(ordenBicicleta==true)
         Collections.sort(bicicletasEquipo,compBicicleta);
         else
         Collections.sort(bicicletasEquipo, Collections.reverseOrder(compBicicleta));
@@ -173,6 +174,7 @@ public class Equipo
         else{
             ciclistasAbandonado.add(c);
         }
+        ordenarCiclistas();
     }
   
     /**

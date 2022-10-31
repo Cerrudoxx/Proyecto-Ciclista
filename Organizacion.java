@@ -174,7 +174,7 @@ public class Organizacion
            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
            System.out.println("+++++++++++++++++++++++++ Comienza la carrera en " +e.getName() +" ++++++++++++++++++++++++++"); 
            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-           correrCarrera();
+           correrCarrera(e);
            devolverCiclista();
            
        numCarr++;
@@ -196,14 +196,20 @@ public class Organizacion
     
    }
    
-   private void correrCarrera(){
+   private void correrCarrera(Etapa e){
        int numCicl = 1;
         for (Ciclista c: ciclistas){
                System.out.println("@@@ "+ "ciclista "+ numCicl + " de "+ ciclistas.size());
                c.mostrarCiclista();
                System.out.printf("con bicicleta: ");
                c.getBicicleta().mostrarBicicleta();
-               
+               double velocidad=Math.round((c.getBicicleta().calcularVelocidad(c, e))*100d) / 100d;
+               double tiempo=Math.round((c.getBicicleta().calcularTiempoNecesario(c, e))*100d) / 100d;
+               System.out.println(" ");
+               System.out.println("+++ Con estas condiciones el ciclista "+ c.getName()+ " con la bicicleta "+c.getBicicleta().getName()+" alcanza una velocidad de "+ velocidad +" km/hora +++");
+               System.out.println("+++ "+ c.getName()+ " termina la etapa en "+ tiempo +" minutos ++");
+               c.actualizarResultadoEnergia(e);
+               System.out.println("+++ La energia del ciclista "+ c.getName()+" tras la carrera es "+ c.getEnergia()+" +++");
                
                System.out.println("@@@");
                numCicl++;
