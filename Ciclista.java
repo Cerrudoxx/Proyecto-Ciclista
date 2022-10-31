@@ -25,6 +25,7 @@ public class Ciclista
     public Ciclista()
     {        
         nombre=" ";
+        bicicleta=null;
         habilidad=0;
         energia=0;
         this.resultado=new ArrayList<Resultados>();
@@ -39,11 +40,35 @@ public class Ciclista
      * @param habilidad es la habilidad del ciclista
      * @param energia es la energía restante del ciclista
      * @param resultado es el resultado del ciclista
+     * @param equipo es el equipo al que pertenece el ciclista
      * 
      */
     public Ciclista(String nombre, double habilidad, double energia, Equipo e)
     {        
         this.nombre=nombre;
+        this.habilidad=habilidad;
+        this.energia=energia;
+        this.resultado=new ArrayList<Resultados>();
+        this.abandono=false;
+        this.equipo=e;
+    }
+    
+    /**
+     * Constructor parametrizado de objetos de la clase Ciclista
+     * Crea un nuevo ciclista inicializando con parametros pasados por teclado incluyendo la bicicleta
+     * 
+     * @param nombre es el nombre del ciclista
+     * @param bicicleta es la bicicleta asignada al ciclista
+     * @param habilidad es la habilidad del ciclista
+     * @param energia es la energía restante del ciclista
+     * @param resultado es el resultado del ciclista
+     * @param equipo es el equipo al que pertenece el ciclista
+     * 
+     */
+    public Ciclista(String nombre, Bicicleta bicicleta, double habilidad, double energia, Equipo e)
+    {        
+        this.nombre=nombre;
+        this.bicicleta=bicicleta;
         this.habilidad=habilidad;
         this.energia=energia;
         this.resultado=new ArrayList<Resultados>();
@@ -123,8 +148,6 @@ public class Ciclista
         
     }
     
-
-    
     /**
      * Establece el valor del campo bicicleta al dado como entrada
      * 
@@ -155,20 +178,13 @@ public class Ciclista
     
       
     /**
-     * Devuelve el valor del campo bicicleta
+     * Recibe una nueva bicicleta del equipo y se la cambia al ciclista
      * 
-     * @return     bicicleta del ciclista
      */
-    public Bicicleta cambiarBicicletaEquipo(Bicicleta bicicletaB)
+    public void cambiarBicicletaEquipo(Bicicleta b)
     {
-        
-        //TO DO
-        if(bicicleta==null){
-            System.out.println("El ciclista no tiene bicicleta asignada");
-        }
-        
-        return bicicleta;
-        
+        if(b!=null)
+        setBicicleta(b);
         
     }
 
@@ -179,10 +195,6 @@ public class Ciclista
         return this.abandono;
     }
 
-    
-    
-
-     
     public void setResultado(Etapa E, double tiempo){
         resultado.add(new Resultados(tiempo, E));//COMPROBAR
         
@@ -257,7 +269,7 @@ public class Ciclista
     }
      
     public void mostrarCiclista(){
-        System.out.println("<ciclista:"+nombre+"> <energía:"+energia+"> <habilidad: "+habilidad+"> <tiempo acumulado sin abandonar:"+tiempoTotalAcumulado()+ "<abandonado:"+abandono+")>");
+        System.out.println("<ciclista:"+nombre+"> <energía:"+energia+"> <habilidad: "+habilidad+"> <tiempo acumulado sin abandonar:"+tiempoTotalAcumulado()+ "> <abandonado:"+abandono+">");
     }
    
 }

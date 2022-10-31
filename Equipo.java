@@ -112,11 +112,11 @@ public class Equipo
      */
     public void ordenarCiclistas()
     {
-       if(ordenCiclista=false)
+       if(ordenCiclista)
         Collections.sort(ciclistasEquipo,compCiclista);
         else
         Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
-    }
+    }    
     
     /**
      * Ordena las bicicletas del equipo (se ordenará por el campo comparador al que se llame)
@@ -124,7 +124,7 @@ public class Equipo
      */
     public void ordenarBicicletas()
     {
-       if(ordenBicicleta==false)
+       if(ordenBicicleta)
         Collections.sort(bicicletasEquipo,compBicicleta);
         else
         Collections.sort(bicicletasEquipo, Collections.reverseOrder(compBicicleta));
@@ -133,7 +133,7 @@ public class Equipo
     /**
      * Calcula el tiempo acumulado de los ciclistas de un equipo
      * 
-     * @return Tiempo ciclista 1 + Tiempo ciclista 2 + ... + Tiempo ciclista n
+     * @return suma de los tiempos de los ciclistas de los equipos
      */
     public double tiempoTotalAcumuladoCiclistas(){
         int index=0;   
@@ -202,6 +202,17 @@ public class Equipo
         for(int i=0; i<ciclistasEquipo.size(); i++){
             c=ciclistasEquipo.get(i);
             c.mostrarCiclista();
+        }
+
+    }
+    
+    /**
+     * Muestra cada uno de los ciclistas pertenecientes a un equipo
+     
+    public void ordenarCiclistasEquipo(){
+        Ciclista c= new Ciclista();
+        for(int i=0; i<ciclistasEquipo.size(); i++){
+            ordenarCiclistas();
         }
 
     }

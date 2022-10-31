@@ -67,17 +67,22 @@ public class Organizacion
          ordenCiclistas=oc;
     } 
     
-    
+        public void ordenarEtapas(){
+         if(ordenEtapa==false)
+        Collections.sort(etapas,compEtapa);
+        else
+        Collections.sort(etapas, Collections.reverseOrder(compEtapa));
+    }
    
    
    
-   private void ordenarCiclistas(){
+    private void ordenarCiclistas(){
         if(ordenCiclistas==false)
         Collections.sort(ciclistas, compCiclistasCarrera);
         else
         Collections.sort(ciclistas, Collections.reverseOrder(compCiclistasCarrera));
     
-   }
+    }
     
     public void ordenarEquipos(){
          if(ordenEquipo==false)
@@ -85,8 +90,6 @@ public class Organizacion
         else
         Collections.sort(equipos, Collections.reverseOrder(compEquipo));
     }
-    
-    
     
     public void mostrarEquipos(){
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
@@ -114,14 +117,6 @@ public class Organizacion
         System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
     }
     
-    public void ordenarEtapas(){
-         if(ordenEtapa==false)
-        Collections.sort(etapas,compEtapa);
-        else
-        Collections.sort(etapas, Collections.reverseOrder(compEtapa));
-    }
-    
-    
     private double tiempoMedio(Equipo e){
         double tMedio=0;
         if(e.getNumeroCiclistas()!=0){
@@ -142,7 +137,7 @@ public class Organizacion
        ordenarEquipos();
        setCompCiclistas(new ComparadorCiclistasNombre(), true);
        //cargarCiclistas();
-       //ordenarCiclistas();
+       ordenarCiclistas();
        mostrarEtapas();//for each llamando etapas
        mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
    
@@ -206,6 +201,7 @@ public class Organizacion
         for (Ciclista c: ciclistas){
                System.out.println("@@@ "+ "ciclista "+ numCicl + " de "+ ciclistas.size());
                c.mostrarCiclista();
+               System.out.printf("con bicicleta: ");
                c.getBicicleta().mostrarBicicleta();
                
                
