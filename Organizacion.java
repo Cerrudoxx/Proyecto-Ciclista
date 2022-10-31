@@ -178,6 +178,7 @@ public class Organizacion
            System.out.println("+++++++++++++++++++++++++ Comienza la carrera en " +e.getName() +" ++++++++++++++++++++++++++"); 
            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
            correrCarrera(e);
+           mostrarClasificacionCarrera();///////////TODO
            devolverCiclista();
            
        numCarr++;
@@ -197,6 +198,13 @@ public class Organizacion
     
     ///////////no carga los 9 ciclistas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///////////////////
     
+   }
+   
+   private void mostrarClasificacionCarrera(){
+       int pos=0;
+       for (Ciclista c: ciclistas){
+               System.out.println("@@@ Posicion("+pos+"");///////////terminar
+           }
    }
    
    private void correrCarrera(Etapa e){
@@ -219,6 +227,9 @@ public class Organizacion
                System.out.println("@@@");
                numCicl++;
            }
+           
+           
+        
        
    }
    
