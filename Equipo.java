@@ -11,7 +11,6 @@ import java.util.*;
 */
 public class Equipo
 {  
-    // instance variables - replace the example below with your own
     private String nombre;
     
     private ArrayList<Ciclista> ciclistasEquipo;
