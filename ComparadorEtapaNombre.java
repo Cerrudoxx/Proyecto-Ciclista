@@ -1,8 +1,8 @@
 
 /**
- * Java class to demonstrate the use of Java Comparator.  
- * Creating a class which implements Comparator Interface (using 
- * name field)
+ * 
+ * Comparador del nombre de las Etapa
+ * 
  */ 
 import java.util.*;  
 class ComparadorEtapaNombre implements Comparator<Etapa>{  

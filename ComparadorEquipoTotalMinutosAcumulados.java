@@ -1,8 +1,6 @@
 
 /**
- * Java class to demonstrate the use of Java Comparator.  
- * Creating a class which implements Comparator Interface (using 
- * name field)
+ * Comparador del total de minutos acumulados por el Equipo
  */ 
 import java.util.*;  
 class ComparadorEquipoTotalMinutosAcumulados implements Comparator<Equipo>{  

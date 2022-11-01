@@ -1,7 +1,5 @@
 /**
- * Java class to demonstrate the use of Java Comparator.  
- * Creating a class which implements Comparator Interface (using 
- * name field)
+ * Comparador del tiempo de los resultados
  */ 
 import java.util.*;  
 class compResultadosTiempo implements Comparator<Resultados>{  

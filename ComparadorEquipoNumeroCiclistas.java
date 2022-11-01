@@ -1,7 +1,7 @@
 /**
- * Java class to demonstrate the use of Java Comparator.  
- * Creating a class which implements Comparator Interface (using 
- * name field)
+ * 
+ * Comparador del numero de ciclistas de equipo
+ *   
  */ 
 import java.util.*;  
 class ComparadorEquipoNumeroCiclistas implements Comparator<Equipo>{  
