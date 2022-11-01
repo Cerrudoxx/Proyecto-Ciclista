@@ -15,7 +15,8 @@ public class Resultados
     private Ciclista ciclista;
 
     /**
-     * Constructor for objects of class Resultados
+     * Constructor de objetos de la clase Resultados
+     * Crea un nuevo resultado inicializando con parametros por defecto
      */
     public Resultados()
     {
@@ -26,7 +27,13 @@ public class Resultados
     }
     
     /**
-     * Constructor for objects of class Resultados
+     * Constructor parametrizado de objetos de la clase Resultados
+     * Crea un nuevo resultado inicializando con parametros pasados por teclado
+     * 
+     * @param tiempo es el resultado del ciclista
+     * @param etapa es la etapa para la que se guarda el tiempo 
+     * @param ciclista es el ciclista que obtiene el resultado
+     * 
      */
     public Resultados(double tiempo, Etapa etapa, Ciclista ciclista)
     {
@@ -37,10 +44,9 @@ public class Resultados
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Establece el valor del campo tiempo al dado como entrada
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @param  tiempo es el nuevo valor del campo tiempo
      */
     public void setTiempo (double tiempo)
     {
@@ -48,10 +54,9 @@ public class Resultados
         
     }
     /**
-     * An example of a method - replace this comment with your own
+     * Devuelve el valor del campo tiempo
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return     tiempo de un ciclista en una etapa
      */
     public double getTiempo ()
     {
@@ -59,18 +64,38 @@ public class Resultados
         
     }
     
+    /**
+     * Establece el valor del campo etapa al dado como entrada
+     * 
+     * @param  etapa es el nuevo valor del campo etapa
+     */
     public void setEtapa(Etapa e){
         this.etapa=e;
     }
     
+    /**
+     * Devuelve el valor del campo etapa
+     * 
+     * @return     etapa en la que corre un ciclista
+     */
     public Etapa getEtapa(){
         return etapa;
     }
     
+    /**
+     * Establece el valor del campo ciclista al dado como entrada
+     * 
+     * @param  ciclista es el nuevo valor del campo ciclista
+     */
     public void setCiclista(Ciclista c){
         this.ciclista=c;
     }
     
+    /**
+     * Devuelve el valor del campo ciclista
+     * 
+     * @return     ciclista del que se guarda el resultado
+     */
     public Ciclista getCiclista(){
         return ciclista;
     }
