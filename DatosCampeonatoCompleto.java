@@ -38,7 +38,7 @@
         organizacion.inscribirEquipo(trekSegafredoWomen);
         organizacion.inscribirEquipo(dSMWomen);
         
-        organizacion.setCompEquipo(new ComparadorEquipoNombre(), false);
+        organizacion.setCompEquipo(new ComparadorEquipoNombre(), true);
         
         //constructor de bicicletas pide ( String nombre, double peso)
         
