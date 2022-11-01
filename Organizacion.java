@@ -40,7 +40,6 @@ public class Organizacion
      */
     public Organizacion()
     {
-        // initialise instance variables
         etapas=new ArrayList<Etapa>();
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
@@ -60,7 +59,6 @@ public class Organizacion
      */
     public Organizacion(Comparator<Etapa> ce, boolean oe)
     {
-        // initialise instance variables
         etapas=new ArrayList<Etapa>();
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
@@ -95,7 +93,7 @@ public class Organizacion
     * Ordena las etapas según el comparador que se haya definido
     */
         public void ordenarEtapas(){
-         if(ordenEtapa==false){//false
+         if(ordenEtapa==false){
         Collections.sort(etapas,compEtapa);
     }
         else{
@@ -107,7 +105,7 @@ public class Organizacion
     * Ordena los ciclistas según el comparador que se haya definido
     */
     private void ordenarCiclistas(){
-        if(ordenCiclistas==false)//false
+        if(ordenCiclistas==false)
         Collections.sort(ciclistas, compCiclistasCarrera);
         else
         Collections.sort(ciclistas, Collections.reverseOrder(compCiclistasCarrera));
@@ -118,7 +116,7 @@ public class Organizacion
     * Ordena los equipos según el comparador que se haya definido
     */
     public void ordenarEquipos(){
-         if(ordenEquipo)///true
+         if(ordenEquipo)
         Collections.sort(equipos, compEquipo);
         else
         Collections.sort(equipos, Collections.reverseOrder(compEquipo));
@@ -176,12 +174,11 @@ public class Organizacion
     */
     public void gestionarCampeonato(){
        ordenarEtapas();
-       //setCompEquipo
        ordenarEquipos();
        setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), true);
        ordenarCiclistas();
-       mostrarEtapas();//for each llamando etapas
-       mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
+       mostrarEtapas();
+       mostrarEquipos();
        hacerCarreras();
        mostrarClasificacionFinal();
     }
@@ -190,18 +187,11 @@ public class Organizacion
      * Permite que se puedan correr las carreras del campeonato
      */
     private void hacerCarreras(){
-       //mientras haya ciclistas para competir sigo
-       
-       //while(!ciclistas.isEmpty() || ciclistas.size()==1){   
-      
-       int numCarr = 1; ////////////////asegurar comparadores
-       
-       
+       int numCarr = 1; 
        for(int index=0; index<etapas.size(); index++){
        Etapa e= etapas.get(index);
           cargarCiclistas();
           ordenarCiclistas();
-           //etapas.remove(0);
           System.out.println("********************************************************************************************************");
            System.out.printf("*** " + "CARRERA<"+numCarr+"> EN ");
            e.mostrarEtapa();
@@ -223,21 +213,7 @@ public class Organizacion
            devolverCiclista();
            
        numCarr++;
-       
-       
-           
-       //recorrer etapas y traer ciclitas de cada equipo
-       //para cada ciclista y mostrar resuktado estapa
-       
-       // mientras(){
-           // obtener ciclistas a competir para cada ciclista:
-           // ciclista.correr(etapa
-           // mostrar resul etapa
-           // devolver ciclistas a equipos)
-       // }
      }
-        
-    
     }
    
     /**
