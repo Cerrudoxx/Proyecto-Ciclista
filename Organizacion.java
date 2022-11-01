@@ -393,7 +393,7 @@ public class Organizacion
    }
    
    /**
-    * Envía al primer ciclista de un equipo a correr una carrera 
+    * Obtiene los ciclistas de cada equipo y los agrega a la organizacion los mismos.
     * 
     * @param e es el equipo del que se envía un ciclista
     */
@@ -412,7 +412,7 @@ public class Organizacion
    }
    
    /**
-    * Carga los ciclistas de un equipo en la organización
+    * Carga los ciclistas de todos los equipos en la organización
     */
    private void cargarCiclistas(){
        if(ciclistas.isEmpty()){
