@@ -350,7 +350,8 @@ public class Ciclista
      */
     public void mostrarResultadosCiclista(){
         for(Resultados r: resultado){
-            System.out.println("Carrera("+r.getEtapa().getName()+") - Tiempo: " + r.getTiempo()+" minutos");
+            double tiempo=Math.round((r.getTiempo())*100d) / 100d;
+            System.out.println("Carrera("+r.getEtapa().getName()+") - Tiempo: " + tiempo+" minutos");
         }
     }
      
