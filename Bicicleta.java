@@ -1,30 +1,23 @@
 /**
  * Guarda la informacion del nombre y el peso de la bicicleta 
- * etapa
  * 
  * @author Jesús Cerrudo, Pablo Polo y Marco Vega. 
  * @version 1.0
 */
 public class Bicicleta  
 {
-    // instance variables - replace the example below with your own
     private String nombre;
     
     private double peso;
     
-
     /**
      * Constructor de objetos de la clase Bicicleta
      * Crea una nueva bicicleta inicializando con parametros por defecto
      */
     public Bicicleta()
     {
-        // initialise instance variables
         nombre=" ";
-        peso=0;
-     
-        
-       
+        peso=0;  
     }
     
     /**
@@ -47,9 +40,7 @@ public class Bicicleta
      */
     public String getName()
     {
-        // put your code here
         return nombre;
-        
     }
     
     /**
@@ -59,9 +50,7 @@ public class Bicicleta
      */
     public void setName(String nombre)
     {
-        // put your code here
-        this.nombre=nombre;
-        
+        this.nombre=nombre;        
     }
     
     /**
@@ -71,9 +60,7 @@ public class Bicicleta
      */
     public double getPeso()
     {
-        // put your code here
-        return peso;
-        
+        return peso; 
     }
     
      /**
@@ -83,9 +70,7 @@ public class Bicicleta
      */
     public void setPeso(double peso)
     {
-        // put your code here
         this.peso=peso;
-        
     }
     
     /**
@@ -95,10 +80,8 @@ public class Bicicleta
      */
     public double calcularVelocidad(Ciclista c, Etapa e)
     {
-        // put your code here
         double velocidad= (c.getHabilidad()*100)/(peso*e.getDificultad());
         return velocidad;
-        
     }
     
     /**
@@ -108,11 +91,13 @@ public class Bicicleta
      */
     public double calcularTiempoNecesario(Ciclista c, Etapa e)
     {
-        // put your code here
         double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*60 ;
         return tiempo;        
     }
     
+    /**
+     * Muestra la informacion de la bicicleta por pantalla
+     */
      public void mostrarBicicleta(){
         System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
     }

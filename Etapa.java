@@ -8,7 +8,6 @@
 */
 public class Etapa
 {  
-    // instance variables - replace the example below with your own
     private String nombre;
     
     private double dificultad;
@@ -23,7 +22,6 @@ public class Etapa
      */
     public Etapa()
     {
-        // initialise instance variables
         nombre=" ";
         dificultad=0;
         distancia=0;
@@ -52,7 +50,6 @@ public class Etapa
      */
     public String getName()
     {
-        // put your code here
         return nombre;
         
     }
@@ -64,7 +61,6 @@ public class Etapa
      */
     public void setName(String nombre)
     {
-        // put your code here
         this.nombre=nombre;
         
     }
@@ -76,7 +72,6 @@ public class Etapa
      */
     public double getDificultad()
     {
-        // put your code here
         return dificultad;
         
     }
@@ -88,7 +83,6 @@ public class Etapa
      */
     public void setDificultad(double dificultad)
     {
-        // put your code here
         this.dificultad=dificultad;
         
     }
@@ -100,7 +94,6 @@ public class Etapa
      */
     public int getDistancia()
     {
-        // put your code here
         return distancia;
         
     }
@@ -112,7 +105,6 @@ public class Etapa
      */
     public void setDistancia(int distancia)
     {
-        // put your code here
         this.distancia=distancia;
         
     }
@@ -122,12 +114,8 @@ public class Etapa
      */
     public void mostrarEtapa()
     {
-        // put your code here
         System.out.println("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
         
     }
     
-    public void ponerTiempoCiclista(double tiempo, Ciclista c){
-        
-    }
 }
