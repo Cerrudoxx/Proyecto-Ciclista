@@ -228,7 +228,11 @@ public class Equipo
     
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * Muestra todos los ciclistas pertenecientes a un equipo
+=======
+     * Muestra cada uno de los ciclistas que hayan abandonado.
+>>>>>>> 72dea4290d79fcd19df7d8fff7b11d295b28c52f
 =======
      * Muestra cada uno de los ciclistas que hayan abandonado.
 >>>>>>> 72dea4290d79fcd19df7d8fff7b11d295b28c52f
