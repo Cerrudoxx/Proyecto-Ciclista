@@ -11,7 +11,6 @@ import java.util.*;
 */
 public class Equipo
 {  
-    // instance variables - replace the example below with your own
     private String nombre;
     
     private ArrayList<Ciclista> ciclistasEquipo;
@@ -36,14 +35,10 @@ public class Equipo
      */
     public Equipo()
     {
-        // initialise instance variables
         nombre=" ";
         ciclistasEquipo = new ArrayList<Ciclista>();
         ciclistasAbandonado= new ArrayList<Ciclista>();
         bicicletasEquipo= new ArrayList<Bicicleta>();
-        
-        
-       
     }
     
     
@@ -80,9 +75,7 @@ public class Equipo
      */
     public String getName()
     {
-        // put your code here
         return nombre;
-        
     }
     
     /**
@@ -92,9 +85,7 @@ public class Equipo
      */
     public void setName(String nombre)
     {
-        // put your code here
         this.nombre=nombre;
-        
     }
     
     /**
@@ -163,6 +154,13 @@ public class Equipo
         
     }
     
+    
+     /**
+     * Envía a una etapa el primer ciclista de la lista de ciclistas que han abandonado
+     * y lo elimina de la lista
+     * 
+     * @return ciclista que haya abandonado
+     */
     public Ciclista enviarAEtapaAbandono(){
         Ciclista c=new Ciclista();
         if(!ciclistasAbandonado.isEmpty()){
@@ -171,6 +169,7 @@ public class Equipo
     }
      return c;
     } 
+    
     /**
      * Añade un ciclista a un equipo
      */
@@ -206,6 +205,11 @@ public class Equipo
         return ciclistasEquipo.size();
     }
     
+    /**
+     * Calcula el numero de ciclistas que han abandonado
+     * 
+     * @return numero de ciclistas que han abandonada
+     */
      public int getNumeroCiclistasAbandonados(){
         return ciclistasAbandonado.size();
     }
@@ -223,52 +227,19 @@ public class Equipo
     }
     
     /**
+<<<<<<< HEAD
      * Muestra todos los ciclistas pertenecientes a un equipo
+=======
+     * Muestra cada uno de los ciclistas que hayan abandonado.
+>>>>>>> 72dea4290d79fcd19df7d8fff7b11d295b28c52f
      */
     public void mostrarCiclistasAbandonados(){
         Ciclista c= new Ciclista();
-       
-            
         for(int i=0; i<ciclistasAbandonado.size(); i++){
             c=ciclistasAbandonado.get(i);
             c.mostrarCiclista();
         }
 
     }
-    
-    /**
-     * Muestra cada uno de los ciclistas pertenecientes a un equipo
-     
-    public void ordenarCiclistasEquipo(){
-        Ciclista c= new Ciclista();
-        for(int i=0; i<ciclistasEquipo.size(); i++){
-            ordenarCiclistas();
-        }
 
-    }
-    /**
-     * Devuelve el valor del campo nombre
-     * 
-     * @return     nombre de la bicicleta 
-     
-    public String getCiclistasEquipo()
-    {
-        // put your code here
-        return ciclistasEquipo.getName();
-        
-    }
-    
-    /**
-     * Establece el valor del campo nombre al dado como entrada
-     * 
-     * @param  nombre es el nuevo valor del campo nombre
-    
-    public void setCiclistaEquipo(Ciclista CiclistaEquipo)
-    {
-        // put your code here
-        this.ciclistasEquipo=CiclistaEquipo;
-        
-    } */
-    
-    
 }
