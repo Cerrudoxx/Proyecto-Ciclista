@@ -1,12 +1,7 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PROJECT TITLE: Ciclista
+PURPOSE OF PROJECT: Gestionar un campeonato de ciclismo guardando las etapas, equipos, ciclistas y bicicletas que componen dicho campeonato
+VERSION or DATE: 01/11/2022
+HOW TO START THIS PROJECT: Mediante la clase CiclismoDemo
+AUTHORS: Jesús Cerrudo Herrera, Marco Vega Velicia, Pablo Polo Alcántara
+EXTRAS: Soporte GIT, iteradores, colecciones y comparadores.
