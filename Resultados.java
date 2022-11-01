@@ -11,6 +11,8 @@ public class Resultados
     private double tiempo;
     
     private Etapa etapa;
+    
+    private Ciclista ciclista;
 
     /**
      * Constructor for objects of class Resultados
@@ -20,16 +22,18 @@ public class Resultados
         // initialise instance variables
         tiempo=0;
         etapa=new Etapa();
+        ciclista=new Ciclista();
     }
     
     /**
      * Constructor for objects of class Resultados
      */
-    public Resultados(double tiempo, Etapa etapa)
+    public Resultados(double tiempo, Etapa etapa, Ciclista ciclista)
     {
         // initialise instance variables
         this.tiempo=tiempo;
         this.etapa=etapa;
+        this.ciclista=ciclista;
     }
 
     /**
@@ -61,6 +65,14 @@ public class Resultados
     
     public Etapa getEtapa(){
         return etapa;
+    }
+    
+    public void setCiclista(Ciclista c){
+        this.ciclista=c;
+    }
+    
+    public Ciclista getCiclista(){
+        return ciclista;
     }
     
 }

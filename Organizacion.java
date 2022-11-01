@@ -9,7 +9,6 @@ import java.util.*;
  */
 public class Organizacion
 {
-    // instance variables - replace the example below with your own
     private ArrayList<Etapa> etapas;
     
     private ArrayList<Equipo> equipos;
@@ -27,9 +26,6 @@ public class Organizacion
     boolean ordenEquipo;
     
     boolean ordenCiclistas;
-    
-    //listaEquipos;
-    //listaEtapa;
     
 
     /**
@@ -139,13 +135,11 @@ public class Organizacion
        setCompEquipo(new ComparadorEquipoNombre(), false);
        ordenarEquipos();
        setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), true);
-       //cargarCiclistas();
        ordenarCiclistas();
        mostrarEtapas();//for each llamando etapas
        mostrarEquipos();//for each llamando equipos //muestra los equipos y sus ciclistas
-   
        hacerCarreras();
-       // mostrarClasificacionFinal();
+       mostrarClasificacionFinal();
    }
    
    private void hacerCarreras(){
@@ -178,7 +172,7 @@ public class Organizacion
            System.out.println("+++++++++++++++++++++++++ Comienza la carrera en " +e.getName() +" ++++++++++++++++++++++++++"); 
            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
            correrCarrera(e);
-           mostrarClasificacionCarrera(e);///////////TODO
+           mostrarClasificacionCarrera(e);
            devolverCiclista();
            
        numCarr++;
@@ -195,23 +189,30 @@ public class Organizacion
            // devolver ciclistas a equipos)
        // }
     }
-    
-    ///////////no carga los 9 ciclistas!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!///////////////////
+        
     
    }
    
    private void mostrarClasificacionCarrera(Etapa e){
-       int pos=0;
+       ArrayList<Resultados> resultados= new ArrayList<Resultados>();
+       int pos=1;
+       Resultados r=new Resultados();
        Ciclista c=new Ciclista();
        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-       System.out.println("+++++++++++++++++ Clasificación final de la carrera en sencilla larga ++++++++++++++++++");
+       System.out.println("+++++++++++++++++ Clasificación final de la carrera en "+e.getName() + " ++++++++++++++++++");
        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-       
        for (int i = 0; i<ciclistas.size(); i++){
            c=ciclistas.get(i);
-                   System.out.println("@@@ Posicion("+pos+") "+c.getName()+" - Tiempo: "+c.getResultado(e)+" minutos @@@");///////////terminar
-          pos++;
+           r=c.getResultado(e);
+           resultados.add(r);
             }
+       Collections.sort(resultados, new compResultadosTiempo());
+       for(Resultados res: resultados){
+           double tiempoCiclista=Math.round((res.getCiclista().getTiempoResultado(e))*100d) / 100d;
+           System.out.println("@@@ Posicion("+pos+") "+res.getCiclista().getName()+" - Tiempo: "+tiempoCiclista+" minutos @@@");
+           pos++;
+        }
+      
    }
    
    private void correrCarrera(Etapa e){
@@ -223,14 +224,12 @@ public class Organizacion
                c.getBicicleta().mostrarBicicleta();
                double velocidad=Math.round((c.getBicicleta().calcularVelocidad(c, e))*100d) / 100d;
                double tiempo=Math.round((c.getBicicleta().calcularTiempoNecesario(c, e))*100d) / 100d;
+               c.actualizarResultadoEnergia(e);
+               double energia=Math.round((c.getEnergia())*100d) / 100d;
                System.out.println(" ");
                System.out.println("+++ Con estas condiciones el ciclista "+ c.getName()+ " con la bicicleta "+c.getBicicleta().getName()+" alcanza una velocidad de "+ velocidad +" km/hora +++");
                System.out.println("+++ "+ c.getName()+ " termina la etapa en "+ tiempo +" minutos ++");
-               c.actualizarResultadoEnergia(e);
-               double energia=Math.round((c.getEnergia())*100d) / 100d;
-
                System.out.println("+++ La energia del ciclista "+ c.getName()+" tras la carrera es "+ energia +" +++");
-               
                System.out.println("@@@");
                numCicl++;
            }
@@ -241,6 +240,23 @@ public class Organizacion
    }
    
    private void mostrarClasificacionFinal(){
+       System.out.println("****************************************************");
+       System.out.println("**************** FIN DEL CAMPEONATO ****************");
+       System.out.println("****************************************************");
+       System.out.println("********** CLASIFICACIÓN FINAL DE CICLISTAS **********");
+       System.out.println("****************************************************");
+       cargarCiclistas();
+       setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), false);
+       ordenarCiclistas();
+       int pos=1;
+       for(Ciclista c: ciclistas){
+           double tiempoTotal=Math.round((c.tiempoTotalAcumulado())*100d) / 100d;
+           System.out.println("@@@ Posicion("+pos+"): " +c.getName()+ " -Tiempo Total: "+tiempoTotal+" @@@");
+           c.mostrarResultadosCiclista();
+           System.out.println(" ");
+           pos++;
+       }
+       
        
    }
    

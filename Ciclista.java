@@ -196,11 +196,22 @@ public class Ciclista
     }
 
     public void setResultado(Etapa E, double tiempo){
-        resultado.add(new Resultados(tiempo, E));//COMPROBAR
+        resultado.add(new Resultados(tiempo, E, this));//COMPROBAR
         
     }
     
-    public double getResultado(Etapa E){
+    public Resultados getResultado(Etapa e){
+        Resultados r=new Resultados();
+        for(int i = 0; i<resultado.size();i++){
+            
+            if(resultado.get(i).getEtapa()==e){
+                r=resultado.get(i);
+            }
+        }
+        return r;
+    }
+    
+    public double getTiempoResultado(Etapa E){
         Resultados r=new Resultados();
         double tiempores=0;
         for (int i = 0; i<resultado.size(); i++){
@@ -278,6 +289,12 @@ public class Ciclista
         
         return equipo;
         
+    }
+    
+    public void mostrarResultadosCiclista(){
+        for(Resultados r: resultado){
+            System.out.println("Carrera("+r.getEtapa().getName()+") - Tiempo: " + r.getTiempo()+" minutos");
+        }
     }
      
     public void mostrarCiclista(){
