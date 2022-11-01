@@ -222,8 +222,8 @@ public class Equipo
 
     }
     
-        /**
-     * Muestra cada uno de los ciclistas pertenecientes a un equipo
+    /**
+     * Muestra todos los ciclistas pertenecientes a un equipo
      */
     public void mostrarCiclistasAbandonados(){
         Ciclista c= new Ciclista();

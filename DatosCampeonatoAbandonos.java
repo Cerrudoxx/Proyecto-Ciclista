@@ -10,6 +10,9 @@ public class DatosCampeonatoAbandonos
         initData(organizacion);
     }
     
+    /**
+     * Carga las etapas, ciclistas y bicicletas que participaran
+     */
      private void initData(Organizacion organizacion)
     {
         //constructor de etapas pide ( String nombre, double dificultad, double distancia)

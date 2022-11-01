@@ -19,6 +19,10 @@ public class Etapa
     /**
      * Constructor de objetos de la clase Etapa
      * Crea una nueva etapa inicializando con parametros por defecto
+     * 
+     * @param nombre es el nombre de la etapa
+     * @param dificultad es la dificultad de la etapa
+     * @param distancia es la distancia en kilometros de la etapa
      */
     public Etapa()
     {

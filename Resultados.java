@@ -1,10 +1,10 @@
 
 /**
- * Write a description of class Resultados here.
+ * Guarda la informacion de los resultados guardando el tiempo, la etapa y el ciclista 
  * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * @author Jesús Cerrudo, Pablo Polo y Marco Vega. 
+ * @version 1.0
+*/
 public class Resultados  
 {
     // instance variables - replace the example below with your own
