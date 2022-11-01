@@ -170,7 +170,7 @@ public class Organizacion
     }
 
     /**
-    * Hace que el campeonato tenga lugar
+    * Permite llevar a cabo tadas las carreras y mostrar su clasificación
     */
     public void gestionarCampeonato(){
        ordenarEtapas();
@@ -184,7 +184,7 @@ public class Organizacion
     }
    
     /**
-     * Permite que se puedan correr las carreras del campeonato
+     * Muestra los ciclistas que van a correr en una etapa, actualiza la energía de los ciclistas y muestra la classificación
      */
     private void hacerCarreras(){
        int numCarr = 1; 
@@ -217,7 +217,7 @@ public class Organizacion
     }
    
     /**
-     * Muestra la clasificación de cada carrera o etapa
+     * Muestra la clasificación de cada carrera o etapa, mostrando también los ciclistas que han abandonado la competición
      * 
      * @param e es la etapa o carrera de la que se muestra su clasificación tras correrla
      */
@@ -293,7 +293,7 @@ public class Organizacion
    }
    
     /**
-    * Muestra por pantalla la clasificación final del campeonato después de que este haya concluido
+    * Muestra por pantalla la clasificación final del campeonato después de que este haya concluido y los ciclistas que han abandonado la competición
     */
     private void mostrarClasificacionFinal(){
        System.out.println("****************************************************");
@@ -371,7 +371,7 @@ public class Organizacion
    }
    
    /**
-    * Devuelve un ciclista a un equipo después de que haya corrido la carrera con la información actualizada
+    * Devuelve un ciclista a un equipo después de que haya corrido la carrera con la información actualizada si su energía es mayor que 0
     */
    public void devolverCiclista(){
        int index=ciclistas.size();
@@ -393,7 +393,7 @@ public class Organizacion
    }
    
    /**
-    * Obtiene los ciclistas de cada equipo y los agrega a la organizacion los mismos.
+    * Obtiene los ciclistas de cada equipo y los agrega a la organizacion.
     * 
     * @param e es el equipo del que se envía un ciclista
     */
