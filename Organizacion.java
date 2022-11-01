@@ -178,7 +178,7 @@ public class Organizacion
            System.out.println("+++++++++++++++++++++++++ Comienza la carrera en " +e.getName() +" ++++++++++++++++++++++++++"); 
            System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
            correrCarrera(e);
-           mostrarClasificacionCarrera();///////////TODO
+           mostrarClasificacionCarrera(e);///////////TODO
            devolverCiclista();
            
        numCarr++;
@@ -200,11 +200,18 @@ public class Organizacion
     
    }
    
-   private void mostrarClasificacionCarrera(){
+   private void mostrarClasificacionCarrera(Etapa e){
        int pos=0;
-       for (Ciclista c: ciclistas){
-               System.out.println("@@@ Posicion("+pos+"");///////////terminar
-           }
+       Ciclista c=new Ciclista();
+       System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+       System.out.println("+++++++++++++++++ Clasificación final de la carrera en sencilla larga ++++++++++++++++++");
+       System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+       
+       for (int i = 0; i<ciclistas.size(); i++){
+           c=ciclistas.get(i);
+                   System.out.println("@@@ Posicion("+pos+") "+c.getName()+" - Tiempo: "+c.getResultado(e)+" minutos @@@");///////////terminar
+          pos++;
+            }
    }
    
    private void correrCarrera(Etapa e){

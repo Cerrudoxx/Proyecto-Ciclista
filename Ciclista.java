@@ -200,6 +200,18 @@ public class Ciclista
         
     }
     
+    public double getResultado(Etapa E){
+        Resultados r=new Resultados();
+        double tiempores=0;
+        for (int i = 0; i<resultado.size(); i++){
+            r=resultado.get(i);
+           if (r.getEtapa()==E){
+               tiempores=r.getTiempo();
+           }
+        }
+        return tiempores;
+    }
+    
     public int totalEtapas(){
         return resultado.size();//COMPROBAR
     }
