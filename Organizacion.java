@@ -15,6 +15,8 @@ public class Organizacion
     
     private ArrayList<Ciclista> ciclistas;
     
+    private ArrayList<Ciclista> ciclistasAbandonados;
+    
     Comparator<Etapa> compEtapa;
     
     Comparator<Equipo> compEquipo;
@@ -37,6 +39,7 @@ public class Organizacion
         etapas=new ArrayList<Etapa>();
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
+        ciclistasAbandonados=new ArrayList<Ciclista>();
     }
     
     
@@ -49,6 +52,7 @@ public class Organizacion
         etapas=new ArrayList<Etapa>();
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
+        ciclistasAbandonados=new ArrayList<Ciclista>();
         compEtapa=ce;
     }
     
@@ -64,7 +68,7 @@ public class Organizacion
     } 
     
         public void ordenarEtapas(){
-         if(ordenEtapa==false){
+         if(ordenEtapa==false){//false
         Collections.sort(etapas,compEtapa);
     }
         else{
@@ -76,7 +80,7 @@ public class Organizacion
    
    
     private void ordenarCiclistas(){
-        if(ordenCiclistas==false)
+        if(ordenCiclistas==false)//false
         Collections.sort(ciclistas, compCiclistasCarrera);
         else
         Collections.sort(ciclistas, Collections.reverseOrder(compCiclistasCarrera));
@@ -84,7 +88,7 @@ public class Organizacion
     }
     
     public void ordenarEquipos(){
-         if(ordenEquipo==true)
+         if(ordenEquipo)///true
         Collections.sort(equipos, compEquipo);
         else
         Collections.sort(equipos, Collections.reverseOrder(compEquipo));
@@ -132,7 +136,7 @@ public class Organizacion
      */
    public void gestionarCampeonato(){
        ordenarEtapas();
-       setCompEquipo(new ComparadorEquipoNombre(), false);
+       //setCompEquipo
        ordenarEquipos();
        setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), true);
        ordenarCiclistas();
@@ -195,6 +199,7 @@ public class Organizacion
    
    private void mostrarClasificacionCarrera(Etapa e){
        ArrayList<Resultados> resultados= new ArrayList<Resultados>();
+       ArrayList<Resultados> resultadosAbandonos= new ArrayList<Resultados>();
        int pos=1;
        Resultados r=new Resultados();
        Ciclista c=new Ciclista();
@@ -204,14 +209,24 @@ public class Organizacion
        for (int i = 0; i<ciclistas.size(); i++){
            c=ciclistas.get(i);
            r=c.getResultado(e);
-           resultados.add(r);
-            }
+           if(c.abandono()==true){
+           resultadosAbandonos.add(r);
+        }
+        else{
+            resultados.add(r);
+        }
+        }
        Collections.sort(resultados, new compResultadosTiempo());
        for(Resultados res: resultados){
+        
            double tiempoCiclista=Math.round((res.getCiclista().getTiempoResultado(e))*100d) / 100d;
            System.out.println("@@@ Posicion("+pos+") "+res.getCiclista().getName()+" - Tiempo: "+tiempoCiclista+" minutos @@@");
            pos++;
+    
         }
+       for(Resultados rAban: resultadosAbandonos){
+            System.out.println("¡¡¡ Ha abandonado "+rAban.getCiclista().getName()+" - Tiempo: " + rAban.getCiclista().getEnergia()+ " Además ha abandonado para el resto del Campeonato");
+       }
       
    }
    
@@ -222,15 +237,24 @@ public class Organizacion
                c.mostrarCiclista();
                System.out.printf("con bicicleta: ");
                c.getBicicleta().mostrarBicicleta();
+               System.out.printf(" en etapa " + e.getName());
                double velocidad=Math.round((c.getBicicleta().calcularVelocidad(c, e))*100d) / 100d;
                double tiempo=Math.round((c.getBicicleta().calcularTiempoNecesario(c, e))*100d) / 100d;
                c.actualizarResultadoEnergia(e);
                double energia=Math.round((c.getEnergia())*100d) / 100d;
                System.out.println(" ");
                System.out.println("+++ Con estas condiciones el ciclista "+ c.getName()+ " con la bicicleta "+c.getBicicleta().getName()+" alcanza una velocidad de "+ velocidad +" km/hora +++");
+               if(c.abandono()==true){
+                   double tiempoEnCarrera=tiempo+energia;
+                   System.out.println("¡¡¡ El ciclista " + c.getName() + " se quedó sin energia a falta de " + Math.abs(energia) +" minutos para terminar !!!");
+                   System.out.println("¡¡¡ En el momento de quedarse sin energia llevaba en carrera "+ tiempoEnCarrera +" minutos !!!");
+               }
+               else{
                System.out.println("+++ "+ c.getName()+ " termina la etapa en "+ tiempo +" minutos ++");
-               System.out.println("+++ La energia del ciclista "+ c.getName()+" tras la carrera es "+ energia +" +++");
-               System.out.println("@@@");
+               
+            }
+            System.out.println("+++ La energia del ciclista "+ c.getName()+" tras la carrera es "+ energia +" +++");
+            System.out.println("@@@");
                numCicl++;
            }
            
@@ -257,6 +281,42 @@ public class Organizacion
            pos++;
        }
        
+       if(!ciclistasAbandonados.isEmpty()){
+       System.out.println("****************************************************");
+       System.out.println("********** CICLISTAS QUE ABANDONARON **********");
+       System.out.println("****************************************************");
+       for(Ciclista cAban: ciclistasAbandonados){
+           double tiempoTotalAnulado=Math.round((cAban.tiempoTotalAcumulado())*100d) / 100d;
+           System.out.println("--- ciclistas Abandonado: "+cAban.getName()+ " - Puntos Totales Anulados: "+ tiempoTotalAnulado + " ---");
+           cAban.mostrarResultadosCiclista();
+           System.out.println(" ");
+           
+       }
+           
+       }
+       
+       devolverCiclista();
+       
+       
+       System.out.println("****************************************************");
+       System.out.println("********** CLASIFICACIÓN FINAL DE EQUIPOS **********");
+       System.out.println("****************************************************");
+       setCompEquipo(new ComparadorEquipoTotalMinutosAcumulados(), true);
+       ordenarEquipos();
+       int posEquip=1;
+       for (Equipo e: equipos){
+           double tiempoMedia=Math.round((tiempoMedio(e))*100d)/100d;
+           System.out.println("@@@ Posicion("+posEquip+ ") " +e.getName()+" con " +tiempoMedia+" minutos de media @@@");
+           System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ");
+           System.out.println("%%% "+ e.getName()+ " %%% Media Minutos de Ciclistas sin abandonar "+tiempoMedia+" %%%");
+           System.out.println(" ");
+           e.mostrarCiclistasEquipo();
+           e.mostrarCiclistasAbandonados();
+           System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ");
+           posEquip++;
+       }
+       
+       
        
    }
    
@@ -270,20 +330,34 @@ public class Organizacion
    
    public void devolverCiclista(){
        int index=ciclistas.size();
+       int index2=ciclistasAbandonados.size();
        for(int i=0; i<index; i++){
            Ciclista c = ciclistas.get(0);
            c.getEquipo().anadirCiclista(c); 
            c.getEquipo().anadirBicicleta(c.getBicicleta());
            ciclistas.remove(0);
        }
+       for(int j=0; j<index2; j++){
+           Ciclista c = ciclistasAbandonados.get(0);
+           c.getEquipo().anadirCiclista(c); 
+           c.getEquipo().anadirBicicleta(c.getBicicleta());
+           ciclistasAbandonados.remove(0);
+       }
+       
    }
    
    public void obtenerCiclista(Equipo e){
        int index=e.getNumeroCiclistas();
+       int index2=e.getNumeroCiclistasAbandonados();
        for(int i=0; i<index; i++){
            Ciclista c= e.enviarAEtapa();
            ciclistas.add(c);
        }
+       for(int j=0; j<index2; j++){
+           Ciclista c= e.enviarAEtapaAbandono();
+           ciclistasAbandonados.add(c);
+       }
+       
    }
    
    private void cargarCiclistas(){

@@ -232,7 +232,9 @@ public class Ciclista
         double tiempoTotal=0;
         while(index<resultado.size()){
             Resultados res=resultado.get(index);
+            if(res.getTiempo()>0){
             tiempoTotal = tiempoTotal + res.getTiempo();
+        } 
             index++;
         }
         return tiempoTotal;
@@ -257,13 +259,14 @@ public class Ciclista
     
     public void actualizarResultadoEnergia(Etapa etp){ //Bicicleta bic){
         double tiempo=bicicleta.calcularTiempoNecesario(this, etp);
-        if(abandono()==false){
+        energia=energia-tiempo;
+        abandono();
+        if(abandono==false){//abandono()==false
             setResultado(etp, tiempo);
-            energia=energia-tiempo;
         }
         else{
-            double tiempoRestante = energia-tiempo;
-            setResultado(etp, tiempoRestante);
+            //double tiempoRestante = energia-tiempo;
+            setResultado(etp, energia);//tiempoRestante
         }
     }
     

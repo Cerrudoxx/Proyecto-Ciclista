@@ -31,43 +31,63 @@ public class DatosCampeonatoAbandonos
         Equipo movistarWomen = new Equipo("Movistar Women", //ciclistas comparados ascendentemente por habilidad (si iguales por nombre), bicicletas comparadas ascendentemente por peso (si iguales por nombre));
         Equipo dSMWomen= new Equipo("DSM Women", //ciclistas comparados ascendentemente por energía (si iguales por nombre), bicicletas comparadas ascendentemente por peso (si iguales por nombre)););
         Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", //ciclistas comparados descendentemente por habilidad (si iguales por nombre), bicicletas comparadas descendentemente por peso (si iguales por nombre)););
+        */
+        Equipo movistarWomen = new Equipo("Movistar Women", new ComparadorCiclistasHabilidad(), true, new ComparadorBicisPeso(), true);
+        Equipo dSMWomen= new Equipo("DSM Women", new ComparadorCiclistasEnergia(), true, new ComparadorBicisPeso(), true);
+        Equipo trekSegafredoWomen = new Equipo("Trek Segafredo Women", new ComparadorCiclistasHabilidad(), false, new ComparadorBicisPeso(), false);
+        
         
         organizacion.inscribirEquipo(movistarWomen);
         organizacion.inscribirEquipo(trekSegafredoWomen);
         organizacion.inscribirEquipo(dSMWomen);
-                
+        
+        organizacion.setCompEquipo(new ComparadorEquipoNombre(), true);
+        //organizacion.ordenarEquipos();
+    
+        
         //constructor de bicicletas pide ( String nombre, double peso)
+        
         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",7.4)); 
         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT 15",7.6));
         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",7.8));
         
+        dSMWomen.ordenarBicicletas();
         
         //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
         dSMWomen.anadirCiclista(new Ciclista("WIEBES",  4.97, 1190,dSMWomen));
         dSMWomen.anadirCiclista(new Ciclista("LIPPERT", 5.0, 1160,dSMWomen));
         dSMWomen.anadirCiclista(new Ciclista("LABOUS", 5.01, 1150,dSMWomen));
-        dSMWomen.ordenarCilistas();
-        dsMWomen.oedenarBicicletas();
+
+        dSMWomen.ordenarCiclistas();
         
-        //constructor de bicicletas pide ( String nombre, double peso)
+        //constructor de bicicletas pide ( String nombre, double peso)  
         trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Madone SLR 9 eTap Gen 7",7.35));
         trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Emonda SLR 9 eTap",7.65));
         trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Domane SLR 9 eTap Gen 4",7.85));
+        
+        trekSegafredoWomen.ordenarBicicletas();
         
         //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
         trekSegafredoWomen.anadirCiclista(new Ciclista("BALSAMO", 4.98,1180,trekSegafredoWomen));
         trekSegafredoWomen.anadirCiclista(new Ciclista("LONGO-BORGHINI", 4.99,1175,trekSegafredoWomen));
         trekSegafredoWomen.anadirCiclista(new Ciclista("CORDON-RAGOT", 5.04, 1120,trekSegafredoWomen));
         
+        trekSegafredoWomen.ordenarCiclistas();
+        
         //constructor de bicicletas pide ( String nombre, double peso)
+        
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Ultimate CFR eTap",7.45));
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",7.5));
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Endurace CF SLX 9 Di2",7.75));
+        
+        movistarWomen.ordenarBicicletas();
+        
         //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
         movistarWomen.anadirCiclista(new Ciclista("VAN VLEUTEN", 4.96,1200,movistarWomen));
         movistarWomen.anadirCiclista(new Ciclista("NORSGAARD", 5.02,1145,movistarWomen));
-        movistarWomen.anadirCiclista(new Ciclista("SIERRA", 5.03, 1130,movistarWomen));    
-      */
+        movistarWomen.anadirCiclista(new Ciclista("SIERRA", 5.03, 1130,movistarWomen));
+        
+        movistarWomen.ordenarCiclistas();
     }
 
 }

@@ -38,6 +38,8 @@
         organizacion.inscribirEquipo(trekSegafredoWomen);
         organizacion.inscribirEquipo(dSMWomen);
         
+        organizacion.setCompEquipo(new ComparadorEquipoNombre(), false);
+        
         //constructor de bicicletas pide ( String nombre, double peso)
         
         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",7.4)); 

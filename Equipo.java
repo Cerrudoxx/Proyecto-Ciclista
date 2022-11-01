@@ -163,7 +163,14 @@ public class Equipo
         
     }
     
-    
+    public Ciclista enviarAEtapaAbandono(){
+        Ciclista c=new Ciclista();
+        if(!ciclistasAbandonado.isEmpty()){
+        c=ciclistasAbandonado.get(0);  
+        ciclistasAbandonado.remove(0);
+    }
+     return c;
+    } 
     /**
      * Añade un ciclista a un equipo
      */
@@ -199,6 +206,10 @@ public class Equipo
         return ciclistasEquipo.size();
     }
     
+     public int getNumeroCiclistasAbandonados(){
+        return ciclistasAbandonado.size();
+    }
+    
     /**
      * Muestra cada uno de los ciclistas pertenecientes a un equipo
      */
@@ -206,6 +217,20 @@ public class Equipo
         Ciclista c= new Ciclista();
         for(int i=0; i<ciclistasEquipo.size(); i++){
             c=ciclistasEquipo.get(i);
+            c.mostrarCiclista();
+        }
+
+    }
+    
+        /**
+     * Muestra cada uno de los ciclistas pertenecientes a un equipo
+     */
+    public void mostrarCiclistasAbandonados(){
+        Ciclista c= new Ciclista();
+       
+            
+        for(int i=0; i<ciclistasAbandonado.size(); i++){
+            c=ciclistasAbandonado.get(i);
             c.mostrarCiclista();
         }
 
