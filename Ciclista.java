@@ -82,10 +82,8 @@ public class Ciclista
      * @param  nombre es el nuevo valor del campo nombre
      */
     public void setName(String nombre)
-    {
-        
+    { 
         this.nombre=nombre;
-        
     }
     
     /**
@@ -95,9 +93,7 @@ public class Ciclista
      */
     public String getName()
     {
-        
-        return nombre;
-        
+        return nombre; 
     }
     
     /**
@@ -106,10 +102,8 @@ public class Ciclista
      * @param  habilidad es el nuevo valor del campo habilidad
      */
     public void setHabilidad(double habilidad)
-    {
-        
-        this.habilidad=habilidad;
-        
+    {  
+       this.habilidad=habilidad; 
     }
     
      /**
@@ -118,10 +112,8 @@ public class Ciclista
      * @return   habilidad del ciclista
      */
     public double getHabilidad()
-    {
-        
-        return habilidad;
-        
+    { 
+        return habilidad; 
     }
     
     /**
@@ -131,9 +123,7 @@ public class Ciclista
      */
      public void setEnergia(double energia)
     {
-        
         this.energia=energia;
-        
     }
     
     /**
@@ -142,10 +132,8 @@ public class Ciclista
      * @return     energía restante
      */
     public double getEnergia()
-    {
-        
-        return energia;
-        
+    {  
+        return energia;  
     }
     
     /**
@@ -155,23 +143,19 @@ public class Ciclista
      */
      public void setBicicleta(Bicicleta bicicleta)
     {
-        
         this.bicicleta=bicicleta;
-        
     }
     
     /**
-     * Devuelve el valor del campo bicicleta
+     * Devuelve el valor del campo bicicleta, en caso de estar vacia muestra un mensaje de error.
      * 
      * @return     bicicleta del ciclista
      */
     public Bicicleta getBicicleta()
     {
-        
         if(bicicleta==null){
             System.out.println("El ciclista no tiene bicicleta asignada");
         }
-        
         return bicicleta;
         
     }
@@ -188,18 +172,41 @@ public class Ciclista
         
     }
 
+    /**
+     * Comprueba si la energia del ciclista es igual o menor que 0 y en caso afirmativo
+     * cambia el valor de abandono.
+     * 
+     * @return   el valor del campo abandono
+     * 
+     */
     public boolean abandono(){
         if(energia<=0){
             this.abandono = true;
         }
         return this.abandono;
     }
-
+    
+    
+    
+    /**
+     * Establece el tiempo como resultado de la etapa dada.
+     * 
+     * @param Etapa es la etapa en la cual se ha obtenido el resultado
+     * @param tiempo es el es el tiempo obtenido tiempo
+     */
     public void setResultado(Etapa E, double tiempo){
-        resultado.add(new Resultados(tiempo, E, this));//COMPROBAR
+        resultado.add(new Resultados(tiempo, E, this));
         
     }
     
+    /**
+     * Establece el tiempo como resultado de la etapa dada.
+     * 
+     * @param Etapa es la etapa de la cual se desea obtener el resultado
+     * 
+     * @return el resultado de la etapa dada
+     * 
+     */
     public Resultados getResultado(Etapa e){
         Resultados r=new Resultados();
         for(int i = 0; i<resultado.size();i++){
@@ -211,6 +218,14 @@ public class Ciclista
         return r;
     }
     
+     /**
+     * Establece el tiempo como resultado de la etapa dada.
+     * 
+     * @param Etapa es la etapa de la cual se desea obtener el tiempo
+     * 
+     * @return devuelve el tiempo obtenido en la etapa dada
+     * 
+     */                                              
     public double getTiempoResultado(Etapa E){
         Resultados r=new Resultados();
         double tiempores=0;
@@ -223,10 +238,24 @@ public class Ciclista
         return tiempores;
     }
     
+     /**
+     * Devuelve la cantidad de etapas en las que se han obtenido resultados
+     * 
+     * 
+     * @return devuelve el tamaño de la lista de resultados
+     * 
+     */    
     public int totalEtapas(){
-        return resultado.size();//COMPROBAR
+        return resultado.size();
     }
     
+    /**
+     * Devuelve el tiempo total acumulado en todas las etapas que se han completado
+     * 
+     * 
+     * @return devuelve el tiempo total acumulado en todas las etapas
+     * 
+     */   
     public double tiempoTotalAcumulado(){
         int index=0;   
         double tiempoTotal=0;
@@ -240,10 +269,24 @@ public class Ciclista
         return tiempoTotal;
     }
     
+    /**
+     * Devuelve el numero de etapas terminadas
+     * 
+     * 
+     * @return devuelve el tamaño de la lista de resultados
+     * 
+     */  
     public int etapasTerminadas(){
         return resultado.size();
     }
     
+    /**
+     * Devuelve la etapa en la que se ha abandonado
+     * 
+     * 
+     * @return devuelve la etapa en la que el tiempo es negativo
+     * 
+     */  
     public Etapa etapaAbandonada(){
         int index=0;
         Etapa etapa=new Etapa();
@@ -257,16 +300,23 @@ public class Ciclista
         return etapa;
     }
     
-    public void actualizarResultadoEnergia(Etapa etp){ //Bicicleta bic){
+    /**
+     * Calcula la energia restante del ciclista en la etapa dada como parametro asi como el tiempo 
+     * obtenido en la etapa y lo almacena como resultado
+     * 
+     * 
+     * @param la etapa en la cual se quiere calcular el resultado y la energia del ciclista
+     * 
+     */  
+    public void actualizarResultadoEnergia(Etapa etp){ 
         double tiempo=bicicleta.calcularTiempoNecesario(this, etp);
         energia=energia-tiempo;
         abandono();
-        if(abandono==false){//abandono()==false
+        if(abandono==false){
             setResultado(etp, tiempo);
         }
         else{
-            //double tiempoRestante = energia-tiempo;
-            setResultado(etp, energia);//tiempoRestante
+            setResultado(etp, energia);
         }
     }
     
@@ -281,7 +331,6 @@ public class Ciclista
         
     }
     
-    
     /**
      * Devuelve el valor del campo equipo
      * 
@@ -294,12 +343,22 @@ public class Ciclista
         
     }
     
+    /**
+     * 
+     * Muestra los resultados del ciclista.
+     * 
+     */
     public void mostrarResultadosCiclista(){
         for(Resultados r: resultado){
             System.out.println("Carrera("+r.getEtapa().getName()+") - Tiempo: " + r.getTiempo()+" minutos");
         }
     }
      
+    /**
+     * 
+     * Muestra el ciclista por pantalla.
+     * 
+     */
     public void mostrarCiclista(){
         double energiaRedondeada=Math.round((energia)*100d) / 100d;
         double tiempoTotal=Math.round((tiempoTotalAcumulado())*100d) / 100d;
