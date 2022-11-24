@@ -16,8 +16,8 @@ public class CiclismoDemo
         Organizacion organizacion=new Organizacion(new ComparadorEtapaDificultad(), false);
         
         //Descomentar de las dos líneas siguientes, la prueba que se quiera ejecutar
-        DatosCampeonatoCompleto initdata = new DatosCampeonatoCompleto(organizacion); 
-        //DatosCampeonatoAbandonos initdata = new DatosCampeonatoAbandonos(organizacion); 
+        DatosCampeonatoCompletoFinal initdata = new DatosCampeonatoCompletoFinal(organizacion); 
+        //DatosCampeonatoAbandonosFinal initdata = new DatosCampeonatoAbandonosFinal (organizacion); 
         
         organizacion.gestionarCampeonato();
          

@@ -1,4 +1,5 @@
 
+
 /**
  * Guarda la informacion del nombre, la dificultad y la distancia de la clase 
  * etapa
@@ -10,9 +11,9 @@ public class Etapa
 {  
     private String nombre;
     
-    private double dificultad;
+    private Dificultad dificultad;
     
-    private int distancia;
+    private Distancia distancia;
     
     private double tiempoCiclista;
 
@@ -27,8 +28,8 @@ public class Etapa
     public Etapa()
     {
         nombre=" ";
-        dificultad=0;
-        distancia=0;
+       dificultad=null;
+       distancia=null;
        
     }
     
@@ -41,10 +42,10 @@ public class Etapa
      * @param distancia es la distancia en kilometros de la etapa
      * 
      */
-    public Etapa(String nombre, double dificultad, int distancia){
+    public Etapa(String nombre, Dificultad dificultad, Distancia distancia){
         this.nombre=nombre;
-        this.dificultad=dificultad;
-        this.distancia=distancia;
+        setDificultad(dificultad);
+        setDistancia(distancia);
     }
 
     /**
@@ -76,6 +77,17 @@ public class Etapa
      */
     public double getDificultad()
     {
+        return dificultad.getValor();
+        
+    }
+    
+    /**
+     * Devuelve el valor numerico del campo dificultad
+     * 
+     * @return     dificultad de la etapa 
+     */
+    public Dificultad getCampoDificultad()
+    {
         return dificultad;
         
     }
@@ -85,7 +97,7 @@ public class Etapa
      * 
      * @param  dificultad es el nuevo valor del campo dificultad
      */
-    public void setDificultad(double dificultad)
+    public void setDificultad(Dificultad dificultad)
     {
         this.dificultad=dificultad;
         
@@ -96,7 +108,18 @@ public class Etapa
      * 
      * @return     distancia de la etapa 
      */
-    public int getDistancia()
+    public double getDistancia()
+    {
+        return distancia.getValor();
+        
+    }
+    
+    /**
+     * Devuelve el valor numerico del campo distancia
+     * 
+     * @return     distancia de la etapa 
+     */
+    public Distancia getCampoDistancia()
     {
         return distancia;
         
@@ -107,10 +130,14 @@ public class Etapa
      * 
      * @param  distancia es el nuevo valor del campo nombre
      */
-    public void setDistancia(int distancia)
+    public void setDistancia(Distancia distancia)
     {
         this.distancia=distancia;
         
+    }
+    
+    public String toString(){
+        return "<etapa:"+getName()+"> <dificultad:"+getDificultad()+"> <distancia:"+getDistancia()+")>";
     }
     
     /**

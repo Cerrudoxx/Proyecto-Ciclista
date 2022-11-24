@@ -1,7 +1,7 @@
-public class DatosCampeonatoAbandonos
+public class DatosCampeonatoAbandonosFinal
 {
     
-    public DatosCampeonatoAbandonos(Organizacion organizacion)
+    public DatosCampeonatoAbandonosFinal(Organizacion organizacion)
     {
         System.out.println("*********************************************************************************************************");
         System.out.println("*****************ESTA SIMULACIÓN CONCLUYE NORMALMENTE COMPLETANDOSE TODAS LAS CARRERAS PERO CON ABANDONOS*******************");
@@ -15,13 +15,20 @@ public class DatosCampeonatoAbandonos
      */
      private void initData(Organizacion organizacion)
     {
-        //constructor de etapas pide ( String nombre, double dificultad, double distancia)
-        Etapa etapa1 = new Etapa("sencilla larga", 0.9, 225);
-        Etapa etapa2 = new Etapa("compleja intermedia", 1.1, 200);
-        Etapa etapa3 = new Etapa("normal intermedia", 1.0, 200);
-        Etapa etapa4 = new Etapa("sencilla intermedia", 0.9, 200);
-        Etapa etapa5 = new Etapa("compleja larga", 1.1, 225);
-        Etapa etapa6 = new Etapa("normal larga", 1.0, 225);
+        //constructor de etapas pide ( String nombre, Dificultad dificultad, Distancia distancia)
+        // Etapa etapa1 = new Etapa("sencilla larga", 0.9, 225);
+        // Etapa etapa2 = new Etapa("compleja intermedia", 1.1, 200);
+        // Etapa etapa3 = new Etapa("normal intermedia", 1.0, 200);
+        // Etapa etapa4 = new Etapa("sencilla intermedia", 0.9, 200);
+        // Etapa etapa5 = new Etapa("compleja larga", 1.1, 225);
+        // Etapa etapa6 = new Etapa("normal larga", 1.0, 225);
+        Etapa etapa1 = new Etapa("sencilla larga",Dificultad.SENCILLA,Distancia.LARGA);
+        Etapa etapa2 = new Etapa("compleja intermedia", Dificultad.COMPLEJA, Distancia.INTERMEDIA);
+        Etapa etapa3 = new Etapa("normal intermedia", Dificultad.NORMAL,Distancia.INTERMEDIA);
+        Etapa etapa4 = new Etapa("sencilla intermedia", Dificultad.SENCILLA, Distancia.INTERMEDIA);
+        Etapa etapa5 = new Etapa("compleja larga", Dificultad.COMPLEJA, Distancia.LARGA);
+        Etapa etapa6 = new Etapa("normal larga",Dificultad.NORMAL, Distancia.LARGA);
+        
         organizacion.anadirEtapa(etapa1);
         organizacion.anadirEtapa(etapa2);
         organizacion.anadirEtapa(etapa3);
@@ -49,10 +56,17 @@ public class DatosCampeonatoAbandonos
     
         
         //constructor de bicicletas pide ( String nombre, double peso)
+        //constructor de bicicletas rápidas pide ( String nombre, Peso peso, double velocidad extra)
         
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",7.4)); 
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT 15",7.6));
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",7.8));
+        
+        //////////////////////////////DESCOMENTAR CUANDO BICLICLETA ESTE TOTALMENTE IMPLEMENTADO///////////////////
+         // dSMWomen.anadirBicicleta(new BicicletaRapida("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA, 0.3)); 
+        // dSMWomen.anadirBicicleta(new BicicletaPrototipo("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
+        // dSMWomen.anadirBicicleta(new BicicletaNormal("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
+        /////////////////////////////////////////////////////////////////////////////////////////
+         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA)); 
+        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
+        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
         
         dSMWomen.ordenarBicicletas();
         
@@ -63,10 +77,16 @@ public class DatosCampeonatoAbandonos
 
         dSMWomen.ordenarCiclistas();
         
-        //constructor de bicicletas pide ( String nombre, double peso)  
-        trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Madone SLR 9 eTap Gen 7",7.35));
-        trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Emonda SLR 9 eTap",7.65));
-        trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Domane SLR 9 eTap Gen 4",7.85));
+        //constructor de bicicletas pide ( String nombre, double peso)
+        //constructor de bicicletas rápidas pide ( String nombre, Peso peso, double velocidad extra)
+         // trekSegafredoWomen.anadirBicicleta(new BicicletaNormal("TREK Madone SLR 9 eTap Gen 7",Peso.LIGERA));
+        // trekSegafredoWomen.anadirBicicleta(new BicicletaRapida("TREK Emonda SLR 9 eTap",Peso.NORMAL, 0.5));
+        // trekSegafredoWomen.anadirBicicleta(new BicicletaPrototipo("TREK Domane SLR 9 eTap Gen 4",Peso.PESADA));
+        
+        
+         trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Madone SLR 9 eTap Gen 7",Peso.LIGERA));
+        trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Emonda SLR 9 eTap",Peso.NORMAL));
+        trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Domane SLR 9 eTap Gen 4",Peso.PESADA));
         
         trekSegafredoWomen.ordenarBicicletas();
         
@@ -78,10 +98,14 @@ public class DatosCampeonatoAbandonos
         trekSegafredoWomen.ordenarCiclistas();
         
         //constructor de bicicletas pide ( String nombre, double peso)
-        
-        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Ultimate CFR eTap",7.45));
-        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",7.5));
-        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Endurace CF SLX 9 Di2",7.75));
+        //constructor de bicicletas rápidas pide ( String nombre, Peso peso, double velocidad extra)
+        // movistarWomen.anadirBicicleta(new BicicletaRapida("CANYON Ultimate CFR eTap",Peso.LIGERA, 0.4));
+        // movistarWomen.anadirBicicleta(new BicicletaNormal("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
+        // movistarWomen.anadirBicicleta(new BicicletaPrototipo("CANYON Endurace CF SLX 9 Di2",Peso.PESADA));
+      
+        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Ultimate CFR eTap",Peso.LIGERA));
+        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
+        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Endurace CF SLX 9 Di2",Peso.PESADA));
         
         movistarWomen.ordenarBicicletas();
         

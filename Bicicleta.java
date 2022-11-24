@@ -8,7 +8,7 @@ public class Bicicleta
 {
     private String nombre;
     
-    private double peso;
+    private Peso peso;
     
     /**
      * Constructor de objetos de la clase Bicicleta
@@ -17,7 +17,7 @@ public class Bicicleta
     public Bicicleta()
     {
         nombre=" ";
-        peso=0;  
+        peso=null;  
     }
     
     /**
@@ -28,9 +28,9 @@ public class Bicicleta
      * @param peso es el peso (en kg) de la bicicleta 
      * 
      */
-    public Bicicleta(String nombre, double peso){
+    public Bicicleta(String nombre, Peso peso){
         this.nombre=nombre;
-        this.peso=peso;
+        setPeso(peso);
     }
 
     /**
@@ -60,6 +60,16 @@ public class Bicicleta
      */
     public double getPeso()
     {
+        return peso.getValor(); 
+    }
+    
+    /**
+     * Devuelve el valor del campo peso
+     * 
+     * @return    peso de la bicicleta 
+     */
+    public Peso getCampoPeso()
+    {
         return peso; 
     }
     
@@ -68,7 +78,7 @@ public class Bicicleta
      * 
      * @param  peso es el nuevo valor del campo peso
      */
-    public void setPeso(double peso)
+    public void setPeso(Peso peso)
     {
         this.peso=peso;
     }
@@ -80,7 +90,7 @@ public class Bicicleta
      */
     public double calcularVelocidad(Ciclista c, Etapa e)
     {
-        double velocidad= (c.getHabilidad()*100)/(peso*e.getDificultad());
+        double velocidad= (c.getHabilidad()*100)/(getPeso()*e.getDificultad());
         return velocidad;
     }
     
@@ -93,6 +103,10 @@ public class Bicicleta
     {
         double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*60 ;
         return tiempo;        
+    }
+    
+    public String toString(){
+        return "<bicicleta: "+getName()+"> <peso: "+getPeso()+"> ";
     }
     
     /**
