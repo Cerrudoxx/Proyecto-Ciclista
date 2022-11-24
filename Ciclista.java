@@ -12,7 +12,7 @@ public class Ciclista
     
     private String nombre;
     private Bicicleta bicicleta;
-    private double habilidad;
+    private Habilidad habilidad;
     private double energia;
     private ArrayList<Resultados> resultado;
     private Equipo equipo;
@@ -27,7 +27,7 @@ public class Ciclista
     {        
         nombre=" ";
         bicicleta=null;
-        habilidad=0;
+        habilidad=null;
         energia=0;
         this.resultado=new ArrayList<Resultados>();
         abandono=false;
@@ -44,7 +44,7 @@ public class Ciclista
      * @param equipo es el equipo al que pertenece el ciclista
      * 
      */
-    public Ciclista(String nombre, double habilidad, double energia, Equipo e)
+    public Ciclista(String nombre, Habilidad habilidad, double energia, Equipo e)
     {        
         this.nombre=nombre;
         this.habilidad=habilidad;
@@ -66,11 +66,11 @@ public class Ciclista
      * @param equipo es el equipo al que pertenece el ciclista
      * 
      */
-    public Ciclista(String nombre, Bicicleta bicicleta, double habilidad, double energia, Equipo e)
+    public Ciclista(String nombre, Bicicleta bicicleta, Habilidad habilidad, double energia, Equipo e)
     {        
         this.nombre=nombre;
         this.bicicleta=bicicleta;
-        this.habilidad=habilidad;
+        setHabilidad(habilidad);
         this.energia=energia;
         this.resultado=new ArrayList<Resultados>();
         this.abandono=false;
@@ -102,7 +102,7 @@ public class Ciclista
      * 
      * @param  habilidad es el nuevo valor del campo habilidad
      */
-    public void setHabilidad(double habilidad)
+    public void setHabilidad(Habilidad habilidad)
     {  
        this.habilidad=habilidad; 
     }
@@ -114,7 +114,18 @@ public class Ciclista
      */
     public double getHabilidad()
     { 
-        return habilidad; 
+        return habilidad.getValor(); 
+    }
+    
+    /**
+     * Devuelve el valor numerico del campo habilidad
+     * 
+     * @return     habilidad del ciclista
+     */
+    public Habilidad getCampoHabilidad()
+    {
+        return habilidad;
+        
     }
     
     /**
