@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class CiclistaExperimentado extends Ciclista
+public class CiclistaExperimentado extends Ciclista
 {
     // instance variables - replace the example below with your own
     
