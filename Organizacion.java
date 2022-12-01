@@ -226,7 +226,7 @@ public class Organizacion
        ArrayList<Resultados> resultadosAbandonos= new ArrayList<Resultados>();
        int pos=1;
        Resultados r=new Resultados();
-       Ciclista c=new Ciclista();
+       Ciclista c=null;
        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
        System.out.println("+++++++++++++++++ Clasificación final de la carrera en "+e.getName() + " ++++++++++++++++++");
        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");

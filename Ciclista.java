@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Jesús Cerrudo, Pablo Polo y Marco Vega. 
  * @version 1.0
 */
-public class Ciclista
+public abstract class Ciclista
 {
     
     private String nombre;
@@ -17,6 +17,7 @@ public class Ciclista
     private ArrayList<Resultados> resultado;
     private Equipo equipo;
     private boolean abandono;
+    private double destreza;
     
 
     /**
@@ -31,6 +32,7 @@ public class Ciclista
         energia=0;
         this.resultado=new ArrayList<Resultados>();
         abandono=false;
+        destreza=0;
     }
     
     /**
@@ -52,6 +54,7 @@ public class Ciclista
         this.resultado=new ArrayList<Resultados>();
         this.abandono=false;
         this.equipo=e;
+        this.destreza=0;
     }
     
     /**
@@ -126,6 +129,14 @@ public class Ciclista
     {
         return habilidad;
         
+    }
+    
+    public double getDestreza(){
+        return destreza;
+    }
+    
+    public void setDestreza(double d){
+        destreza=d;
     }
     
     /**
@@ -378,6 +389,8 @@ public class Ciclista
 
         System.out.println("<ciclista:"+nombre+"> <energía:"+energiaRedondeada+"> <habilidad: "+habilidad+"> <tiempo acumulado sin abandonar:"+tiempoTotal+ "> <abandonado:"+abandono+">");
     }
+    
+    public abstract void calcularDestreza();
    
 }
    

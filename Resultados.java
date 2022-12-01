@@ -23,7 +23,7 @@ public class Resultados
         // initialise instance variables
         tiempo=0;
         etapa=new Etapa();
-        ciclista=new Ciclista();
+        //ciclista=new Ciclista();
     }
     
     /**

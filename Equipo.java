@@ -144,7 +144,7 @@ public class Equipo
      * @return ciclista con bicicleta
      */
     public Ciclista enviarAEtapa(){
-        Ciclista c=new Ciclista();
+        Ciclista c=null; 
         if(!ciclistasEquipo.isEmpty()){
         c=ciclistasEquipo.get(0);
         asignarBici(c);
@@ -162,7 +162,7 @@ public class Equipo
      * @return ciclista que haya abandonado
      */
     public Ciclista enviarAEtapaAbandono(){
-        Ciclista c=new Ciclista();
+        Ciclista c=null;
         if(!ciclistasAbandonado.isEmpty()){
         c=ciclistasAbandonado.get(0);  
         ciclistasAbandonado.remove(0);
@@ -218,7 +218,7 @@ public class Equipo
      * Muestra cada uno de los ciclistas pertenecientes a un equipo
      */
     public void mostrarCiclistasEquipo(){
-        Ciclista c= new Ciclista();
+        Ciclista c=null;
         for(int i=0; i<ciclistasEquipo.size(); i++){
             c=ciclistasEquipo.get(i);
             c.mostrarCiclista();
@@ -230,7 +230,7 @@ public class Equipo
      * Muestra cada uno de los ciclistas que hayan abandonado.
      */
     public void mostrarCiclistasAbandonados(){
-        Ciclista c= new Ciclista();
+        Ciclista c=null;
         for(int i=0; i<ciclistasAbandonado.size(); i++){
             c=ciclistasAbandonado.get(i);
             c.mostrarCiclista();

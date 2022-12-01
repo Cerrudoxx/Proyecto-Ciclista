@@ -64,66 +64,65 @@ public class DatosCampeonatoAbandonosFinal
         // dSMWomen.anadirBicicleta(new BicicletaPrototipo("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
         // dSMWomen.anadirBicicleta(new BicicletaNormal("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
         /////////////////////////////////////////////////////////////////////////////////////////
-         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA)); 
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
+         // dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA)); 
+        // dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
+        // dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
         
-        dSMWomen.ordenarBicicletas();
+        // dSMWomen.ordenarBicicletas();
         
-        //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
+        // //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
         // dSMWomen.anadirCiclista(new CiclistaNovato("WIEBES",  Habilidad.NORMAL, 1190, dSMWomen));
         // dSMWomen.anadirCiclista(new CiclistaEstrella("LIPPERT", Habilidad.LENTA, 1160, dSMWomen));
         // dSMWomen.anadirCiclista(new CiclistaExperimentado("LABOUS", Habilidad.BUENA, 1150, dSMWomen));
-        dSMWomen.anadirCiclista(new Ciclista("WIEBES",  Habilidad.NORMAL, 1190, dSMWomen));
-        dSMWomen.anadirCiclista(new Ciclista("LIPPERT", Habilidad.LENTA, 1160, dSMWomen));
-        dSMWomen.anadirCiclista(new Ciclista("LABOUS", Habilidad.BUENA, 1150, dSMWomen));
+        // //dSMWomen.anadirCiclista(new Ciclista("WIEBES",  Habilidad.NORMAL, 1190, dSMWomen));
+        // // dSMWomen.anadirCiclista(new Ciclista("LIPPERT", Habilidad.LENTA, 1160, dSMWomen));
+        // // dSMWomen.anadirCiclista(new Ciclista("LABOUS", Habilidad.BUENA, 1150, dSMWomen));
 
-        dSMWomen.ordenarCiclistas();
+        // dSMWomen.ordenarCiclistas();
         
-        //constructor de bicicletas pide ( String nombre, double peso)
-        //constructor de bicicletas rápidas pide ( String nombre, Peso peso, double velocidad extra)
-         // trekSegafredoWomen.anadirBicicleta(new BicicletaNormal("TREK Madone SLR 9 eTap Gen 7",Peso.LIGERA));
+        // //constructor de bicicletas pide ( String nombre, double peso)
+        // //constructor de bicicletas rápidas pide ( String nombre, Peso peso, double velocidad extra)
+        // trekSegafredoWomen.anadirBicicleta(new BicicletaNormal("TREK Madone SLR 9 eTap Gen 7",Peso.LIGERA));
         // trekSegafredoWomen.anadirBicicleta(new BicicletaRapida("TREK Emonda SLR 9 eTap",Peso.NORMAL, 0.5));
         // trekSegafredoWomen.anadirBicicleta(new BicicletaPrototipo("TREK Domane SLR 9 eTap Gen 4",Peso.PESADA));
         
         
-         trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Madone SLR 9 eTap Gen 7",Peso.LIGERA));
-        trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Emonda SLR 9 eTap",Peso.NORMAL));
-        trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Domane SLR 9 eTap Gen 4",Peso.PESADA));
+         // // trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Madone SLR 9 eTap Gen 7",Peso.LIGERA));
+        // // trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Emonda SLR 9 eTap",Peso.NORMAL));
+        // // trekSegafredoWomen.anadirBicicleta(new Bicicleta("TREK Domane SLR 9 eTap Gen 4",Peso.PESADA));
         
-        trekSegafredoWomen.ordenarBicicletas();
+        // trekSegafredoWomen.ordenarBicicletas();
         
-        //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
-        // trekSegafredoWomen.anadirCiclista(new CiclistaEstrella("BALSAMO", Habilidad.LENTA,1180, trekSegafredoWomen));
-        // trekSegafredoWomen.anadirCiclista(new CiclistaExperimentado("LONGO-BORGHINI", Habilidad.NORMAL,1175, trekSegafredoWomen));
-        // trekSegafredoWomen.anadirCiclista(new CiclistaNovato("CORDON-RAGOT", Habilidad.BUENA, 1120, trekSegafredoWomen));
-        trekSegafredoWomen.anadirCiclista(new Ciclista("BALSAMO", Habilidad.LENTA,1180, trekSegafredoWomen));
-        trekSegafredoWomen.anadirCiclista(new Ciclista("LONGO-BORGHINI", Habilidad.NORMAL,1175, trekSegafredoWomen));
-        trekSegafredoWomen.anadirCiclista(new Ciclista("CORDON-RAGOT", Habilidad.BUENA, 1120, trekSegafredoWomen));
+        // //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
+        // // trekSegafredoWomen.anadirCiclista(new CiclistaEstrella("BALSAMO", Habilidad.LENTA,1180, trekSegafredoWomen));
+        // // trekSegafredoWomen.anadirCiclista(new CiclistaExperimentado("LONGO-BORGHINI", Habilidad.NORMAL,1175, trekSegafredoWomen));
+        // // trekSegafredoWomen.anadirCiclista(new CiclistaNovato("CORDON-RAGOT", Habilidad.BUENA, 1120, trekSegafredoWomen));
+        // trekSegafredoWomen.anadirCiclista(new Ciclista("BALSAMO", Habilidad.LENTA,1180, trekSegafredoWomen));
+        // trekSegafredoWomen.anadirCiclista(new Ciclista("LONGO-BORGHINI", Habilidad.NORMAL,1175, trekSegafredoWomen));
+        // trekSegafredoWomen.anadirCiclista(new Ciclista("CORDON-RAGOT", Habilidad.BUENA, 1120, trekSegafredoWomen));
         
-        trekSegafredoWomen.ordenarCiclistas();
+        // trekSegafredoWomen.ordenarCiclistas();
         
-        //constructor de bicicletas pide ( String nombre, double peso)
-        //constructor de bicicletas rápidas pide ( String nombre, Peso peso, double velocidad extra)
-        // movistarWomen.anadirBicicleta(new BicicletaRapida("CANYON Ultimate CFR eTap",Peso.LIGERA, 0.4));
-        // movistarWomen.anadirBicicleta(new BicicletaNormal("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
-        // movistarWomen.anadirBicicleta(new BicicletaPrototipo("CANYON Endurace CF SLX 9 Di2",Peso.PESADA));
+        // //constructor de bicicletas pide ( String nombre, double peso)
+        // //constructor de bicicletas rápidas pide ( String nombre, Peso peso, double velocidad extra)
+        // // movistarWomen.anadirBicicleta(new BicicletaRapida("CANYON Ultimate CFR eTap",Peso.LIGERA, 0.4));
+        // // movistarWomen.anadirBicicleta(new BicicletaNormal("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
+        // // movistarWomen.anadirBicicleta(new BicicletaPrototipo("CANYON Endurace CF SLX 9 Di2",Peso.PESADA));
       
-        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Ultimate CFR eTap",Peso.LIGERA));
-        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
-        movistarWomen.anadirBicicleta(new Bicicleta("CANYON Endurace CF SLX 9 Di2",Peso.PESADA));
+        // movistarWomen.anadirBicicleta(new Bicicleta("CANYON Ultimate CFR eTap",Peso.LIGERA));
+        // movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
+        // movistarWomen.anadirBicicleta(new Bicicleta("CANYON Endurace CF SLX 9 Di2",Peso.PESADA));
         
-        movistarWomen.ordenarBicicletas();
+        // movistarWomen.ordenarBicicletas();
         
-        //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
-        // movistarWomen.anadirCiclista(new CiclistaEstrella("VAN VLEUTEN", Habilidad.BUENA,1200, movistarWomen));
-        // movistarWomen.anadirCiclista(new CiclistaExperimentado("NORSGAARD", Habilidad.NORMAL,1145, movistarWomen));
-        // movistarWomen.anadirCiclista(new CiclistaNovato("SIERRA", Habilidad.LENTA, 1110, movistarWomen));   
-        movistarWomen.anadirCiclista(new Ciclista("VAN VLEUTEN", Habilidad.BUENA,1200, movistarWomen));
-        movistarWomen.anadirCiclista(new Ciclista("NORSGAARD", Habilidad.NORMAL,1145, movistarWomen));
-        movistarWomen.anadirCiclista(new Ciclista("SIERRA", Habilidad.LENTA, 1110, movistarWomen));   
+        // //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
+        // // movistarWomen.anadirCiclista(new CiclistaEstrella("VAN VLEUTEN", Habilidad.BUENA,1200, movistarWomen));
+        // // movistarWomen.anadirCiclista(new CiclistaExperimentado("NORSGAARD", Habilidad.NORMAL,1145, movistarWomen));
+        // // movistarWomen.anadirCiclista(new CiclistaNovato("SIERRA", Habilidad.LENTA, 1110, movistarWomen));   
+        // movistarWomen.anadirCiclista(new Ciclista("VAN VLEUTEN", Habilidad.BUENA,1200, movistarWomen));
+        // movistarWomen.anadirCiclista(new Ciclista("NORSGAARD", Habilidad.NORMAL,1145, movistarWomen));
+        // movistarWomen.anadirCiclista(new Ciclista("SIERRA", Habilidad.LENTA, 1110, movistarWomen));   
         
-        movistarWomen.ordenarCiclistas();
-    }
-
-}
+        // movistarWomen.ordenarCiclistas();
+     }
+ }
