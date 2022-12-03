@@ -3,13 +3,13 @@
  * 
  * @author Jesús Cerrudo, Pablo Polo y Marco Vega. 
  * @version 1.0
-*/
+ */
 public class Bicicleta  
 {
     private String nombre;
-    
+
     private Peso peso;
-    
+
     /**
      * Constructor de objetos de la clase Bicicleta
      * Crea una nueva bicicleta inicializando con parametros por defecto
@@ -19,7 +19,7 @@ public class Bicicleta
         nombre=" ";
         peso=null;  
     }
-    
+
     /**
      * Constructor parametrizado de objetos de la clase Bicicleta
      * Crea una nueva bicicleta inicializando con parametros pasados por teclado
@@ -42,7 +42,7 @@ public class Bicicleta
     {
         return nombre;
     }
-    
+
     /**
      * Establece el valor del campo nombre al dado como entrada
      * 
@@ -52,7 +52,7 @@ public class Bicicleta
     {
         this.nombre=nombre;        
     }
-    
+
     /**
      * Devuelve el valor del campo peso
      * 
@@ -62,7 +62,7 @@ public class Bicicleta
     {
         return peso.getValor(); 
     }
-    
+
     /**
      * Devuelve el valor del campo peso
      * 
@@ -72,8 +72,8 @@ public class Bicicleta
     {
         return peso; 
     }
-    
-     /**
+
+    /**
      * Establece el valor del campo peso al dado como entrada
      * 
      * @param  peso es el nuevo valor del campo peso
@@ -82,18 +82,32 @@ public class Bicicleta
     {
         this.peso=peso;
     }
-    
-    /**
-     * Establece el valor del campo peso al dado como entrada
-     * 
-     * @param  peso es el nuevo valor del campo peso
-     */
-    public double calcularVelocidad(Ciclista c, Etapa e)
-    {
+
+    public boolean equals (Bicicleta b) {
+        if (this == b) {
+            return true; //Ambos referencian al mismo Post
+        }
+        
+        if (! (b instanceof Bicicleta)) {
+            return false; //Tienen diferentes tipos
+        }
+        
+        Bicicleta other = (Bicicleta) b;
+        return (getName().equals(other.getName()) &&
+        getCampoPeso().equals(other.getCampoPeso()));
+    }
+
+        /**
+         * Establece el valor del campo peso al dado como entrada
+         * 
+         * @param  peso es el nuevo valor del campo peso
+         */
+        public double calcularVelocidad(Ciclista c, Etapa e)
+        {
         double velocidad= (c.getHabilidad()*100)/(getPeso()*e.getDificultad());
         return velocidad;
     }
-    
+
     /**
      * Establece el valor del campo peso al dado como entrada
      * 
@@ -104,16 +118,16 @@ public class Bicicleta
         double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*60 ;
         return tiempo;        
     }
-    
+
     public String toString(){
         return "<bicicleta: "+getName()+"> <peso: "+getPeso()+"> ";
     }
-    
+
     /**
      * Muestra la informacion de la bicicleta por pantalla
      */
-     public void mostrarBicicleta(){
+    public void mostrarBicicleta(){
         System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
     }
-    
+
 }
