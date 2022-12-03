@@ -149,7 +149,8 @@ public class Organizacion
         System.out.println("||||||||||||||||||| ETAPAS DEL CAMPEONATO |||||||||||||||||||");
         System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
         for (Etapa e: etapas){ 
-            e.mostrarEtapa();
+            System.out.println(e);
+            //e.mostrarEtapa();
         }
         System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
     }
@@ -194,7 +195,8 @@ public class Organizacion
           ordenarCiclistas();
           System.out.println("********************************************************************************************************");
            System.out.printf("*** " + "CARRERA<"+numCarr+"> EN ");
-           e.mostrarEtapa();
+           System.out.println(e);
+           //e.mostrarEtapa();
            System.out.println(" ***");
            
            System.out.println("********************************************************************************************************");
@@ -263,9 +265,10 @@ public class Organizacion
        int numCicl = 1;
         for (Ciclista c: ciclistas){
                System.out.println("@@@ "+ "ciclista "+ numCicl + " de "+ ciclistas.size());
-               c.mostrarCiclista();
+                System.out.println(c);
+            //c.mostrarCiclista();
                System.out.printf("con bicicleta: ");
-               c.getBicicleta().mostrarBicicleta();
+               System.out.println(c.getBicicleta());
                System.out.printf(" en etapa " + e.getName());
                double velocidad=Math.round((c.getBicicleta().calcularVelocidad(c, e))*100d) / 100d;
                double tiempo=Math.round((c.getBicicleta().calcularTiempoNecesario(c, e))*100d) / 100d;
@@ -430,7 +433,8 @@ public class Organizacion
     */
     private void mostrarCiclistas(){
        for (Ciclista c: ciclistas){
-           c.mostrarCiclista();
+            System.out.println(c);
+            //c.mostrarCiclista();
        }
    }
 }

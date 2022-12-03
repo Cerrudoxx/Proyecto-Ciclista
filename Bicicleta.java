@@ -119,15 +119,26 @@ public class Bicicleta
         return tiempo;        
     }
 
+    // public String toString(){
+        // return "<bicicleta: "+getName()+"> <peso: "+getPeso()+"> ";
+    // }
+    
+    @Override
     public String toString(){
-        return "<bicicleta: "+getName()+"> <peso: "+getPeso()+"> ";
+        StringBuilder builder = new StringBuilder();
+        builder.append(getName());
+        builder.append("");
+        builder.append(getCampoPeso());
+        builder.append("\n");
+        return builder.toString();
     }
 
-    /**
-     * Muestra la informacion de la bicicleta por pantalla
-     */
-    public void mostrarBicicleta(){
-        System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
-    }
+
+    // /**
+     // * Muestra la informacion de la bicicleta por pantalla
+     // */
+    // public void mostrarBicicleta(){
+        // System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
+    // }
 
 }

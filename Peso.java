@@ -10,7 +10,7 @@ public enum Peso
 {
     LIGERA ("LIGERA", 7.35),
     NORMAL ("NORMAL", 7.50),
-    PESADA ("COMPLEJA", 7.85);
+    PESADA ("PESADA", 7.85);
     
     private final String nombre;
     private final double valor;

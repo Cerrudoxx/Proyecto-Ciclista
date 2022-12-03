@@ -16,7 +16,16 @@ public class CiclistaNovato extends Ciclista
         super(nombre, habilidad, energia, e);
         
     }
-
+ @Override
+    protected String getFormattedContent(){
+         StringBuilder builder = new StringBuilder();
+         builder.append("<ciclistaNovato: ");
+         
+         // builder.append("<popularidad: ");
+         // builder.append(getPopularidad());
+         // builder.append(">");
+         return builder.toString();
+    }
     /**
      * An example of a method - replace this comment with your own
      * 

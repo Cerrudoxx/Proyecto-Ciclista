@@ -135,18 +135,28 @@ public class Etapa
         this.distancia=distancia;
         
     }
-    
+    @Override
     public String toString(){
-        return "<etapa:"+getName()+"> <dificultad:"+getDificultad()+"> <distancia:"+getDistancia()+")>";
+        StringBuilder builder = new StringBuilder();
+        builder.append("<etapa:");
+        builder.append(getName());
+        builder.append("> ");
+        builder.append(getCampoDificultad());
+        builder.append(" ");
+        builder.append(getCampoDistancia());
+        
+       
+
+        return builder.toString();
     }
     
-    /**
-     * Muestra la informacion de la etapa por pantalla
-     */
-    public void mostrarEtapa()
-    {
-        System.out.println("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
+    // /**
+     // * Muestra la informacion de la etapa por pantalla
+     // */
+    // public void mostrarEtapa()
+    // {
+        // System.out.println("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
         
-    }
+    // }
     
 }

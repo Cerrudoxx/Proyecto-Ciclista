@@ -29,7 +29,7 @@ public enum Distancia
     
     @Override
     public String toString(){
-        return "<dist: "+getNombre()+" (valor: "+getValor()+")>";
+        return "<distancia: "+getNombre()+" (valor: "+getValor()+")>";
     }
     
 }

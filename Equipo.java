@@ -221,7 +221,8 @@ public class Equipo
         Ciclista c=null;
         for(int i=0; i<ciclistasEquipo.size(); i++){
             c=ciclistasEquipo.get(i);
-            c.mostrarCiclista();
+            System.out.println(c);
+            //c.mostrarCiclista();
         }
 
     }
@@ -233,7 +234,8 @@ public class Equipo
         Ciclista c=null;
         for(int i=0; i<ciclistasAbandonado.size(); i++){
             c=ciclistasAbandonado.get(i);
-            c.mostrarCiclista();
+             System.out.println(c);
+            //c.mostrarCiclista();
         }
 
     }

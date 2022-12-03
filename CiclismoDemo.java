@@ -19,8 +19,10 @@ public class CiclismoDemo
         DatosCampeonatoCompletoFinal initdata = new DatosCampeonatoCompletoFinal(organizacion); 
         //DatosCampeonatoAbandonosFinal initdata = new DatosCampeonatoAbandonosFinal (organizacion); 
         
-        organizacion.gestionarCampeonato();
          
+    
+        organizacion.gestionarCampeonato();
+        
     }    
 
 }

@@ -30,6 +30,20 @@ public class BicicletaRapida extends Bicicleta
         return velocidadExtra; 
     }
 
+    
+    
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        builder.append(super.toString());
+         builder.append("\n");
+          builder.append("VelocidadExtra: ");
+        builder.append(getVelocidadExtra());
+        builder.append("\n");
+        return builder.toString();
+    }
+    
+  
     /**
      * Establece el valor del campo peso al dado como entrada
      * 

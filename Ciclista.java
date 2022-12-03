@@ -378,17 +378,45 @@ public abstract class Ciclista
         }
     }
      
-    /**
-     * 
-     * Muestra el ciclista por pantalla.
-     * 
-     */
-    public void mostrarCiclista(){
-        double energiaRedondeada=Math.round((energia)*100d) / 100d;
-        double tiempoTotal=Math.round((tiempoTotalAcumulado())*100d) / 100d;
+    // /**
+     // * 
+     // * Muestra el ciclista por pantalla.
+     // * 
+     // */
+    // public void mostrarCiclista(){
+        // double energiaRedondeada=Math.round((energia)*100d) / 100d;
+        // double tiempoTotal=Math.round((tiempoTotalAcumulado())*100d) / 100d;
 
-        System.out.println("<ciclista:"+nombre+"> <energía:"+energiaRedondeada+"> <habilidad: "+habilidad+"> <tiempo acumulado sin abandonar:"+tiempoTotal+ "> <abandonado:"+abandono+">");
+        // System.out.println("<ciclista:"+nombre+"> <energía:"+energiaRedondeada+"> <habilidad: "+habilidad+"> <tiempo acumulado sin abandonar:"+tiempoTotal+ "> <abandonado:"+abandono+">");
+    // }
+    
+    private double redondearEnergia(){
+        return Math.round((energia)*100d) / 100d;
     }
+    
+    private double tiempoAcumuladoRedondeado(){
+        return Math.round((tiempoTotalAcumulado())*100d) / 100d;
+    }
+    
+    @Override
+    public String toString(){
+        
+        StringBuilder builder = new StringBuilder();
+        builder.append(getFormattedContent());
+        builder.append(getName());
+        builder.append("> <energía:");
+        builder.append(redondearEnergia());
+        builder.append("> ");
+        builder.append(getCampoHabilidad());
+        builder.append(" <tiempo acumulado sin abandonar:");
+        builder.append(tiempoAcumuladoRedondeado());
+        builder.append("> <abandonado:");
+        builder.append(abandono);
+        builder.append(">");
+        return builder.toString();
+    }
+    
+    protected abstract String getFormattedContent();
     
     public abstract void calcularDestreza();
    

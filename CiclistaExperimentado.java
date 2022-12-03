@@ -18,6 +18,17 @@ public class CiclistaExperimentado extends Ciclista
         
     }
 
+    
+     @Override
+    protected String getFormattedContent(){
+         StringBuilder builder = new StringBuilder();
+         builder.append("<ciclistaExperimentado: ");
+         
+         // builder.append("<popularidad: ");
+         // builder.append(getPopularidad());
+         // builder.append(">");
+         return builder.toString();
+    }
     /**
      * An example of a method - replace this comment with your own
      * 
