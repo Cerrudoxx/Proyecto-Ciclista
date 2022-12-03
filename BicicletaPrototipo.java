@@ -8,7 +8,6 @@
 public class BicicletaPrototipo extends Bicicleta
 {
     
-    
 
     /**
      * Constructor for objects of class BicicletaPrototipo

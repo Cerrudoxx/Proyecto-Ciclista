@@ -9,7 +9,7 @@ import java.util.*;
 */
 public class Organizacion
 {
-    private ArrayList<Etapa> etapas;
+    private ArrayList<Etapa> etapas;//Cambiar colección que no permita etapas duplicadas y las mantenga ordenadas según el criterio de ordenación definido al crear la organización(tree set)
     
     private ArrayList<Equipo> equipos;
     

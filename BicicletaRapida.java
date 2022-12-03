@@ -21,6 +21,16 @@ public class BicicletaRapida extends Bicicleta
     }
 
     /**
+     * Devuelve el valor del campo velocidadExtra
+     * 
+     * @return   velocidadExtra de la bicicleta rapida
+     */
+    public double getVelocidadExtra()
+    {
+        return velocidadExtra; 
+    }
+
+    /**
      * Establece el valor del campo peso al dado como entrada
      * 
      * @param  peso es el nuevo valor del campo peso
@@ -30,6 +40,5 @@ public class BicicletaRapida extends Bicicleta
     {
         return super.calcularVelocidad(c, e) + velocidadExtra;
     }
-    
-    
+
 }
