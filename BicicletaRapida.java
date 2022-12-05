@@ -8,12 +8,12 @@
 public class BicicletaRapida extends Bicicleta
 {
     // instance variables - replace the example below with your own
-    private double velocidadExtra;
+    private VelocidadExtra velocidadExtra;
 
     /**
      * Constructor for objects of class BicicletaRapida
      */
-    public BicicletaRapida(String nombre, Peso peso, double velocidadExtra)
+    public BicicletaRapida(String nombre, Peso peso, VelocidadExtra velocidadExtra)
     {
         // initialise instance variables
         super(nombre, peso);
@@ -27,11 +27,42 @@ public class BicicletaRapida extends Bicicleta
      */
     public double getVelocidadExtra()
     {
+        return velocidadExtra.getValor(); 
+    }
+    
+     /**
+     * Devuelve el valor del campo velocidadExtra
+     * 
+     * @return   velocidadExtra de la bicicleta rapida
+     */
+    public VelocidadExtra getCampoVelocidadExtra()
+    {
         return velocidadExtra; 
     }
 
+    @Override
+    public boolean equals (Bicicleta b) {
+        if(this == b) {
+            return true;
+        }
+
+        if (! (b instanceof BicicletaRapida)) {
+            return false; 
+        }
+        
+        BicicletaRapida other = (BicicletaRapida) b;
+        return  (super.equals(other) &&  getVelocidadExtra()==other.getVelocidadExtra());
+    }
     
-    
+    @Override
+    public int hashCode ()
+     {
+        int result = 17;
+        result = 7 * result + super.hashCode();
+        result = 13 * result + getCampoVelocidadExtra().hashCode();
+        return result;
+     }
+
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
@@ -52,7 +83,7 @@ public class BicicletaRapida extends Bicicleta
     @Override
     public double calcularVelocidad(Ciclista c, Etapa e)
     {
-        return super.calcularVelocidad(c, e) + velocidadExtra;
+        return super.calcularVelocidad(c, e) + getVelocidadExtra();
     }
 
 }

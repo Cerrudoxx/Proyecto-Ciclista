@@ -16,7 +16,8 @@ public class CiclistaNovato extends Ciclista
         super(nombre, habilidad, energia, e);
         
     }
- @Override
+    
+     @Override
     protected String getFormattedContent(){
          StringBuilder builder = new StringBuilder();
          builder.append("<ciclistaNovato: ");
@@ -26,6 +27,7 @@ public class CiclistaNovato extends Ciclista
          // builder.append(">");
          return builder.toString();
     }
+    
     /**
      * An example of a method - replace this comment with your own
      * 

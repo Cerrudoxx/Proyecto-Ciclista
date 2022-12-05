@@ -183,6 +183,45 @@ public abstract class Ciclista
         
     }
     
+       /** * Establece el valor del campo equipo al dado como entrada
+     * 
+     * @param  equipo es el nuevo valor del campo equipo
+     */
+     public void setEquipo(Equipo equipo)
+    {
+        
+        this.equipo=equipo;
+        
+    }
+    
+    /**
+     * Devuelve el valor del campo equipo
+     * 
+     * @return     equipo del ciclista
+    */
+    public Equipo getEquipo()
+    {
+        
+        return equipo;
+        
+    }
+    
+    public boolean equals (Ciclista c) {
+        if (this == c) {
+            return true;
+        }
+        
+        if (! (c instanceof Ciclista)) {
+            return false; 
+        }
+        
+        Ciclista other = (Ciclista) c;
+        
+        return ((getName().equals(other.getName())) && 
+        (getCampoHabilidad().equals(other.getCampoHabilidad()) && 
+        getEnergia()==other.getEnergia() &&
+        getEquipo()==other.getEquipo()));
+    }
       
     /**
      * Recibe una nueva bicicleta del equipo y se la cambia al ciclista
@@ -343,29 +382,7 @@ public abstract class Ciclista
         }
     }
     
-    /** * Establece el valor del campo equipo al dado como entrada
-     * 
-     * @param  equipo es el nuevo valor del campo equipo
-     */
-     public void setEquipo(Equipo equipo)
-    {
-        
-        this.equipo=equipo;
-        
-    }
-    
-    /**
-     * Devuelve el valor del campo equipo
-     * 
-     * @return     equipo del ciclista
-    */
-    public Equipo getEquipo()
-    {
-        
-        return equipo;
-        
-    }
-    
+ 
     /**
      * 
      * Muestra los resultados del ciclista.

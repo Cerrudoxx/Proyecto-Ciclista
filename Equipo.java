@@ -88,6 +88,20 @@ public class Equipo
         this.nombre=nombre;
     }
     
+    public boolean equals (Equipo eq) {
+        if (this == eq) {
+            return true;
+        }
+        
+        if (! (eq instanceof Equipo)) {
+            return false; 
+        }
+        
+        Equipo other = (Equipo) eq;
+        
+        return (getName()==other.getName());
+    }
+    
     /**
      * Añade una bicicleta a la lista de bicicletas de un equipo
      * 

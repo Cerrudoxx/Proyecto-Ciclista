@@ -85,17 +85,26 @@ public class Bicicleta
 
     public boolean equals (Bicicleta b) {
         if (this == b) {
-            return true; //Ambos referencian al mismo Post
+            return true;
         }
         
         if (! (b instanceof Bicicleta)) {
-            return false; //Tienen diferentes tipos
+            return false; 
         }
         
         Bicicleta other = (Bicicleta) b;
-        return (getName().equals(other.getName()) &&
-        getCampoPeso().equals(other.getCampoPeso()));
+        return ((getName().equals(other.getName())) &&
+        (getCampoPeso().equals(other.getCampoPeso())));
     }
+    
+    public int hashCode ()
+     {
+        int result = 17;
+        result = 7 * result + getName().hashCode();
+        result = 13 * result + getCampoPeso().hashCode();
+        return result;
+     }
+
 
         /**
          * Establece el valor del campo peso al dado como entrada

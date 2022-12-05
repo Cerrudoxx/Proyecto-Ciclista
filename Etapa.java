@@ -135,6 +135,23 @@ public class Etapa
         this.distancia=distancia;
         
     }
+    
+    public boolean equals (Etapa e) {
+        if (this == e) {
+            return true;
+        }
+        
+        if (! (e instanceof Etapa)) {
+            return false; 
+        }
+        
+        Etapa other = (Etapa) e;
+        
+        return (getName().equals(other.getName()) &&
+        (getCampoDificultad().equals(other.getCampoDificultad())) &&
+        (getCampoDistancia().equals(other.getCampoDistancia())));
+    }
+    
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
