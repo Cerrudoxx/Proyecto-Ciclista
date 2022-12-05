@@ -8,12 +8,12 @@
 public class BicicletaRapida extends Bicicleta
 {
     // instance variables - replace the example below with your own
-    private VelocidadExtra velocidadExtra;
+    private double velocidadExtra;
 
     /**
      * Constructor for objects of class BicicletaRapida
      */
-    public BicicletaRapida(String nombre, Peso peso, VelocidadExtra velocidadExtra)
+    public BicicletaRapida(String nombre, Peso peso, double velocidadExtra)
     {
         // initialise instance variables
         super(nombre, peso);
@@ -27,17 +27,7 @@ public class BicicletaRapida extends Bicicleta
      */
     public double getVelocidadExtra()
     {
-        return velocidadExtra.getValor(); 
-    }
-    
-     /**
-     * Devuelve el valor del campo velocidadExtra
-     * 
-     * @return   velocidadExtra de la bicicleta rapida
-     */
-    public VelocidadExtra getCampoVelocidadExtra()
-    {
-        return velocidadExtra; 
+         return velocidadExtra; 
     }
 
     @Override
@@ -59,7 +49,7 @@ public class BicicletaRapida extends Bicicleta
      {
         int result = 17;
         result = 7 * result + super.hashCode();
-        result = 13 * result + getCampoVelocidadExtra().hashCode();
+      //  result = 13 * result + getVelocidadExtra().hashCode();
         return result;
      }
 
