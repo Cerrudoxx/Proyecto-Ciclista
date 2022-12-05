@@ -1,4 +1,13 @@
-
+import java.util.ArrayList;  
+import java.util.Comparator;
+import java.util.*; 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 /**
  * Guarda la informacion del nombre, la dificultad y la distancia de la clase 

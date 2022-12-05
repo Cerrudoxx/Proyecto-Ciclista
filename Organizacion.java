@@ -197,13 +197,13 @@ public class Organizacion
      */
     private void hacerCarreras(){
        int numCarr = 1; 
-       Iterator<Etapa> iterador=etapas.iterator();
+       Iterator<Etapa> iteradorEtapas= etapas.iterator();
        int index=0;
-       Etapa e=null;
-       while(iterador.hasNext()){
+      
+       while(iteradorEtapas.hasNext()){
          
        // Etapa e= etapas.get(index);
-           // Etapa e= etapas.next();
+           Etapa e= iteradorEtapas.next();
            // System.out.println(etapas.next());
 
            cargarCiclistas();
