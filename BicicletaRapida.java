@@ -48,8 +48,10 @@ public class BicicletaRapida extends Bicicleta
     public int hashCode ()
      {
         int result = 17;
+        double vel_extra=getVelocidadExtra();
+        int vel_extra_int=(int) vel_extra;
         result = 7 * result + super.hashCode();
-      //  result = 13 * result + getVelocidadExtra().hashCode();
+       //result = 13 * result + getVelocidadExtra().hashCode();
         return result;
      }
 

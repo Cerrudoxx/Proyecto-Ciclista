@@ -1,6 +1,14 @@
 import java.util.ArrayList;  
 import java.util.Comparator;
 import java.util.*; 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 /**
  * Guarda la informacion de todo lo relacionado con las carreras que se van a correr
  * 
@@ -9,13 +17,13 @@ import java.util.*;
 */
 public class Organizacion
 {
-    private ArrayList<Etapa> etapas;//Cambiar colección que no permita etapas duplicadas y las mantenga ordenadas según el criterio de ordenación definido al crear la organización(tree set)
+    private TreeSet<Etapa> etapas;//Cambiar colección que no permita etapas duplicadas y las mantenga ordenadas según el criterio de ordenación definido al crear la organización(tree set)
     
-    private ArrayList<Equipo> equipos;
+    private List<Equipo> equipos;
     
-    private ArrayList<Ciclista> ciclistas;
+    private List<Ciclista> ciclistas;
     
-    private ArrayList<Ciclista> ciclistasAbandonados;
+    private List<Ciclista> ciclistasAbandonados;
     
     Comparator<Etapa> compEtapa;
     
@@ -23,7 +31,7 @@ public class Organizacion
     
     Comparator<Ciclista> compCiclistasCarrera;
     
-    boolean ordenEtapa;
+    //boolean ordenEtapa;
     
     boolean ordenEquipo;
     
@@ -40,7 +48,7 @@ public class Organizacion
      */
     public Organizacion()
     {
-        etapas=new ArrayList<Etapa>();
+        etapas=new TreeSet<Etapa>();
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
         ciclistasAbandonados=new ArrayList<Ciclista>();
@@ -57,14 +65,14 @@ public class Organizacion
      * @param compEtapa guarda el comparador según el cual se ordenarán las etapas
      * @param ordenEtapa guarda el orden, ascendente o descendente de como se ordenaran las etapas
      */
-    public Organizacion(Comparator<Etapa> ce, boolean oe)
+    public Organizacion(Comparator<Etapa> ce) //boolean oe)
     {
-        etapas=new ArrayList<Etapa>();
+        etapas=new TreeSet<Etapa>(ce);
         equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
         ciclistasAbandonados=new ArrayList<Ciclista>();
         compEtapa=ce;
-        ordenEtapa=oe;
+        //ordenEtapa=oe;
     }
     
    /**
@@ -89,17 +97,17 @@ public class Organizacion
          ordenCiclistas=oc;
     } 
     
-    /**
-    * Ordena las etapas según el comparador que se haya definido
-    */
-        public void ordenarEtapas(){
-         if(ordenEtapa==false){
-        Collections.sort(etapas,compEtapa);
-    }
-        else{
-        Collections.sort(etapas, Collections.reverseOrder(compEtapa));
-    } 
-    }
+    // /**
+    // * Ordena las etapas según el comparador que se haya definido
+    // */
+        // public void ordenarEtapas(){
+         // if(ordenEtapa==false){
+        // Collections.sort(etapas,compEtapa);
+    // }
+        // else{
+        // Collections.sort(etapas, Collections.reverseOrder(compEtapa));
+    // } 
+    // }
     
     /**
     * Ordena los ciclistas según el comparador que se haya definido
@@ -174,7 +182,7 @@ public class Organizacion
     * Permite llevar a cabo tadas las carreras y mostrar su clasificación
     */
     public void gestionarCampeonato(){
-       ordenarEtapas();
+      // ordenarEtapas();
        ordenarEquipos();
        setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), true);
        ordenarCiclistas();
@@ -189,9 +197,16 @@ public class Organizacion
      */
     private void hacerCarreras(){
        int numCarr = 1; 
-       for(int index=0; index<etapas.size(); index++){
-       Etapa e= etapas.get(index);
-          cargarCiclistas();
+       Iterator<Etapa> iterador=etapas.iterator();
+       int index=0;
+       Etapa e=null;
+       while(iterador.hasNext()){
+         
+       // Etapa e= etapas.get(index);
+           // Etapa e= etapas.next();
+           // System.out.println(etapas.next());
+
+           cargarCiclistas();
           ordenarCiclistas();
           System.out.println("********************************************************************************************************");
            System.out.printf("*** " + "CARRERA<"+numCarr+"> EN ");
@@ -213,7 +228,7 @@ public class Organizacion
            correrCarrera(e);
            mostrarClasificacionCarrera(e);
            devolverCiclista();
-           
+       index++;
        numCarr++;
      }
     }
