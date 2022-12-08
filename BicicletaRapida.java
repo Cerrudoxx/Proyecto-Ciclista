@@ -59,13 +59,18 @@ public class BicicletaRapida extends Bicicleta
     public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append(super.toString());
-         builder.append("\n");
-          builder.append("VelocidadExtra: ");
+        // builder.append("\n");
+        builder.append(" <VelocidadExtra: ");
         builder.append(getVelocidadExtra());
-        builder.append("\n");
+        builder.append(" > ");
+       // builder.append("\n");
         return builder.toString();
     }
     
+     @Override
+     protected String getTipoBicicleta(){
+        return "<BicicletaRapida: ";
+    }
   
     /**
      * Establece el valor del campo peso al dado como entrada

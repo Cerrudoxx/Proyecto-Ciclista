@@ -17,7 +17,11 @@ public class BicicletaPrototipo extends Bicicleta
         // initialise instance variables
         super(nombre, peso);
     }
-
+    @Override
+     protected String getTipoBicicleta(){
+        return "<BicicletaPrototipo: ";
+    }
+    
     /**
      * Establece el valor del campo peso al dado como entrada
      * 

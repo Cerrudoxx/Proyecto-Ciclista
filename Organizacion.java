@@ -280,11 +280,12 @@ public class Organizacion
        int numCicl = 1;
         for (Ciclista c: ciclistas){
                System.out.println("@@@ "+ "ciclista "+ numCicl + " de "+ ciclistas.size());
-                System.out.println(c);
+                System.out.print(c);
             //c.mostrarCiclista();
-               System.out.printf("con bicicleta: ");
-               System.out.println(c.getBicicleta());
-               System.out.printf(" en etapa " + e.getName());
+               System.out.printf(" con bicicleta: ");
+               System.out.printf("\n");
+               System.out.print(c.getBicicleta());
+               System.out.printf("en etapa " + e.getName());
                double velocidad=Math.round((c.getBicicleta().calcularVelocidad(c, e))*100d) / 100d;
                double tiempo=Math.round((c.getBicicleta().calcularTiempoNecesario(c, e))*100d) / 100d;
                c.actualizarResultadoEnergia(e);

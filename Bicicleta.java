@@ -135,14 +135,17 @@ public class Bicicleta
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
+        builder.append(getTipoBicicleta());
         builder.append(getName());
-        builder.append("");
+        builder.append("> ");
         builder.append(getCampoPeso());
-        builder.append("\n");
+        builder.append(" ");
         return builder.toString();
     }
 
-
+    protected String getTipoBicicleta(){
+        return "<Bicicleta: ";
+    }
     // /**
      // * Muestra la informacion de la bicicleta por pantalla
      // */
