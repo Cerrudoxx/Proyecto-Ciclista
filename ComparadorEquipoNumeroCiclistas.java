@@ -2,7 +2,7 @@
  * 
  * Comparador del numero de ciclistas de equipo
  *   
- */ 
+ */  
 import java.util.*;  
 class ComparadorEquipoNumeroCiclistas implements Comparator<Equipo>{  
     public int compare(Equipo e1,Equipo e2){  

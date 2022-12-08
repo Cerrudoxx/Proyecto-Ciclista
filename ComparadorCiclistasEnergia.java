@@ -3,7 +3,7 @@
  * 
  *Comparador de la Energia de los Cisclistas
  *
- */ 
+ */  
 import java.util.*;  
 class ComparadorCiclistasEnergia implements Comparator<Ciclista>{  
     public int compare(Ciclista c1,Ciclista c2){  

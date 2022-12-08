@@ -3,7 +3,7 @@
  * Comparador de la distancia de la etapa
  * 
  */ 
-import java.util.*;  
+import java.util.*;   
 class ComparadorEtapaDistancia implements Comparator<Etapa>{  
     public int compare(Etapa e1,Etapa e2){  
         if(e1.getDistancia()==e2.getDistancia())  

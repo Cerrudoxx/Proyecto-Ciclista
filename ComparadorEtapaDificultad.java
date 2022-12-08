@@ -3,7 +3,7 @@
  * 
  * Comparador de la dificultad de la etapa
  * 
- */ 
+ */  
 import java.util.*;  
 class ComparadorEtapaDificultad implements Comparator<Etapa>{  
     public int compare(Etapa e1,Etapa e2){  

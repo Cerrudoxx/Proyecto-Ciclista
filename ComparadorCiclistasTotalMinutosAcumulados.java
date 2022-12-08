@@ -2,7 +2,7 @@
 /**
  * 
  * Comparador del numero total de minutos acumulados
- * 
+ *  
  */ 
 import java.util.*;  
 class ComparadorCiclistasTotalMinutosAcumulados implements Comparator<Ciclista>{  

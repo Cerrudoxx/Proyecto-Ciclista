@@ -2,7 +2,7 @@
  * 
  * Comparador del peso de las bicicletas
  * 
- */ 
+ */  
 import java.util.*;  
 class ComparadorBicisPeso implements Comparator<Bicicleta>{  
     public int compare(Bicicleta b1,Bicicleta b2){  

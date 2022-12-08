@@ -8,7 +8,7 @@ class compResultadosTiempo implements Comparator<Resultados>{
             return 0;  
         else if(r1.getTiempo()>r2.getTiempo())  
             return 1;  
-        else  
+        else   
             return -1;  
     }  
 } 

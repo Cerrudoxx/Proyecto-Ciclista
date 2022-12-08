@@ -3,7 +3,7 @@
  * Comparador de la Habilidad de los ciclistas  
  * 
  */ 
-import java.util.*;  
+import java.util.*;   
 class ComparadorCiclistasHabilidad implements Comparator<Ciclista>{  
   
     public int compare(Ciclista c1,Ciclista c2){  
