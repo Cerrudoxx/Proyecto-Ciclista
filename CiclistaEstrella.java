@@ -57,6 +57,7 @@ public class CiclistaEstrella extends Ciclista
         CiclistaEstrella other = (CiclistaEstrella) c;
         return  (super.equals(other) &&  getPopularidad()==other.getPopularidad());
     }
+    
 
     @Override
     protected String getFormattedContent(){
