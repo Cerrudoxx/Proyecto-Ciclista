@@ -29,18 +29,8 @@ public class CiclistaExperimentadoTest
     public void setUp()
     {
     }
-
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
-    }
-
-    @Test
+    
+     @Test
     public void TestTiempoTotalAcumulado()
     {
         Etapa etapa1 = new Etapa("prueba1", Dificultad.SENCILLA, Distancia.LARGA);
@@ -56,5 +46,17 @@ public class CiclistaExperimentadoTest
         ciclista1.setResultado(etapa2, 161.7);
         assertEquals(310.5375, ciclista1.tiempoTotalAcumulado(), 0.1);
     }
+    
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @AfterEach
+    public void tearDown()
+    {
+    }
+
+    
 }
 
