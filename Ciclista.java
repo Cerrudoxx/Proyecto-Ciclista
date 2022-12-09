@@ -223,6 +223,17 @@ public abstract class Ciclista
         getEquipo()==other.getEquipo()));
     }
       
+    public int hashCode ()
+     {
+        int result = 17;
+        result = 7 * result + getName().hashCode();
+        result = 13 * result + getCampoHabilidad().hashCode();
+      // result = 19 * result + getEnergia().hashcode();
+      // result = 23 * result + getEquipo().hashcode();
+        
+        return result;
+     }
+    
     /**
      * Recibe una nueva bicicleta del equipo y se la cambia al ciclista
      * 

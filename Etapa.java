@@ -161,6 +161,15 @@ public class Etapa
         (getCampoDistancia().equals(other.getCampoDistancia())));
     }
     
+    public int hashCode ()
+     {
+        int result = 17;
+        result = 7 * result + getName().hashCode();
+        result = 13 * result + getCampoDificultad().hashCode();
+        result = 19 * result + getCampoDistancia().hashCode();
+        return result;
+     }
+    
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();

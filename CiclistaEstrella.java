@@ -58,6 +58,16 @@ public class CiclistaEstrella extends Ciclista
         return  (super.equals(other) &&  getPopularidad()==other.getPopularidad());
     }
     
+     @Override
+    public int hashCode ()
+     {
+        int result = 17;
+        
+        result = 7 * result + super.hashCode();
+       //result = 13 * result + getPopularidad.hashCode();
+        return result;
+     }
+
 
     @Override
     protected String getFormattedContent(){

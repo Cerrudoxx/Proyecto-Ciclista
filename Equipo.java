@@ -118,6 +118,14 @@ public class Equipo
         return (getName()==other.getName());
     }
     
+    public int hashCode ()
+     {
+        int result = 17;
+        result = 7 * result + getName().hashCode();
+        
+        return result;
+     }
+    
     /**
      * Añade una bicicleta a la lista de bicicletas de un equipo
      * 
