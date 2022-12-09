@@ -304,7 +304,7 @@ public class Organizacion
             if(c.getClass() ==  new CiclistaEstrella().getClass()){
 
                 CiclistaEstrella cE = (CiclistaEstrella) c; 
-                if(tiempo>=160){
+                if(tiempo<160){
                     System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha aumentado y ahora su nivel de popularidad es de: " + cE.getPopularidad() +" unidades");
                 }
                 else{
