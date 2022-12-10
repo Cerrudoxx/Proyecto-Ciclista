@@ -23,7 +23,7 @@ public class DatosCampeonatoCompletoFinal
         Etapa etapa4 = new Etapa("sencilla intermedia", Dificultad.SENCILLA, Distancia.INTERMEDIA);
         Etapa etapa5 = new Etapa("compleja intermedia", Dificultad.COMPLEJA, Distancia.INTERMEDIA);
         Etapa etapa6 = new Etapa("normal larga", Dificultad.NORMAL, Distancia.LARGA);
-        organizacion.anadirEtapa(etapa1);
+       // organizacion.anadirEtapa(etapa1);
         
         organizacion.anadirEtapa(etapa1);
         organizacion.anadirEtapa(etapa2);
@@ -48,10 +48,10 @@ public class DatosCampeonatoCompletoFinal
         
         //constructor de bicicletas pide ( String nombre, double peso)
         
-         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
-         dSMWomen.anadirBicicleta(new BicicletaPrototipo("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
          dSMWomen.anadirBicicleta(new BicicletaRapida("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA, 0.3)); 
-        
+         dSMWomen.anadirBicicleta(new BicicletaPrototipo("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
+         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
+         
         dSMWomen.ordenarBicicletas();
         
         // //constructor de ciclistas pide (String nombre , double habilidad , double energia, Equipo equipo)
@@ -85,11 +85,7 @@ public class DatosCampeonatoCompletoFinal
         //constructor de bicicletas pide ( String nombre, double peso)
         
          movistarWomen.anadirBicicleta(new BicicletaRapida("CANYON Ultimate CFR eTap",Peso.LIGERA, 0.4));
-         
-        //movistarWomen.anadirBicicleta(new BicicletaNormal("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
-        
         movistarWomen.anadirBicicleta(new Bicicleta("CANYON Aeroad CF SLX 8 Disc Di2",Peso.NORMAL));
-        
         movistarWomen.anadirBicicleta(new BicicletaPrototipo("CANYON Endurace CF SLX 9 Di2",Peso.PESADA));
         
         
