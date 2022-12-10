@@ -20,10 +20,16 @@ public class Organizacion
     private TreeSet<Etapa> etapas;//Cambiar colección que no permita etapas duplicadas y las mantenga ordenadas según el criterio de ordenación definido al crear la organización(tree set)
 
     private List<Equipo> equipos;
-
+    
     private List<Ciclista> ciclistas;
 
     private List<Ciclista> ciclistasAbandonados;
+
+   // private Map<Equipo, List<Ciclista> > ciclistasEquipo;
+    
+    //private Map<Ciclista,Equipo> ciclistas;
+    
+   // private Map<Ciclista, Equipo> ciclistasAbandonados;
 
     Comparator<Etapa> compEtapa;
 
@@ -49,8 +55,11 @@ public class Organizacion
     {
         etapas=new TreeSet<Etapa>();
         equipos=new ArrayList<Equipo>();
-        ciclistas=new ArrayList<Ciclista>();
-        ciclistasAbandonados=new ArrayList<Ciclista>();
+         ciclistas=new ArrayList<Ciclista>();
+         ciclistasAbandonados=new ArrayList<Ciclista>();
+        //ciclistasEquipo= new TreeMap<>();
+        //ciclistas=new TreeMap<>(    );
+        //ciclistasAbandonados=new TreeMap<>();
     }
 
     /**
@@ -65,10 +74,14 @@ public class Organizacion
      */
     public Organizacion(Comparator<Etapa> ce) //boolean oe)
     {
+        
         etapas=new TreeSet<Etapa>(ce);
-        equipos=new ArrayList<Equipo>();
+       equipos=new ArrayList<Equipo>();
         ciclistas=new ArrayList<Ciclista>();
         ciclistasAbandonados=new ArrayList<Ciclista>();
+       // ciclistasEquipo= new TreeMap<>();
+        //ciclistas=new TreeMap<>();
+        //ciclistasAbandonados=new TreeMap<>();;
         compEtapa=ce;
         //ordenEtapa=oe;
     }
@@ -111,22 +124,45 @@ public class Organizacion
      * Ordena los ciclistas según el comparador que se haya definido
      */
     private void ordenarCiclistas(){
-        if(ordenCiclistas==false)
+        if(ordenCiclistas==false){ 
+            
             Collections.sort(ciclistas, compCiclistasCarrera);
-        else
+        }
+        else{
+             // TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
+  
+          // sorted.putAll(ciclistas);
+  
+           // ciclistas=sorted;
             Collections.sort(ciclistas, Collections.reverseOrder(compCiclistasCarrera));
-
+        }
     }
 
     /**
      * Ordena los equipos según el comparador que se haya definido
      */
     public void ordenarEquipos(){
-        if(ordenEquipo)
+        if(ordenEquipo){
+         // TreeMap<Equipo, List<Ciclista> > sorted = new TreeMap<Equipo, List<Ciclista>>(compEquipo);
+  
+            // sorted.putAll(ciclistasEquipo);
+  
+           // ciclistasEquipo=sorted;
             Collections.sort(equipos, compEquipo);
-        else
-            Collections.sort(equipos, Collections.reverseOrder(compEquipo));
-    }
+        }
+        else{
+             // TreeMap<Equipo, List<Ciclista> > sorted = new TreeMap<Equipo, List<Ciclista>>(Collections.reverseOrder(compEquipo));
+  
+            // sorted.putAll(ciclistasEquipo);
+  
+           // ciclistasEquipo=sorted;
+           
+           
+           Collections.sort(equipos, Collections.reverseOrder(compEquipo));
+        }
+        
+        }
+    
 
     /**
      * Muestra por pantalla el nombre de cada equipo y la media de minutos de sus ciclistas sin abandonar
@@ -137,7 +173,10 @@ public class Organizacion
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
-        for (Equipo e: equipos){
+        //Set<Map.Entry<Equipo, List<Ciclista>>> entrySet = ciclistasEquipo.entrySet();
+        
+        for (Equipo e: equipos){ //Map.Entry<Equipo, List<Ciclista>> currentEntry: entrySet
+            //Equipo e=currentEntry.getKey();
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             System.out.println("%%% " + e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+ tiempoMedio(e) +" %%% ");
@@ -360,7 +399,10 @@ public class Organizacion
         setCompEquipo(new ComparadorEquipoTotalMinutosAcumulados(), true);
         ordenarEquipos();
         int posEquip=1;
-        for (Equipo e: equipos){
+        //Set<Map.Entry<Equipo, List<Ciclista>>> entrySet = ciclistasEquipo.entrySet();
+        
+        for (Equipo e: equipos){ // Map.Entry<Equipo, List<Ciclista>> currentEntry: entrySet
+            //Equipo e=currentEntry.getKey(); 
             double tiempoMedia=Math.round((tiempoMedio(e))*100d)/100d;
             System.out.println("@@@ Posicion("+posEquip+ ") " +e.getName()+" con " +tiempoMedia+" minutos de media @@@");
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ");
@@ -390,7 +432,7 @@ public class Organizacion
      * @param eq es el equipo que se quiere añadir
      */
     public void inscribirEquipo(Equipo eq){
-        equipos.add(eq);
+        //equipos.add(eq);
     }
 
     /**
