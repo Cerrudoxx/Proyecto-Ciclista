@@ -97,6 +97,7 @@ public class Bicicleta
         (getCampoPeso().equals(other.getCampoPeso())));
     }
     
+    @Override
     public int hashCode ()
      {
         int result = 17;

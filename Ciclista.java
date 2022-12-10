@@ -218,19 +218,17 @@ public abstract class Ciclista
         Ciclista other = (Ciclista) c;
         
         return ((getName().equals(other.getName())) && 
-        (getCampoHabilidad().equals(other.getCampoHabilidad()) && 
-        getEnergia()==other.getEnergia() &&
-        getEquipo()==other.getEquipo()));
+        getHabilidad()==other.getHabilidad() && 
+        getEnergia()==other.getEnergia());
     }
-      
+     
+    @Override
     public int hashCode ()
      {
         int result = 17;
         result = 7 * result + getName().hashCode();
-        result = 13 * result + getCampoHabilidad().hashCode();
-      // result = 19 * result + getEnergia().hashcode();
-      // result = 23 * result + getEquipo().hashcode();
-        
+        result = 13 * result + (int) getHabilidad();
+        result = 19 * result + (int) getEnergia();        
         return result;
      }
     
