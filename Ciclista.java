@@ -46,14 +46,14 @@ public abstract class Ciclista
      * @param equipo es el equipo al que pertenece el ciclista
      * 
      */
-    public Ciclista(String nombre, Habilidad habilidad, double energia, Equipo e)
+    public Ciclista(String nombre, Habilidad habilidad, double energia, Equipo e)//
     {        
         this.nombre=nombre;
         this.habilidad=habilidad;
         this.energia=energia;
         this.resultado=new ArrayList<Resultados>();
         this.abandono=false;
-        this.equipo=e;
+       this.equipo=e;
         this.destreza=0;
     }
     
@@ -219,8 +219,8 @@ public abstract class Ciclista
         
         return ((getName().equals(other.getName())) && 
         (getCampoHabilidad().equals(other.getCampoHabilidad()) && 
-        getEnergia()==other.getEnergia() &&
-        getEquipo()==other.getEquipo()));
+        getEnergia()==other.getEnergia()));//&&
+        //getEquipo()==other.getEquipo()));
     }
       
     public int hashCode ()

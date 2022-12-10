@@ -17,8 +17,8 @@ import java.util.TreeSet;
  */
 public class Organizacion
 {
-    private TreeSet<Etapa> etapas;//Cambiar colección que no permita etapas duplicadas y las mantenga ordenadas según el criterio de ordenación definido al crear la organización(tree set)
-
+    private TreeSet<Etapa> etapas;
+    
     private List<Equipo> equipos;
     
     private List<Ciclista> ciclistas;
@@ -27,9 +27,9 @@ public class Organizacion
 
    // private Map<Equipo, List<Ciclista> > ciclistasEquipo;
     
-    //private Map<Ciclista,Equipo> ciclistas;
+    //private Map<Ciclista, Equipo> ciclistas;
     
-   // private Map<Ciclista, Equipo> ciclistasAbandonados;
+    //private Map<Ciclista, Equipo> ciclistasAbandonados;
 
     Comparator<Etapa> compEtapa;
 
