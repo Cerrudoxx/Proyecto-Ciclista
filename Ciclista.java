@@ -206,7 +206,7 @@ public abstract class Ciclista
         
     }
     
-    public boolean equals (Ciclista c) {
+  public boolean equals (Ciclista c) {
         if (this == c) {
             return true;
         }
@@ -219,18 +219,17 @@ public abstract class Ciclista
         
         return ((getName().equals(other.getName())) && 
         (getCampoHabilidad().equals(other.getCampoHabilidad()) && 
-        getEnergia()==other.getEnergia()));//&&
-        //getEquipo()==other.getEquipo()));
+        getEnergia()==other.getEnergia() &&
+        getEquipo()==other.getEquipo()));
     }
-      
+     
+    @Override
     public int hashCode ()
      {
         int result = 17;
         result = 7 * result + getName().hashCode();
-        result = 13 * result + getCampoHabilidad().hashCode();
-      // result = 19 * result + getEnergia().hashcode();
-      // result = 23 * result + getEquipo().hashcode();
-        
+        result = 13 * result + (int) getHabilidad();
+        result = 19 * result + (int) getEnergia();        
         return result;
      }
     

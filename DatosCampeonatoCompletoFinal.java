@@ -1,4 +1,4 @@
-     public class DatosCampeonatoCompletoFinal
+public class DatosCampeonatoCompletoFinal
 {
     
     public DatosCampeonatoCompletoFinal(Organizacion organizacion)

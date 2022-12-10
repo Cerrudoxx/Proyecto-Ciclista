@@ -1,4 +1,5 @@
 
+
 /**
  * Write a description of class BicicletaRapida here.
  * 
@@ -41,17 +42,16 @@ public class BicicletaRapida extends Bicicleta
         }
         
         BicicletaRapida other = (BicicletaRapida) b;
-        return  (super.equals(other) &&  getVelocidadExtra()==other.getVelocidadExtra());
+        return  (super.equals(other) &&  getVelocidadExtra()==other.getVelocidadExtra());  
     }
     
     @Override
     public int hashCode ()
      {
         int result = 17;
-        double vel_extra=getVelocidadExtra();
-        int vel_extra_int=(int) vel_extra;
+         double vel_extra=getVelocidadExtra();
         result = 7 * result + super.hashCode();
-       //result = 13 * result + getVelocidadExtra().hashCode();
+        result = 13 * result + (int) vel_extra;
         return result;
      }
 

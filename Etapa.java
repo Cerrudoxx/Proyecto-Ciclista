@@ -157,16 +157,16 @@ public class Etapa
         Etapa other = (Etapa) e;
         
         return (getName().equals(other.getName()) &&
-        (getCampoDificultad().equals(other.getCampoDificultad())) &&
-        (getCampoDistancia().equals(other.getCampoDistancia())));
+        (getCampoDificultad()==other.getCampoDificultad()) &&
+        (getCampoDistancia()==other.getCampoDistancia()));
     }
     
     public int hashCode ()
      {
         int result = 17;
         result = 7 * result + getName().hashCode();
-        result = 13 * result + getCampoDificultad().hashCode();
-        result = 19 * result + getCampoDistancia().hashCode();
+        result = 13 * result + (int) getDificultad();
+        result = 19 * result + (int) getDistancia();
         return result;
      }
     

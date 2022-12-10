@@ -64,7 +64,7 @@ public class CiclistaEstrella extends Ciclista
         int result = 17;
         
         result = 7 * result + super.hashCode();
-       //result = 13 * result + getPopularidad.hashCode();
+        result = 13 * result + getPopularidad();
         return result;
      }
 
