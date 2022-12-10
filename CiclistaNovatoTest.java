@@ -48,6 +48,19 @@ public class CiclistaNovatoTest
         assertEquals(310.5375, ciclista1.tiempoTotalAcumulado(), 0.1);
     }
     
+    @Test
+    public void TestActualizarResultadoEnergia()
+    {
+        Etapa etapa1 = new Etapa("sencilla larga", Dificultad.SENCILLA, Distancia.LARGA);
+        ComparadorCiclistasHabilidad comparad1 = new ComparadorCiclistasHabilidad();
+        ComparadorBicisPeso comparad2 = new ComparadorBicisPeso();
+        Equipo equipo1 = new Equipo("Trek Segafredo Women", comparad1, false, comparad2, false);
+        Bicicleta biciclet1 = new Bicicleta("SCOTT CONTESSA ADDICT RC 15", Peso.PESADA);
+        CiclistaNovato ciclista1 = new CiclistaNovato("LONGO-BORGHINI", Habilidad.NORMAL, 1175, equipo1);
+        ciclista1.setBicicleta(biciclet1);
+        ciclista1.actualizarResultadoEnergia(etapa1);
+        assertEquals(1016.0375, ciclista1.getEnergia(), 0.1);
+    }
     /**
      * Tears down the test fixture.
      *
