@@ -218,9 +218,8 @@ public abstract class Ciclista
         Ciclista other = (Ciclista) c;
         
         return ((getName().equals(other.getName())) && 
-        (getCampoHabilidad().equals(other.getCampoHabilidad()) && 
-        getEnergia()==other.getEnergia() &&
-        getEquipo()==other.getEquipo()));
+        getHabilidad()==other.getHabilidad() && 
+        getEnergia()==other.getEnergia());
     }
      
     @Override
