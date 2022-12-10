@@ -342,12 +342,12 @@ public class Organizacion
             System.out.println("@@@");
             if(c.getClass() ==  new CiclistaEstrella().getClass()){
 
-                CiclistaEstrella cE = (CiclistaEstrella) c; 
+                //CiclistaEstrella cE = (CiclistaEstrella) c; 
                 if(tiempo<160){
-                    System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha aumentado y ahora su nivel de popularidad es de: " + cE.getPopularidad() +" unidades");
+                    System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha aumentado y ahora su nivel de popularidad es de: " + c.getPopularidad() +" unidades");
                 }
                 else{
-                    System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha disminuido y ahora su nivel de popularidad es de: " + cE.getPopularidad() +" unidades");
+                    System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha disminuido y ahora su nivel de popularidad es de: " + c.getPopularidad() +" unidades");
                 }
                 System.out.println("@@@");
             }

@@ -92,15 +92,28 @@ public class CiclistaEstrella extends Ciclista
         return builder.toString();
     }
 
+    
     @Override
-    public double getTiempoResultado(Etapa E){
-        double resultado=super.getTiempoResultado(E);
-        if(resultado<160){
+    public double tiempo(Etapa etp){
+        double tiempo = super.tiempo(etp);
+        
+        if(tiempo<160){
             this.serPopular=this.serPopular+4;
-        }
-        else{
+         }
+         else{
             this.serPopular--;
-        }
-        return resultado;
+         }
+         return tiempo;
     }
+    // @Override
+    // public double getTiempoResultado(Etapa E){
+        // double resultado=super.getTiempoResultado(E);
+        // if(resultado<160){
+            // this.serPopular=this.serPopular+4;
+        // }
+        // else{
+            // this.serPopular--;
+        // }
+        // return resultado;
+    // }
 }

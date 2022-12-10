@@ -39,4 +39,9 @@ public class CiclistaNovato extends Ciclista
     super.setDestreza(((super.getHabilidad() + 2)/120)*10);    
     }
     
+    @Override
+    public int getPopularidad(){
+        return 0;
+    }
+    
 }

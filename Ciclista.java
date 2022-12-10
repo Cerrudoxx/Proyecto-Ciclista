@@ -351,6 +351,9 @@ public abstract class Ciclista
         return resultado.size();
     }
     
+    
+   
+    
     /**
      * Devuelve la etapa en la que se ha abandonado
      * 
@@ -380,7 +383,8 @@ public abstract class Ciclista
      * 
      */  
     public void actualizarResultadoEnergia(Etapa etp){ 
-        double tiempo=bicicleta.calcularTiempoNecesario(this, etp);
+        double tiempo=tiempo(etp);
+        //bicicleta.calcularTiempoNecesario(this, etp);
         energia=energia-tiempo;
         abandono();
         if(abandono==false){
@@ -392,6 +396,9 @@ public abstract class Ciclista
     }
     
  
+    public double tiempo(Etapa etp){
+        return bicicleta.calcularTiempoNecesario(this, etp);
+    }
     /**
      * 
      * Muestra los resultados del ciclista.
@@ -445,6 +452,8 @@ public abstract class Ciclista
     protected abstract String getFormattedContent();
     
     public abstract void calcularDestreza();
+    
+    public abstract int getPopularidad();
    
 }
    

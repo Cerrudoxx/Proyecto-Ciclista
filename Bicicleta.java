@@ -125,8 +125,9 @@ public class Bicicleta
      */
     public double calcularTiempoNecesario(Ciclista c, Etapa e)
     {
+        
         double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*60 ;
-        return tiempo;        
+        return tiempo;              
     }
 
     // public String toString(){
