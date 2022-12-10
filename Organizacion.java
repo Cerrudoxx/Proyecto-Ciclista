@@ -23,7 +23,7 @@ public class Organizacion
     
     private List<Ciclista> ciclistas;
 
-    private List<Ciclista> ciclistasAbandonados;
+    private List<Ciclista> ciclistasAbandonados; 
 
    // private Map<Equipo, List<Ciclista> > ciclistasEquipo;
     
@@ -432,7 +432,7 @@ public class Organizacion
      * @param eq es el equipo que se quiere añadir
      */
     public void inscribirEquipo(Equipo eq){
-        //equipos.add(eq);
+        equipos.add(eq);
     }
 
     /**
