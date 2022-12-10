@@ -44,19 +44,13 @@
         organizacion.inscribirEquipo(trekSegafredoWomen);
         organizacion.inscribirEquipo(dSMWomen);
         
-        organizacion.setCompEquipo(new ComparadorEquipoNombre(), true);
+        organizacion.setCompEquipo(new ComparadorEquipoNombre(), true);//true
         
         //constructor de bicicletas pide ( String nombre, double peso)
         
-         dSMWomen.anadirBicicleta(new BicicletaRapida("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA, 0.3)); 
+         dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
          dSMWomen.anadirBicicleta(new BicicletaPrototipo("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
-        
-        //dSMWomen.anadirBicicleta(new BicicletaNormal("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
-
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA)); 
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT 15",Peso.NORMAL));
-        dSMWomen.anadirBicicleta(new Bicicleta("SCOTT CONTESSA ADDICT RC 15",Peso.PESADA));
+         dSMWomen.anadirBicicleta(new BicicletaRapida("SCOTT CONTESSA ADDICT eRIDE 15",Peso.LIGERA, 0.3)); 
         
         dSMWomen.ordenarBicicletas();
         
