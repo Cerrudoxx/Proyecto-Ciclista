@@ -1,6 +1,14 @@
-import java.util.ArrayList;
+import java.util.ArrayList;  
 import java.util.Comparator;
-import java.util.*;
+import java.util.*; 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 
 /**
  * Guarda la informacion del equipo: ciclistas que le pertenecen, ciclistas que abandonan y
@@ -13,9 +21,9 @@ public class Equipo
 {  
     private String nombre;
     
-    // private Map<Ciclista,Bicicleta> ciclistasEquipoBicicletas;
+    //private Map<Ciclista,Bicicleta> ciclistasEquipoBicicletas;
     
-    // private Map<Ciclista,Bicicleta> ciclistasEquipoBicicletasAbandono;
+    //private Map<Ciclista,Bicicleta> ciclistasEquipoBicicletasAbandono;
     
     private ArrayList<Ciclista> ciclistasEquipo;
     

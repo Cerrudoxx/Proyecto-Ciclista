@@ -13,7 +13,7 @@ public class Resultados
     private Etapa etapa;
     
     private Ciclista ciclista;
-
+    
     /**
      * Constructor de objetos de la clase Resultados
      * Crea un nuevo resultado inicializando con parametros por defecto
