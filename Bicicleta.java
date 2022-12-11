@@ -161,5 +161,5 @@ public class Bicicleta
     protected String getTipoBicicleta(){
         return "<Bicicleta: ";
     }
-    
+
 }

@@ -1,22 +1,26 @@
 
-
 /**
- * Write a description of class BicicletaRapida here.
+ * Guarda la informacion del nombre, el peso y la velocidadExtra de la bicicletaRapida
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
  */
 public class BicicletaRapida extends Bicicleta
 {
-    // instance variables - replace the example below with your own
+
     private double velocidadExtra;
 
     /**
-     * Constructor for objects of class BicicletaRapida
+     * Constructor de objetos de la clase BicicletaRapida
+     * Crea una nueva bicicletaRapida inicializando con parametros por defecto
+     * 
+     * @param nombre es el nombre de la bicicleta
+     * @param peso es el peso (en kg) de la bicicleta
+     * @param velocidadExtra es la velocidad extra de la bicicleta rapida
+     * 
      */
     public BicicletaRapida(String nombre, Peso peso, double velocidadExtra)
     {
-        // initialise instance variables
+
         super(nombre, peso);
         this.velocidadExtra = velocidadExtra;
     }
@@ -28,7 +32,7 @@ public class BicicletaRapida extends Bicicleta
      */
     public double getVelocidadExtra()
     {
-         return velocidadExtra; 
+        return velocidadExtra; 
     }
 
     /**
@@ -47,11 +51,11 @@ public class BicicletaRapida extends Bicicleta
         if (! (b instanceof BicicletaRapida)) {
             return false; 
         }
-        
+
         BicicletaRapida other = (BicicletaRapida) b;
         return  (super.equals(other) &&  getVelocidadExtra()==other.getVelocidadExtra());  
     }
-    
+
     /**
      * devuelve un valor entero que representa de forma inequívoca a una bicicleta.
      * 
@@ -59,15 +63,15 @@ public class BicicletaRapida extends Bicicleta
      */
     @Override
     public int hashCode ()
-     {
+    {
         int result = 17;
-         double vel_extra=getVelocidadExtra();
+        double vel_extra=getVelocidadExtra();
         result = 7 * result + super.hashCode();
         result = 13 * result + (int) vel_extra;
         return result;
-     }
+    }
 
-     /**
+    /**
      * Transforma en una cadena de caracteres todos los datos de una bicicleta.
      */
     @Override
@@ -79,15 +83,15 @@ public class BicicletaRapida extends Bicicleta
         builder.append(" > ");
         return builder.toString();
     }
-    
+
     /**
      * Devuelve el tipo de bicicleta al que pertenece
      */
-     @Override
-     protected String getTipoBicicleta(){
+    @Override
+    protected String getTipoBicicleta(){
         return "<BicicletaRapida: ";
     }
-  
+
     /**
      * Calcula la velocidad de un ciclista en una etapa
      * 

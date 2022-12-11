@@ -131,10 +131,21 @@ public abstract class Ciclista
         
     }
     
+    
+     /**
+     * Devuelve el valor del campo destreza
+     * 
+     * @return     destreza del ciclista
+     */
     public double getDestreza(){
         return destreza;
     }
     
+    /**
+     * Establece el valor del campo destreza al dado como entrada
+     * 
+     * @param  d es el nuevo valor del campo destreza
+     */
     public void setDestreza(double d){
         destreza=d;
     }
@@ -397,7 +408,6 @@ public abstract class Ciclista
      */  
     public void actualizarResultadoEnergia(Etapa etp){ 
         double tiempo=tiempo(etp);
-        //bicicleta.calcularTiempoNecesario(this, etp);
         energia=energia-tiempo;
         abandono();
         if(abandono==false){
@@ -428,10 +438,21 @@ public abstract class Ciclista
         }
     }
   
+     /**
+     * Devuelve el valor redondeado del campo energia
+     * 
+     * @return valor redondeado del campo energia
+     */
     private double redondearEnergia(){
         return Math.round((energia)*100d) / 100d;
     }
     
+    
+    /**
+     * Devuelve el valor redondeado del resultado de calcular el tiempo total acumulado
+     * 
+     * @return valor redondeado del tiempo total acumulado
+     */
     private double tiempoAcumuladoRedondeado(){
         return Math.round((tiempoTotalAcumulado())*100d) / 100d;
     }

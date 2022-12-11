@@ -1,8 +1,8 @@
 /**
- * Write a description of class CiclistaExperimentado here.
+ * Guarda la informacion del nombre, la bicicleta, la habilidad, la energía,
+ * los resultados y el equipo de la clase ciclistaExperimentado
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
  */
 public class CiclistaExperimentado extends Ciclista
 {

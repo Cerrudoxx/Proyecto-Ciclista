@@ -15,15 +15,15 @@ import java.util.TreeSet;
  * 
  * @author Jesús Cerrudo, Pablo Polo y Marco Vega. 
  * @version 1.0
-*/
+ */
 public class Etapa
 {  
     private String nombre;
-    
+
     private Dificultad dificultad;
-    
+
     private Distancia distancia;
-    
+
     private double tiempoCiclista;
 
     /**
@@ -37,11 +37,11 @@ public class Etapa
     public Etapa()
     {
         nombre=" ";
-       dificultad=null;
-       distancia=null;
-       
+        dificultad=null;
+        distancia=null;
+
     }
-    
+
     /**
      * Constructor parametrizado de objetos de la clase Etapa
      * Crea una nueva etapa inicializando con parametros pasados por teclado
@@ -65,9 +65,9 @@ public class Etapa
     public String getName()
     {
         return nombre;
-        
+
     }
-    
+
     /**
      * Establece el valor del campo nombre al dado como entrada
      * 
@@ -76,9 +76,9 @@ public class Etapa
     public void setName(String nombre)
     {
         this.nombre=nombre;
-        
+
     }
-    
+
     /**
      * Devuelve el valor del campo dificultad
      * 
@@ -87,9 +87,9 @@ public class Etapa
     public double getDificultad()
     {
         return dificultad.getValor();
-        
+
     }
-    
+
     /**
      * Devuelve el valor numerico del campo dificultad
      * 
@@ -98,10 +98,10 @@ public class Etapa
     public Dificultad getCampoDificultad()
     {
         return dificultad;
-        
+
     }
-    
-     /**
+
+    /**
      * Establece el valor del campo dificultad al dado como entrada
      * 
      * @param  dificultad es el nuevo valor del campo dificultad
@@ -109,9 +109,9 @@ public class Etapa
     public void setDificultad(Dificultad dificultad)
     {
         this.dificultad=dificultad;
-        
+
     }
-    
+
     /**
      * Devuelve el valor del campo distancia
      * 
@@ -120,9 +120,9 @@ public class Etapa
     public double getDistancia()
     {
         return distancia.getValor();
-        
+
     }
-    
+
     /**
      * Devuelve el valor numerico del campo distancia
      * 
@@ -131,10 +131,10 @@ public class Etapa
     public Distancia getCampoDistancia()
     {
         return distancia;
-        
+
     }
-    
-     /**
+
+    /**
      * Establece el valor del campo distancia al dado como entrada
      * 
      * @param  distancia es el nuevo valor del campo nombre
@@ -142,9 +142,9 @@ public class Etapa
     public void setDistancia(Distancia distancia)
     {
         this.distancia=distancia;
-        
+
     }
-    
+
     /**
      * Devuelve true si nos encontramos ante la misma etapa y false en caso contrario.
      * 
@@ -156,18 +156,18 @@ public class Etapa
         if (this == e) {
             return true;
         }
-        
+
         if (! (e instanceof Etapa)) {
             return false; 
         }
-        
+
         Etapa other = (Etapa) e;
-        
+
         return (getName().equals(other.getName()) &&
-        (getCampoDificultad()==other.getCampoDificultad()) &&
-        (getCampoDistancia()==other.getCampoDistancia()));
+            (getCampoDificultad()==other.getCampoDificultad()) &&
+            (getCampoDistancia()==other.getCampoDistancia()));
     }
-    
+
     /**
      * devuelve un valor entero que representa de forma inequívoca a una etapa.
      * 
@@ -175,15 +175,15 @@ public class Etapa
      */
     @Override
     public int hashCode ()
-     {
+    {
         int result = 17;
         result = 7 * result + getName().hashCode();
         result = 13 * result + (int) getDificultad();
         result = 19 * result + (int) getDistancia();
         return result;
-     }
-    
-     /**
+    }
+
+    /**
      * Transforma en una cadena de caracteres todos los datos de una etapa.
      */
     @Override
@@ -195,19 +195,9 @@ public class Etapa
         builder.append(getCampoDificultad());
         builder.append(" ");
         builder.append(getCampoDistancia());
-        
-       
+
 
         return builder.toString();
     }
-    
-    // /**
-     // * Muestra la informacion de la etapa por pantalla
-     // */
-    // public void mostrarEtapa()
-    // {
-        // System.out.println("<etapa:"+nombre+"> <dificultad:"+dificultad+"> <distancia:"+distancia+")>");
-        
-    // }
-    
+
 }

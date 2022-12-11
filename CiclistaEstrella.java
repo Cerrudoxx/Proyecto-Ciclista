@@ -1,17 +1,18 @@
 
 /**
- * Write a description of class CiclistaEstrella here.
+ * Guarda la informacion del nombre, la bicicleta, la habilidad, la energía,
+ * los resultados, el equipo y la popularidad de la clase ciclistaEstrella
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
  */
 public class CiclistaEstrella extends Ciclista
 {
   
     private int serPopular;
 
-    /**
-     * Constructor for objects of class CiclistaEstrella
+   /***
+     * Constructor de objetos de la clase CiclistaEstrella
+     * Crea un nuevo ciclistaEstrella inicializando con parametros por defecto
      */
     public CiclistaEstrella()
     {
@@ -19,8 +20,17 @@ public class CiclistaEstrella extends Ciclista
         serPopular=6;
     }
 
-     /**
-     * Constructor for objects of class CiclistaEstrella
+      /**
+     * Constructor parametrizado de objetos de la clase CiclistaEstrella
+     * Crea un nuevo ciclistaEstrella inicializando con parametros pasados como parametros
+     * 
+     * @param nombre es el nombre del ciclista
+     * @param habilidad es la habilidad del ciclista
+     * @param energia es la energía restante del ciclista
+     * @param resultado es el resultado del ciclista
+     * @param equipo es el equipo al que pertenece el ciclista
+     * @param serPopular es la popularidad del ciclista
+     * 
      */
      public CiclistaEstrella(String nombre, Habilidad habilidad, double energia, Equipo e)
      {

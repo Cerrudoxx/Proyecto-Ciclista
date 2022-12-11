@@ -1,31 +1,32 @@
 
 /**
- * Write a description of class BicicletaPrototipo here.
+ *Guarda la informacion del nombre y el peso de la bicicletaPrototipo
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
  */
 public class BicicletaPrototipo extends Bicicleta
 {
-    
 
     /**
-     * Constructor for objects of class BicicletaPrototipo
+     * Constructor de objetos de la clase BicicletaPrototipo
+     * Crea una nueva bicicletaPrototipo inicializando con parametros dados como parametros
+     * 
+     * @param nombre es el nombre de la bicicleta
+     * @param peso es el peso (en kg) de la bicicleta 
      */
     public BicicletaPrototipo(String nombre, Peso peso)
     {
-        
         super(nombre, peso);
     }
-    
-     /**
+
+    /**
      * Devuelve el tipo de bicicleta al que pertenece
      */
     @Override
-     protected String getTipoBicicleta(){
+    protected String getTipoBicicleta(){
         return "<BicicletaPrototipo: ";
     }
-    
+
     /**
      * Calcula el tiempo necesario para que el ciclista c termine la etapa e 
      * 
