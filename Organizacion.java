@@ -250,18 +250,16 @@ public class Organizacion
         int index=0;
 
         while(iteradorEtapas.hasNext()){
-
-            // Etapa e= etapas.get(index);
+            
             Etapa e= iteradorEtapas.next();
-            // System.out.println(etapas.next());
 
             cargarCiclistas();
             ordenarCiclistas();
-            //ordenarCiclistasAbandonados();
+   
             System.out.println("********************************************************************************************************");
             System.out.printf("*** " + "CARRERA<"+numCarr+"> EN ");
             System.out.println(e);
-            //e.mostrarEtapa();
+
             System.out.println("***");
 
             System.out.println("********************************************************************************************************");
@@ -303,7 +301,6 @@ public class Organizacion
         for (Map.Entry<Ciclista, Equipo> entry: ciclistasMap.entrySet()){ //int i = 0; i<ciclistasMap.size(); i++
             
             c=entry.getKey();
-            //c=ciclistas.get(i);
             r=c.getResultado(e);
             if(c.abandono()==true){
                 resultadosAbandonos.add(r);
@@ -338,7 +335,6 @@ public class Organizacion
             Ciclista c=entry.getKey();
             System.out.println("@@@ "+ "ciclista "+ numCicl + " de "+ ciclistasMap.size());
             System.out.print(c);
-            //c.mostrarCiclista();
             System.out.printf(" con bicicleta: ");
             System.out.printf("\n");
             System.out.print(c.getBicicleta());
@@ -360,14 +356,14 @@ public class Organizacion
             }
             System.out.println("+++ La energía del ciclista "+ c.getName()+" tras la carrera es "+ energia +" +++");
             System.out.println("@@@");
-            if(c.getClass() ==  new CiclistaEstrella().getClass()){
-
-                //CiclistaEstrella cE = (CiclistaEstrella) c; 
+            
+            if(c.getClass() ==  new CiclistaEstrella().getClass()){ 
+                CiclistaEstrella ce = (CiclistaEstrella) c;
                 if(tiempo<160){
-                    System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha aumentado y ahora su nivel de popularidad es de: " + c.getPopularidad() +" unidades");
+                    System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha aumentado y ahora su nivel de popularidad es de: " + ce.getPopularidad() +" unidades");
                 }
                 else{
-                    System.out.println("--- La popularidad del ciclista " + c.getName() +" ha disminuido y ahora su nivel de popularidad es de: " + c.getPopularidad() +" unidades");
+                    System.out.println("--- La popularidad del ciclista " + c.getName() +" ha disminuido y ahora su nivel de popularidad es de: " + ce.getPopularidad() +" unidades");
                 }
                 System.out.println("@@@");
             }
@@ -388,7 +384,6 @@ public class Organizacion
         cargarCiclistas();
         setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), false);
         ordenarCiclistas();
-        //ordenarCiclistasAbandonados();
         int pos=1;
         for(Map.Entry<Ciclista, Equipo> entry: ciclistasMap.entrySet()){//(Ciclista c: ciclistas)
             Ciclista c=entry.getKey();
@@ -422,10 +417,8 @@ public class Organizacion
         setCompEquipo(new ComparadorEquipoTotalMinutosAcumulados(), true);
         ordenarEquipos();
         int posEquip=1;
-        //Set<Map.Entry<Equipo, List<Ciclista>>> entrySet = ciclistasEquipo.entrySet();
-        
-        for (Equipo e: equipos){ // Map.Entry<Equipo, List<Ciclista>> currentEntry: entrySet
-            //Equipo e=currentEntry.getKey(); 
+      
+        for (Equipo e: equipos){ 
             double tiempoMedia=Math.round((e.tiempoMedio())*100d)/100d;
             System.out.println("@@@ Posicion("+posEquip+ ") " +e.getName()+" con " +tiempoMedia+" minutos de media @@@");
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ");
@@ -462,10 +455,8 @@ public class Organizacion
      * Devuelve un ciclista a un equipo después de que haya corrido la carrera con la información actualizada si su energía es mayor que 0
      */
     public void devolverCiclista(){
-        // int index=ciclistasMap.size();
-        //int index2=ciclistasAbandonadosMap.size();
-        for(Map.Entry<Ciclista, Equipo> entry: ciclistasMap.entrySet()){//int i=0; i<index; i++){
-    
+      
+        for(Map.Entry<Ciclista, Equipo> entry: ciclistasMap.entrySet()){
             entry.getValue().anadirCiclista(entry.getKey());
             
             entry.getValue().anadirBicicleta(entry.getKey().getBicicleta());
@@ -474,7 +465,7 @@ public class Organizacion
         
         
         for(Map.Entry<Ciclista, Equipo> entry: ciclistasAbandonadosMap.entrySet()){
-           // Ciclista c = ciclistasAbandonados.get(0);
+          
             entry.getValue().anadirCiclista(entry.getKey()); 
             entry.getValue().anadirBicicleta(entry.getKey().getBicicleta());
             
@@ -494,7 +485,6 @@ public class Organizacion
         for(int i=0; i<index; i++){
             Ciclista c= e.enviarAEtapa();
             ciclistasMap.put(c, e);
-            //ciclistas.add(c);
         }
         for(int j=0; j<index2; j++){
             if(ciclistasAbandonadosMap.isEmpty()){
@@ -502,7 +492,6 @@ public class Organizacion
             }
             Ciclista c= e.enviarAEtapaAbandono();
             ciclistasAbandonadosMap.put(c, e);
-            //ciclistasAbandonados.add(c);
         }
 
     }
@@ -528,7 +517,6 @@ public class Organizacion
         for (Map.Entry<Ciclista, Equipo> entry: ciclistasMap.entrySet()){//Ciclista c: ciclistas){
             Ciclista c=entry.getKey();
             System.out.println(c);
-            //c.mostrarCiclista();
         }
     }
 }

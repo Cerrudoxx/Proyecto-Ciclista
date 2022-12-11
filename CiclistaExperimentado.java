@@ -7,10 +7,16 @@
  */
 public class CiclistaExperimentado extends Ciclista
 {
-    // instance variables - replace the example below with your own
-    
-
-    
+    /**
+     * Constructor parametrizado de objetos de la clase CiclistaExperimentado
+     * Crea un nuevo ciclistaExperimentado inicializando con parametros pasados por teclado
+     * 
+     * @param nombre es el nombre del ciclista
+     * @param habilidad es la habilidad del ciclista
+     * @param energia es la energía restante del ciclista
+     * @param equipo es el equipo al que pertenece el ciclista
+     * 
+     */
     public CiclistaExperimentado(String nombre, Habilidad habilidad, double energia, Equipo e)
     {
       
@@ -25,27 +31,15 @@ public class CiclistaExperimentado extends Ciclista
     protected String getFormattedContent(){
          StringBuilder builder = new StringBuilder();
          builder.append("<ciclistaExperimentado: ");
-         
-         // builder.append("<popularidad: ");
-         // builder.append(getPopularidad());
-         // builder.append(">");
          return builder.toString();
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Calcula la destreza de un cilista
      */
     @Override
     public void calcularDestreza(){
     super.setDestreza(((super.getHabilidad() + 4)/130)*10);    
     }
-    
-    
-    @Override
-    public int getPopularidad(){
-        return 0;
-    }
+
 }
