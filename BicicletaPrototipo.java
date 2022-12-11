@@ -35,7 +35,7 @@ public class BicicletaPrototipo extends Bicicleta
     public double calcularTiempoNecesario(Ciclista c, Etapa e)
     {
         c.calcularDestreza();
-        double tiempo=(e.getDistancia()/calcularVelocidad(c, e)*c.getDestreza()) ;
+        double tiempo=(e.getDistancia()/(calcularVelocidad(c, e)*c.getDestreza())) ;
         return tiempo;        
     }
 }
