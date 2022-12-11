@@ -30,7 +30,8 @@ public class BicicletaPrototipo extends Bicicleta
     @Override
     public double calcularTiempoNecesario(Ciclista c, Etapa e)
     {
-        double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*60 ;
+        c.calcularDestreza();
+        double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*c.getDestreza() ;
         return tiempo;        
     }
 }
