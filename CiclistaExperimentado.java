@@ -40,7 +40,7 @@ public class CiclistaExperimentado extends Ciclista
      */
     @Override
     public void calcularDestreza(){
-    super.setDestreza(((super.getHabilidad() + 4)/130)*10);    
+    super.setDestreza((int)((super.getHabilidad() + 4)/130)*10);    
     }
     
     
