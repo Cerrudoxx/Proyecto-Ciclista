@@ -255,7 +255,7 @@ public class Organizacion
         for(Resultados res: resultados){
 
             double tiempoCiclista=Math.round((res.getCiclista().getTiempoResultado(e))*100d) / 100d;
-            System.out.println("@@@ Posicion("+pos+") "+res.getCiclista().getName()+" - Tiempo: "+tiempoCiclista+" minutos @@@");
+            System.out.println("@@@ Posición("+pos+"): "+res.getCiclista().getName()+" - Tiempo: "+tiempoCiclista+" minutos @@@");
             pos++;
 
         }
@@ -289,8 +289,9 @@ public class Organizacion
             System.out.println("+++ Con estas condiciones el ciclista "+ c.getName()+ " con la bicicleta "+c.getBicicleta().getName()+" alcanza una velocidad de "+ velocidad +" km/hora +++");
             if(c.abandono()==true){
                 double tiempoEnCarrera=tiempo+energia;
+                double tiempoEnCarreraRedondeado=Math.round((tiempoEnCarrera)*100d) / 100d;
                 System.out.println("¡¡¡ El ciclista " + c.getName() + " se quedó sin energia a falta de " + Math.abs(energia) +" minutos para terminar !!!");
-                System.out.println("¡¡¡ En el momento de quedarse sin energia llevaba en carrera "+ tiempoEnCarrera +" minutos !!!");
+                System.out.println("¡¡¡ En el momento de quedarse sin energia llevaba en carrera "+ tiempoEnCarreraRedondeado +" minutos !!!");
             }
             else{
                 System.out.println("+++ "+ c.getName()+ " termina la etapa en "+ tiempo +" minutos +++");
