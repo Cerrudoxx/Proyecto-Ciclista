@@ -217,7 +217,7 @@ public class Organizacion
             //Equipo e=currentEntry.getKey();
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-            System.out.println("%%% " + e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+ tiempoMedio(e) +" %%% ");
+            System.out.println("%%% " + e.getName()+" %%% "+"Media Minutos de Ciclistas sin abandonar "+ e.tiempoMedio() +" %%% ");
             System.out.println(" ");
             e.mostrarCiclistasEquipo();
         }
@@ -238,20 +238,7 @@ public class Organizacion
         System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
     }
 
-    /**
-     * Calcula la media de minutos sin abandonar de los ciclistas de un equipo
-     * 
-     * @param e es el equipo del que se quiere calcular
-     * 
-     * @return el resultado de calcular la media de minutos sin abandonar de los ciclistas de un equipo
-     */
-    private double tiempoMedio(Equipo e){
-        double tMedio=0;
-        if(e.getNumeroCiclistas()!=0){
-            tMedio=e.tiempoTotalAcumuladoCiclistas()/e.getNumeroCiclistas();
-        }
-        return tMedio;
-    }
+    
 
     /**
      * Permite llevar a cabo tadas las carreras y mostrar su clasificación
@@ -451,7 +438,7 @@ public class Organizacion
         
         for (Equipo e: equipos){ // Map.Entry<Equipo, List<Ciclista>> currentEntry: entrySet
             //Equipo e=currentEntry.getKey(); 
-            double tiempoMedia=Math.round((tiempoMedio(e))*100d)/100d;
+            double tiempoMedia=Math.round((e.tiempoMedio())*100d)/100d;
             System.out.println("@@@ Posicion("+posEquip+ ") " +e.getName()+" con " +tiempoMedia+" minutos de media @@@");
             System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ");
             System.out.println("%%% "+ e.getName()+ " %%% Media Minutos de Ciclistas sin abandonar "+tiempoMedia+" %%%");

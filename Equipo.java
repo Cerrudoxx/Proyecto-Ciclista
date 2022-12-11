@@ -304,5 +304,20 @@ public class Equipo
         }
 
     }
+    
+    /**
+     * Calcula la media de minutos sin abandonar de los ciclistas de un equipo
+     * 
+     * @param e es el equipo del que se quiere calcular
+     * 
+     * @return el resultado de calcular la media de minutos sin abandonar de los ciclistas de un equipo
+     */
+    public double tiempoMedio(){
+        double tMedio=0;
+        if(getNumeroCiclistas()!=0){
+            tMedio=tiempoTotalAcumuladoCiclistas()/getNumeroCiclistas();
+        }
+        return tMedio;
+    }
 
 }
