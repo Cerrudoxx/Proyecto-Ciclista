@@ -256,17 +256,17 @@ public class Organizacion
             cargarCiclistas();
             ordenarCiclistas();
    
-            System.out.println("************************************");
-            System.out.printf("* " + "CARRERA<"+numCarr+"> EN ");
+            System.out.println("********************************************************************************************************");
+            System.out.printf("*** " + "CARRERA<"+numCarr+"> EN ");
             System.out.println(e);
 
-            System.out.println("*");
+            System.out.println("***");
 
-            System.out.println("************************************");
-            System.out.println("************************************");
+            System.out.println("********************************************************************************************************");
+            System.out.println("********************************************************************************************************");
 
-            System.out.println("*********** Ciclistas que van a competir en "+ e.getName()+" ************");
-            System.out.println("************************************");
+            System.out.println("******************************** Ciclistas que van a competir en "+ e.getName()+" *******************************");
+            System.out.println("********************************************************************************************************");
 
             mostrarCiclistas();
 
@@ -376,11 +376,11 @@ public class Organizacion
      * Muestra por pantalla la clasificación final del campeonato después de que este haya concluido y los ciclistas que han abandonado la competición
      */
     private void mostrarClasificacionFinal(){
-        System.out.println("******************");
-        System.out.println("****** FIN DEL CAMPEONATO ******");
-        System.out.println("******************");
-        System.out.println("**** CLASIFICACIÓN FINAL DE CICLISTAS ****");
-        System.out.println("******************");
+        System.out.println("****************************************************");
+        System.out.println("**************** FIN DEL CAMPEONATO ****************");
+        System.out.println("****************************************************");
+        System.out.println("********** CLASIFICACIÓN FINAL DE CICLISTAS **********");
+        System.out.println("****************************************************");
         cargarCiclistas();
         setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), false);
         ordenarCiclistas();
@@ -395,9 +395,9 @@ public class Organizacion
         }
 
         if(!(ciclistasAbandonadosMap.isEmpty())){
-            System.out.println("******************");
-            System.out.println("**** CICLISTAS QUE ABANDONARON ****");
-            System.out.println("******************");
+            System.out.println("****************************************************");
+            System.out.println("********** CICLISTAS QUE ABANDONARON **********");
+            System.out.println("****************************************************");
             ordenarCiclistasAbandonados();
             for(Map.Entry<Ciclista, Equipo> entry: ciclistasAbandonadosMap.entrySet()){
                 double tiempoTotalAnulado=Math.round((entry.getKey().tiempoTotalAcumulado())*100d) / 100d;
@@ -411,9 +411,9 @@ public class Organizacion
 
         devolverCiclista();
 
-        System.out.println("******************");
-        System.out.println("**** CLASIFICACIÓN FINAL DE EQUIPOS ****");
-        System.out.println("******************");
+        System.out.println("****************************************************");
+        System.out.println("********** CLASIFICACIÓN FINAL DE EQUIPOS **********");
+        System.out.println("****************************************************");
         setCompEquipo(new ComparadorEquipoTotalMinutosAcumulados(), true);
         ordenarEquipos();
         int posEquip=1;
