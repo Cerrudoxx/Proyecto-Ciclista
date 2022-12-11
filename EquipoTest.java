@@ -30,16 +30,6 @@ public class EquipoTest
     {
     }
 
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
-    }
-
     @Test
     public void TestTiempoMedio()
     {
@@ -64,5 +54,17 @@ public class EquipoTest
         assertEquals(475.5275, equipo1.tiempoTotalAcumuladoCiclistas(), 0.1);
         assertEquals(237.7675, equipo1.tiempoMedio(), 0.1);
     }
+    
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @AfterEach
+    public void tearDown()
+    {
+    }
+
+    
 }
 
