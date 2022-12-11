@@ -475,10 +475,10 @@ public abstract class Ciclista
      */
     public abstract void calcularDestreza();
     
-    /**
-     * Devuelve la popularidad de un ciclista
-     */
-    public abstract int getPopularidad();
+    // /**
+     // * Devuelve la popularidad de un ciclista
+     // */
+    // public abstract int getPopularidad();
    
 }
    

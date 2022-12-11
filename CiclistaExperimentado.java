@@ -44,8 +44,8 @@ public class CiclistaExperimentado extends Ciclista
     }
     
     
-    @Override
-    public int getPopularidad(){
-        return 0;
-    }
+    // @Override
+    // public int getPopularidad(){
+        // return 0;
+    // }
 }

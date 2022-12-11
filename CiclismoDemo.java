@@ -1,5 +1,6 @@
 import java.lang.*;
 import java.util.*;
+import java.io.*;
 /**
  * Main simulation class. 
  * First, initial data are loaded. 
@@ -12,7 +13,6 @@ public class CiclismoDemo
 {
     
     public static void main(String[] args)  throws java.io.IOException{
-        
         Organizacion organizacion=new Organizacion(new ComparadorEtapaDificultad());
         
         //Descomentar de las dos líneas siguientes, la prueba que se quiera ejecutar
@@ -25,6 +25,6 @@ public class CiclismoDemo
     
         organizacion.gestionarCampeonato();
         
-    }    
+    }     
 
 }
