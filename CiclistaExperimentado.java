@@ -18,7 +18,9 @@ public class CiclistaExperimentado extends Ciclista
         
     }
 
-    
+    /**
+     * Añade a la cadena de caracteres el tipo de ciclista al que pertenece
+     */
      @Override
     protected String getFormattedContent(){
          StringBuilder builder = new StringBuilder();

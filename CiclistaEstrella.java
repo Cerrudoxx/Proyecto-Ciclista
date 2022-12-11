@@ -19,33 +19,42 @@ public class CiclistaEstrella extends Ciclista
         serPopular=6;
     }
 
-    /**
+     /**
      * Constructor for objects of class CiclistaEstrella
      */
-    public CiclistaEstrella(String nombre, Habilidad habilidad, double energia, Equipo e)
-    {
+     public CiclistaEstrella(String nombre, Habilidad habilidad, double energia, Equipo e)
+     {
 
         super(nombre, habilidad, energia, e);
         serPopular=6;
-    }
+     }
 
-    public int getPopularidad(){
-        return serPopular;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
+     /**
+     * Devuelve la popularidad de un ciclista
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return popularidad del ciclista
      */
-    @Override
-    public void calcularDestreza(){
-        super.setDestreza(((super.getHabilidad() + 6)/140)*10);    
-    }
+     public int getPopularidad(){
+        return serPopular;
+     }
 
-    @Override
-    public boolean equals (Ciclista c) {
+     /**
+     * Calcula la destreza de un cilista
+     */
+     @Override
+     public void calcularDestreza(){
+        super.setDestreza(((super.getHabilidad() + 6)/140)*10);    
+     }
+
+     /**
+     * Devuelve true si nos encontramos ante el mismo ciclista y false en caso contrario.
+     * 
+     * @param c es el ciclista con el que queremos comparar
+     * 
+     * @return true si ambos ciclistas son el mismo
+     */
+     @Override
+     public boolean equals (Ciclista c) {
         if(this == c) {
             return true;
         }
@@ -56,10 +65,15 @@ public class CiclistaEstrella extends Ciclista
         
         CiclistaEstrella other = (CiclistaEstrella) c;
         return  (super.equals(other) &&  getPopularidad()==other.getPopularidad());
-    }
+     }
     
+     /**
+     * devuelve un valor entero que representa de forma inequívoca a un ciclista.
+     * 
+     * @return el valor que representa al ciclista
+     */
      @Override
-    public int hashCode ()
+     public int hashCode ()
      {
         int result = 17;
         
@@ -68,7 +82,9 @@ public class CiclistaEstrella extends Ciclista
         return result;
      }
 
-
+    /**
+     * Añade a la cadena de caracteres el tipo de ciclista al que pertenece
+     */
     @Override
     protected String getFormattedContent(){
         StringBuilder builder = new StringBuilder();
@@ -81,6 +97,9 @@ public class CiclistaEstrella extends Ciclista
         return builder.toString();
     }
 
+    /**
+     * Transforma en una cadena de caracteres todos los datos de un ciclista.
+     */
     @Override
     public String toString(){
 

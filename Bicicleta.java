@@ -83,37 +83,48 @@ public class Bicicleta
         this.peso=peso;
     }
 
+    /**
+     * Devuelve true si nos encontramos ante la misma bicicleta y false en caso contrario.
+     * 
+     * @param b es la bicicleta con la que queremos comparar
+     * 
+     * @return true si ambas bicicletas son la misma
+     */
     public boolean equals (Bicicleta b) {
         if (this == b) {
             return true;
         }
-        
+
         if (! (b instanceof Bicicleta)) {
             return false; 
         }
-        
+
         Bicicleta other = (Bicicleta) b;
         return ((getName().equals(other.getName())) &&
-        (getCampoPeso().equals(other.getCampoPeso())));
+            (getCampoPeso().equals(other.getCampoPeso())));
     }
-    
+
+    /**
+     * devuelve un valor entero que representa de forma inequívoca a una bicicleta.
+     * 
+     * @return el valor que representa a la bicicleta
+     */
     @Override
     public int hashCode ()
-     {
+    {
         int result = 17;
         result = 7 * result + getName().hashCode();
         result = 13 * result + getCampoPeso().hashCode();
         return result;
-     }
+    }
 
-
-        /**
-         * Establece el valor del campo peso al dado como entrada
-         * 
-         * @param  peso es el nuevo valor del campo peso
-         */
-        public double calcularVelocidad(Ciclista c, Etapa e)
-        {
+    /**
+     * Establece el valor del campo peso al dado como entrada
+     * 
+     * @param  peso es el nuevo valor del campo peso
+     */
+    public double calcularVelocidad(Ciclista c, Etapa e)
+    {
         double velocidad= (c.getHabilidad()*100)/(getPeso()*e.getDificultad());
         return velocidad;
     }
@@ -125,15 +136,14 @@ public class Bicicleta
      */
     public double calcularTiempoNecesario(Ciclista c, Etapa e)
     {
-        
+
         double tiempo=(e.getDistancia()/calcularVelocidad(c, e))*60 ;
         return tiempo;              
     }
 
-    // public String toString(){
-        // return "<bicicleta: "+getName()+"> <peso: "+getPeso()+"> ";
-    // }
-    
+    /**
+     * Transforma en una cadena de caracteres todos los datos de una bicicleta.
+     */
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
@@ -145,14 +155,17 @@ public class Bicicleta
         return builder.toString();
     }
 
+    /**
+     * Devuelve el tipo de bicicleta al que pertenece
+     */
     protected String getTipoBicicleta(){
         return "<Bicicleta: ";
     }
     // /**
-     // * Muestra la informacion de la bicicleta por pantalla
-     // */
+    // * Muestra la informacion de la bicicleta por pantalla
+    // */
     // public void mostrarBicicleta(){
-        // System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
+    // System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
     // }
 
 }

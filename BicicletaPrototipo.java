@@ -17,6 +17,10 @@ public class BicicletaPrototipo extends Bicicleta
         // initialise instance variables
         super(nombre, peso);
     }
+    
+     /**
+     * Devuelve el tipo de bicicleta al que pertenece
+     */
     @Override
      protected String getTipoBicicleta(){
         return "<BicicletaPrototipo: ";

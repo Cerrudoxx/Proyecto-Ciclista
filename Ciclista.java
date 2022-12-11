@@ -206,6 +206,13 @@ public abstract class Ciclista
         
     }
     
+    /**
+     * Devuelve true si nos encontramos ante el mismo ciclista y false en caso contrario.
+     * 
+     * @param c es el ciclista con el que queremos comparar
+     * 
+     * @return true si ambos ciclistas son el mismo
+     */
   public boolean equals (Ciclista c) {
         if (this == c) {
             return true;
@@ -222,6 +229,11 @@ public abstract class Ciclista
         getEnergia()==other.getEnergia());
     }
      
+    /**
+     * devuelve un valor entero que representa de forma inequívoca a un ciclista.
+     * 
+     * @return el valor que representa al ciclista
+     */
     @Override
     public int hashCode ()
      {
@@ -235,6 +247,7 @@ public abstract class Ciclista
     /**
      * Recibe una nueva bicicleta del equipo y se la cambia al ciclista
      * 
+     * @param b es la bicicleta que se le va a cambiar
      */
     public void cambiarBicicletaEquipo(Bicicleta b)
     {
@@ -431,6 +444,9 @@ public abstract class Ciclista
         return Math.round((tiempoTotalAcumulado())*100d) / 100d;
     }
     
+    /**
+     * Transforma en una cadena de caracteres todos los datos de un ciclista.
+     */
     @Override
     public String toString(){
         
@@ -449,10 +465,19 @@ public abstract class Ciclista
         return builder.toString();
     }
     
+    /**
+     * Añade a la cadena de caracteres el tipo de ciclista al que pertenece
+     */
     protected abstract String getFormattedContent();
     
+    /**
+     * Calcula la destreza de un cilista
+     */
     public abstract void calcularDestreza();
     
+    /**
+     * Devuelve la popularidad de un ciclista
+     */
     public abstract int getPopularidad();
    
 }
