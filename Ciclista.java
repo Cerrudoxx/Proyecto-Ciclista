@@ -239,6 +239,8 @@ public abstract class Ciclista
         getHabilidad()==other.getHabilidad() && 
         getEnergia()==other.getEnergia());
     }
+    
+     /**
      
     /**
      * devuelve un valor entero que representa de forma inequívoca a un ciclista.

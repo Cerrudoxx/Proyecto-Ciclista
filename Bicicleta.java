@@ -101,7 +101,7 @@ public class Bicicleta
 
         Bicicleta other = (Bicicleta) b;
         return ((getName().equals(other.getName())) &&
-            (getCampoPeso().equals(other.getCampoPeso())));
+            getPeso()==other.getPeso());
     }
 
     /**
@@ -114,7 +114,7 @@ public class Bicicleta
     {
         int result = 17;
         result = 7 * result + getName().hashCode();
-        result = 13 * result + getCampoPeso().hashCode();
+        result = 13 * result +(int) getPeso();
         return result;
     }
 

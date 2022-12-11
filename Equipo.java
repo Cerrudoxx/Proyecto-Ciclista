@@ -109,7 +109,7 @@ public class Equipo
 
         Equipo other = (Equipo) eq;
 
-        return (getName()==other.getName());
+        return (getName().equals(other.getName()));
     }
 
     /**

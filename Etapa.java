@@ -164,8 +164,8 @@ public class Etapa
         Etapa other = (Etapa) e;
 
         return (getName().equals(other.getName()) &&
-            (getCampoDificultad()==other.getCampoDificultad()) &&
-            (getCampoDistancia()==other.getCampoDistancia()));
+            getDificultad()==other.getDificultad() &&
+            getDistancia()==other.getDistancia());
     }
 
     /**
