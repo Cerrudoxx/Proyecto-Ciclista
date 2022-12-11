@@ -55,6 +55,24 @@ public class EquipoTest
         assertEquals(237.7675, equipo1.tiempoMedio(), 0.1);
     }
     
+    @Test
+    public void TestEnviarAEtapa()
+    {
+        ComparadorCiclistasEnergia comparadcic = new ComparadorCiclistasEnergia();
+        ComparadorBicisPeso comparadbic = new ComparadorBicisPeso();
+        Equipo equipo1 = new Equipo("DSM Women", comparadcic, true, comparadbic, true);
+        BicicletaRapida biciclet1 = new BicicletaRapida("SCOTT CONTESSA ADDICT eRIDE 15", Peso.LIGERA, 0.3);
+        Bicicleta biciclet2 = new Bicicleta("SCOTT CONTESSA ADDICT RC 15", Peso.PESADA);
+        CiclistaNovato ciclista1 = new CiclistaNovato("WIEBES", Habilidad.NORMAL, 1190, equipo1);
+        CiclistaEstrella ciclista2 = new CiclistaEstrella("LIPPERT", Habilidad.NORMAL, 1160, equipo1);
+        equipo1.anadirBicicleta(biciclet1);
+        equipo1.anadirBicicleta(biciclet2);
+        equipo1.anadirCiclista(ciclista1);
+        equipo1.anadirCiclista(ciclista2);
+        assertEquals(ciclista2, equipo1.enviarAEtapa());
+        assertEquals(1, equipo1.getNumeroCiclistas());
+    }
+    
     /**
      * Tears down the test fixture.
      *
@@ -66,5 +84,8 @@ public class EquipoTest
     }
 
     
+
+    
 }
+
 

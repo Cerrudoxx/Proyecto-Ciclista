@@ -31,17 +31,7 @@ public class BicicletaTest
         
     }
 
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @AfterEach
-    public void tearDown()
-    {
-    }
-
-    @Test
+     @Test
     public void TestCalcularVelocidad()
     {
         ComparadorBicisPeso comparad1 = new ComparadorBicisPeso();
@@ -65,6 +55,18 @@ public class BicicletaTest
         CiclistaExperimentado ciclista1 = new CiclistaExperimentado("LONGO-BORGHINI", Habilidad.NORMAL, 1175, equipo1);
         assertEquals(148.8423, biciclet1.calcularTiempoNecesario(ciclista1, etapa1), 0.1);
     }
+    
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @AfterEach
+    public void tearDown()
+    {
+    }
+
+   
 }
 
 
