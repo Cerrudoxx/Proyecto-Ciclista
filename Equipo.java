@@ -164,14 +164,15 @@ public class Equipo
     public void ordenarCiclistas()
     {
        if(ordenCiclista){
-       // ciclistasEquipoBicicletas=new TreeMap<>(compCiclista);
-       // ciclistasEquipoBicicletasAbandono=new TreeMap<>();
         Collections.sort(ciclistasEquipo, compCiclista);
     }
         else{
         Collections.sort(ciclistasEquipo, Collections.reverseOrder(compCiclista));
     }
     }    
+    
+    
+        
     
     /**
      * Ordena las bicicletas del equipo (se ordenará por el campo comparador al que se llame)
@@ -184,6 +185,8 @@ public class Equipo
         else
         Collections.sort(bicicletasEquipo, Collections.reverseOrder(compBicicleta));
     }
+    
+    
     
     /**
      * Calcula el tiempo acumulado de los ciclistas de un equipo
@@ -213,6 +216,7 @@ public class Equipo
         asignarBici(c);
         ciclistasEquipo.remove (0);
         }
+        
         return c;
         
     }
@@ -230,6 +234,7 @@ public class Equipo
         c=ciclistasAbandonado.get(0);  
         ciclistasAbandonado.remove(0);
     }
+    
      return c;
     } 
     
@@ -247,6 +252,7 @@ public class Equipo
         }
         
         ordenarCiclistas();
+        
     }
   
     /**
