@@ -138,43 +138,43 @@ public class Organizacion
             //Collections.sort(ciclistas, Collections.reverseOrder(compCiclistasCarrera));
         }
         
-        if(!ciclistasAbandonadosMap.isEmpty()){
-            if(ordenCiclistas==false){
-                TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(compCiclistasCarrera);
-  
-             sorted.putAll(ciclistasAbandonadosMap);
-             
-             ciclistasAbandonadosMap=sorted;
-            }
-            else{
-                TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
-  
-            sorted.putAll(ciclistasAbandonadosMap);
-            
-             ciclistasAbandonadosMap=sorted;
-            }
-        }
-        
-    }
-    
-    // private void ordenarCiclistasAbandonados(){
         // if(!ciclistasAbandonadosMap.isEmpty()){
             // if(ordenCiclistas==false){
                 // TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(compCiclistasCarrera);
   
              // sorted.putAll(ciclistasAbandonadosMap);
-             // //sorted.putAll(ciclistasAbandonadosMap);
+             
              // ciclistasAbandonadosMap=sorted;
             // }
             // else{
                 // TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
   
             // sorted.putAll(ciclistasAbandonadosMap);
-             // //sorted.putAll(ciclistasAbandonadosMap);
+            
              // ciclistasAbandonadosMap=sorted;
             // }
         // }
-    // }
+        
+    }
+    
+    private void ordenarCiclistasAbandonados(){
+       
+            if(ordenCiclistas==false){
+                TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(compCiclistasCarrera);
+  
+             sorted.putAll(ciclistasAbandonadosMap);
+             //sorted.putAll(ciclistasAbandonadosMap);
+             ciclistasAbandonadosMap=sorted;
+            }
+            else{
+                TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
+  
+            sorted.putAll(ciclistasAbandonadosMap);
+             //sorted.putAll(ciclistasAbandonadosMap);
+             ciclistasAbandonadosMap=sorted;
+            }
+        
+    }
 
     /**
      * Ordena los equipos según el comparador que se haya definido
@@ -522,6 +522,9 @@ public class Organizacion
             //ciclistas.add(c);
         }
         for(int j=0; j<index2; j++){
+            if(ciclistasAbandonadosMap.isEmpty()){
+                ordenarCiclistasAbandonados();
+            }
             Ciclista c= e.enviarAEtapaAbandono();
             ciclistasAbandonadosMap.put(c, e);
             //ciclistasAbandonados.add(c);
