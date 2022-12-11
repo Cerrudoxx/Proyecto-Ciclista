@@ -408,12 +408,16 @@ public abstract class Ciclista
         }
     }
     
- 
-    public double tiempo(Etapa etp){
+      /**
+     * Calcula el tiempo que tarda un ciclista en una etapa 
+     * 
+     * @param etp es la etapa de la que se quiere obtener el tiempo necesario
+     */
+     public double tiempo(Etapa etp){
         return bicicleta.calcularTiempoNecesario(this, etp);
     }
+    
     /**
-     * 
      * Muestra los resultados del ciclista.
      * 
      */
@@ -423,19 +427,7 @@ public abstract class Ciclista
             System.out.println("Carrera("+r.getEtapa().getName()+") - Tiempo: " + tiempo+" minutos");
         }
     }
-     
-    // /**
-     // * 
-     // * Muestra el ciclista por pantalla.
-     // * 
-     // */
-    // public void mostrarCiclista(){
-        // double energiaRedondeada=Math.round((energia)*100d) / 100d;
-        // double tiempoTotal=Math.round((tiempoTotalAcumulado())*100d) / 100d;
-
-        // System.out.println("<ciclista:"+nombre+"> <energía:"+energiaRedondeada+"> <habilidad: "+habilidad+"> <tiempo acumulado sin abandonar:"+tiempoTotal+ "> <abandonado:"+abandono+">");
-    // }
-    
+  
     private double redondearEnergia(){
         return Math.round((energia)*100d) / 100d;
     }
@@ -475,10 +467,5 @@ public abstract class Ciclista
      */
     public abstract void calcularDestreza();
     
-    // /**
-     // * Devuelve la popularidad de un ciclista
-     // */
-    // public abstract int getPopularidad();
-   
 }
    

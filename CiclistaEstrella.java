@@ -7,7 +7,7 @@
  */
 public class CiclistaEstrella extends Ciclista
 {
-    // instance variables - replace the example below with your own
+  
     private int serPopular;
 
     /**
@@ -90,10 +90,6 @@ public class CiclistaEstrella extends Ciclista
         StringBuilder builder = new StringBuilder();
         builder.append("<ciclistaEstrella: ");
 
-        //builder.append(super.toString());
-        // builder.append("<popularidad: ");
-        // builder.append(getPopularidad());
-        // builder.append(">");
         return builder.toString();
     }
 
@@ -111,7 +107,11 @@ public class CiclistaEstrella extends Ciclista
         return builder.toString();
     }
 
-    
+    /**
+     * Calcula el tiempo que tarda un ciclista en una etapa y actualiza la popularidad
+     * 
+     * @param etp es la etapa de la que se quiere obtener el tiempo necesario
+     */
     @Override
     public double tiempo(Etapa etp){
         double tiempo = super.tiempo(etp);
@@ -124,15 +124,5 @@ public class CiclistaEstrella extends Ciclista
          }
          return tiempo;
     }
-    // @Override
-    // public double getTiempoResultado(Etapa E){
-        // double resultado=super.getTiempoResultado(E);
-        // if(resultado<160){
-            // this.serPopular=this.serPopular+4;
-        // }
-        // else{
-            // this.serPopular--;
-        // }
-        // return resultado;
-    // }
+    
 }
