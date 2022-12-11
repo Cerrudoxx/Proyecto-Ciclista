@@ -17,7 +17,7 @@ public abstract class Ciclista
     private ArrayList<Resultados> resultado;
     private Equipo equipo;
     private boolean abandono;
-    private int destreza;
+    private double  destreza;
     
 
     /**
@@ -135,7 +135,7 @@ public abstract class Ciclista
         return destreza;
     }
     
-    public void setDestreza(int d){
+    public void setDestreza(double d){
         destreza=d;
     }
     

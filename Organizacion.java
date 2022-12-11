@@ -123,21 +123,58 @@ public class Organizacion
              TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(compCiclistasCarrera);
   
              sorted.putAll(ciclistasMap);
-             sorted.putAll(ciclistasAbandonadosMap);
              ciclistasMap=sorted;
-             ciclistasAbandonadosMap=sorted;
+             // sorted.putAll(ciclistasAbandonadosMap);
+             // ciclistasAbandonadosMap=sorted;
            // Collections.sort(ciclistas, compCiclistasCarrera);
         }
         else{
             TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
   
             sorted.putAll(ciclistasMap);
-             sorted.putAll(ciclistasAbandonadosMap);
              ciclistasMap=sorted;
-             ciclistasAbandonadosMap=sorted;
+             // sorted.putAll(ciclistasAbandonadosMap);
+             // ciclistasAbandonadosMap=sorted;
             //Collections.sort(ciclistas, Collections.reverseOrder(compCiclistasCarrera));
         }
+        
+        if(!ciclistasAbandonadosMap.isEmpty()){
+            if(ordenCiclistas==false){
+                TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(compCiclistasCarrera);
+  
+             sorted.putAll(ciclistasAbandonadosMap);
+             
+             ciclistasAbandonadosMap=sorted;
+            }
+            else{
+                TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
+  
+            sorted.putAll(ciclistasAbandonadosMap);
+            
+             ciclistasAbandonadosMap=sorted;
+            }
+        }
+        
     }
+    
+    // private void ordenarCiclistasAbandonados(){
+        // if(!ciclistasAbandonadosMap.isEmpty()){
+            // if(ordenCiclistas==false){
+                // TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(compCiclistasCarrera);
+  
+             // sorted.putAll(ciclistasAbandonadosMap);
+             // //sorted.putAll(ciclistasAbandonadosMap);
+             // ciclistasAbandonadosMap=sorted;
+            // }
+            // else{
+                // TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
+  
+            // sorted.putAll(ciclistasAbandonadosMap);
+             // //sorted.putAll(ciclistasAbandonadosMap);
+             // ciclistasAbandonadosMap=sorted;
+            // }
+        // }
+    // }
 
     /**
      * Ordena los equipos según el comparador que se haya definido
@@ -224,6 +261,7 @@ public class Organizacion
         ordenarEquipos();
         setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), true);
         ordenarCiclistas();
+        //ordenarCiclistasAbandonados();
         mostrarEtapas();
         mostrarEquipos();
         hacerCarreras();
@@ -246,6 +284,7 @@ public class Organizacion
 
             cargarCiclistas();
             ordenarCiclistas();
+            //ordenarCiclistasAbandonados();
             System.out.println("********************************************************************************************************");
             System.out.printf("*** " + "CARRERA<"+numCarr+"> EN ");
             System.out.println(e);
@@ -375,6 +414,7 @@ public class Organizacion
         cargarCiclistas();
         setCompCiclistas(new ComparadorCiclistasTotalMinutosAcumulados(), false);
         ordenarCiclistas();
+        //ordenarCiclistasAbandonados();
         int pos=1;
         for(Map.Entry<Ciclista, Equipo> entry: ciclistasMap.entrySet()){//(Ciclista c: ciclistas)
             Ciclista c=entry.getKey();
@@ -385,7 +425,7 @@ public class Organizacion
             pos++;
         }
 
-        if(!ciclistasAbandonadosMap.isEmpty()){
+        if(!(ciclistasAbandonadosMap.isEmpty())){
             System.out.println("****************************************************");
             System.out.println("********** CICLISTAS QUE ABANDONARON **********");
             System.out.println("****************************************************");
