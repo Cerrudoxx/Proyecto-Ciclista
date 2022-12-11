@@ -21,9 +21,6 @@ public class Equipo
 {  
     private String nombre;
     
-    //private Map<Ciclista,Bicicleta> ciclistasEquipoBicicletas;
-    
-    //private Map<Ciclista,Bicicleta> ciclistasEquipoBicicletasAbandono;
     
     private ArrayList<Ciclista> ciclistasEquipo;
     
@@ -49,8 +46,7 @@ public class Equipo
     {
         nombre=" ";
         
-        // ciclistasEquipoBicicletas=new TreeMap<>();
-        // ciclistasEquipoBicicletasAbandono=new TreeMap<>();
+        
         ciclistasEquipo = new ArrayList<Ciclista>();
         ciclistasAbandonado= new ArrayList<Ciclista>();
         bicicletasEquipo= new ArrayList<Bicicleta>();
@@ -73,15 +69,7 @@ public class Equipo
      
     public Equipo(String nombre, Comparator<Ciclista> cc, boolean oc, Comparator<Bicicleta> cb, boolean ob){
          this.nombre=nombre;
-         // if(oc){
-         // ciclistasEquipoBicicletas=new TreeMap<>(cc);
-        // }
-        // else{
-          // ciclistasEquipoBicicletas=new TreeMap<>(Collections.reverseOrder(cc));
-        // }
-        
-
-        // ciclistasEquipoBicicletasAbandono=null;
+         
         ciclistasEquipo = new ArrayList<Ciclista>();
         ciclistasAbandonado= new ArrayList<Ciclista>();
         bicicletasEquipo= new ArrayList<Bicicleta>();

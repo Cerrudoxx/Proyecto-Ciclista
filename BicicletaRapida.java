@@ -89,9 +89,9 @@ public class BicicletaRapida extends Bicicleta
     }
   
     /**
-     * Establece el valor del campo peso al dado como entrada
+     * Calcula la velocidad de un ciclista en una etapa
      * 
-     * @param  peso es el nuevo valor del campo peso
+     * @param  c es el ciclista que usa la bicicleta y e es la etapa de la que queremos obtener el tiempo
      */
     @Override
     public double calcularVelocidad(Ciclista c, Etapa e)

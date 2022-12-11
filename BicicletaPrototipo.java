@@ -14,7 +14,7 @@ public class BicicletaPrototipo extends Bicicleta
      */
     public BicicletaPrototipo(String nombre, Peso peso)
     {
-        // initialise instance variables
+        
         super(nombre, peso);
     }
     
@@ -27,9 +27,9 @@ public class BicicletaPrototipo extends Bicicleta
     }
     
     /**
-     * Establece el valor del campo peso al dado como entrada
+     * Calcula el tiempo necesario para que el ciclista c termine la etapa e 
      * 
-     * @param  peso es el nuevo valor del campo peso
+     * @param  c es el ciclista que usa la bicicleta y e es la etapa de la que queremos obtener el tiempo
      */
     @Override
     public double calcularTiempoNecesario(Ciclista c, Etapa e)

@@ -119,9 +119,9 @@ public class Bicicleta
     }
 
     /**
-     * Establece el valor del campo peso al dado como entrada
+     * Calcula la velocidad de un ciclista en una etapa
      * 
-     * @param  peso es el nuevo valor del campo peso
+     * @param  c es el ciclista que usa la bicicleta y e es la etapa de la que queremos obtener el tiempo
      */
     public double calcularVelocidad(Ciclista c, Etapa e)
     {
@@ -130,9 +130,9 @@ public class Bicicleta
     }
 
     /**
-     * Establece el valor del campo peso al dado como entrada
+     * Calcula el tiempo necesario para que el ciclista c termine la etapa e 
      * 
-     * @param  peso es el nuevo valor del campo peso
+     * @param  c es el ciclista que usa la bicicleta y e es la etapa de la que queremos obtener el tiempo
      */
     public double calcularTiempoNecesario(Ciclista c, Etapa e)
     {
@@ -161,11 +161,5 @@ public class Bicicleta
     protected String getTipoBicicleta(){
         return "<Bicicleta: ";
     }
-    // /**
-    // * Muestra la informacion de la bicicleta por pantalla
-    // */
-    // public void mostrarBicicleta(){
-    // System.out.printf("<bicicleta: "+nombre+"> <peso: "+peso+"> ");
-    // }
-
+    
 }
