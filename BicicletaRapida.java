@@ -31,6 +31,13 @@ public class BicicletaRapida extends Bicicleta
          return velocidadExtra; 
     }
 
+    /**
+     * Devuelve true si nos encontramos ante la misma bicicleta y false en caso contrario.
+     * 
+     * @param b es la bicicleta con la que queremos comparar
+     * 
+     * @return true si ambas bicicletas son la misma
+     */
     @Override
     public boolean equals (Bicicleta b) {
         if(this == b) {
@@ -45,6 +52,11 @@ public class BicicletaRapida extends Bicicleta
         return  (super.equals(other) &&  getVelocidadExtra()==other.getVelocidadExtra());  
     }
     
+    /**
+     * devuelve un valor entero que representa de forma inequívoca a una bicicleta.
+     * 
+     * @return el valor que representa a la bicicleta
+     */
     @Override
     public int hashCode ()
      {
@@ -55,18 +67,22 @@ public class BicicletaRapida extends Bicicleta
         return result;
      }
 
+     /**
+     * Transforma en una cadena de caracteres todos los datos de una bicicleta.
+     */
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append(super.toString());
-        // builder.append("\n");
         builder.append(" <VelocidadExtra: ");
         builder.append(getVelocidadExtra());
         builder.append(" > ");
-       // builder.append("\n");
         return builder.toString();
     }
     
+    /**
+     * Devuelve el tipo de bicicleta al que pertenece
+     */
      @Override
      protected String getTipoBicicleta(){
         return "<BicicletaRapida: ";

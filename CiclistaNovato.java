@@ -17,6 +17,9 @@ public class CiclistaNovato extends Ciclista
         
     }
     
+    /**
+     * Añade a la cadena de caracteres el tipo de ciclista al que pertenece
+     */
      @Override
     protected String getFormattedContent(){
          StringBuilder builder = new StringBuilder();
@@ -29,10 +32,7 @@ public class CiclistaNovato extends Ciclista
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Calcula la destreza de un cilista
      */
     @Override
     public void calcularDestreza(){

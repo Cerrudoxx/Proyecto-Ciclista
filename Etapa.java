@@ -145,6 +145,13 @@ public class Etapa
         
     }
     
+    /**
+     * Devuelve true si nos encontramos ante la misma etapa y false en caso contrario.
+     * 
+     * @param e es la etapa con la que queremos comparar
+     * 
+     * @return true si ambas etapas son la misma
+     */
     public boolean equals (Etapa e) {
         if (this == e) {
             return true;
@@ -161,6 +168,12 @@ public class Etapa
         (getCampoDistancia()==other.getCampoDistancia()));
     }
     
+    /**
+     * devuelve un valor entero que representa de forma inequívoca a una etapa.
+     * 
+     * @return el valor que representa a la etapa
+     */
+    @Override
     public int hashCode ()
      {
         int result = 17;
@@ -170,6 +183,9 @@ public class Etapa
         return result;
      }
     
+     /**
+     * Transforma en una cadena de caracteres todos los datos de una etapa.
+     */
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();

@@ -112,6 +112,13 @@ public class Equipo
         this.nombre=nombre;
     }
     
+    /**
+     * Devuelve true si nos encontramos ante el mismo equipo y false en caso contrario.
+     * 
+     * @param eq es el equipo con el que queremos comparar
+     * 
+     * @return true si ambos equipos son el mismo
+     */
     public boolean equals (Equipo eq) {
         if (this == eq) {
             return true;
@@ -126,6 +133,12 @@ public class Equipo
         return (getName()==other.getName());
     }
     
+    /**
+     * devuelve un valor entero que representa de forma inequívoca a un equipo.
+     * 
+     * @return el valor que representa al equipo
+     */
+    @Override
     public int hashCode ()
      {
         int result = 17;
