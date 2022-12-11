@@ -163,14 +163,12 @@ public class Organizacion
                 TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(compCiclistasCarrera);
   
              sorted.putAll(ciclistasAbandonadosMap);
-             //sorted.putAll(ciclistasAbandonadosMap);
              ciclistasAbandonadosMap=sorted;
             }
             else{
                 TreeMap<Ciclista, Equipo> sorted = new TreeMap<Ciclista, Equipo>(Collections.reverseOrder(compCiclistasCarrera));
   
             sorted.putAll(ciclistasAbandonadosMap);
-             //sorted.putAll(ciclistasAbandonadosMap);
              ciclistasAbandonadosMap=sorted;
             }
         
@@ -181,21 +179,9 @@ public class Organizacion
      */
     public void ordenarEquipos(){
         if(ordenEquipo){
-         // TreeMap<Equipo, List<Ciclista> > sorted = new TreeMap<Equipo, List<Ciclista>>(compEquipo);
-  
-            // sorted.putAll(ciclistasEquipo);
-  
-           // ciclistasEquipo=sorted;
             Collections.sort(equipos, compEquipo);
         }
         else{
-             // TreeMap<Equipo, List<Ciclista> > sorted = new TreeMap<Equipo, List<Ciclista>>(Collections.reverseOrder(compEquipo));
-  
-            // sorted.putAll(ciclistasEquipo);
-  
-           // ciclistasEquipo=sorted;
-           
-           
            Collections.sort(equipos, Collections.reverseOrder(compEquipo));
         }
         
@@ -335,7 +321,8 @@ public class Organizacion
 
         }
         for(Resultados rAban: resultadosAbandonos){
-            System.out.println("¡¡¡ Ha abandonado "+rAban.getCiclista().getName()+" - Tiempo: " + rAban.getCiclista().getEnergia()+ " Además ha abandonado para el resto del Campeonato");
+            double energiaAban=Math.round((rAban.getCiclista().getEnergia())*100d) / 100d;
+            System.out.println("¡¡¡ Ha abandonado "+rAban.getCiclista().getName()+" - Tiempo: " + energiaAban + " Además ha abandonado para el resto del Campeonato !!!");
         }
 
     }
@@ -368,10 +355,10 @@ public class Organizacion
                 System.out.println("¡¡¡ En el momento de quedarse sin energia llevaba en carrera "+ tiempoEnCarrera +" minutos !!!");
             }
             else{
-                System.out.println("+++ "+ c.getName()+ " termina la etapa en "+ tiempo +" minutos ++");
+                System.out.println("+++ "+ c.getName()+ " termina la etapa en "+ tiempo +" minutos +++");
 
             }
-            System.out.println("+++ La energia del ciclista "+ c.getName()+" tras la carrera es "+ energia +" +++");
+            System.out.println("+++ La energía del ciclista "+ c.getName()+" tras la carrera es "+ energia +" +++");
             System.out.println("@@@");
             if(c.getClass() ==  new CiclistaEstrella().getClass()){
 
@@ -380,7 +367,7 @@ public class Organizacion
                     System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha aumentado y ahora su nivel de popularidad es de: " + c.getPopularidad() +" unidades");
                 }
                 else{
-                    System.out.println("+++ La popularidad del ciclista " + c.getName() +" ha disminuido y ahora su nivel de popularidad es de: " + c.getPopularidad() +" unidades");
+                    System.out.println("--- La popularidad del ciclista " + c.getName() +" ha disminuido y ahora su nivel de popularidad es de: " + c.getPopularidad() +" unidades");
                 }
                 System.out.println("@@@");
             }
@@ -406,7 +393,7 @@ public class Organizacion
         for(Map.Entry<Ciclista, Equipo> entry: ciclistasMap.entrySet()){//(Ciclista c: ciclistas)
             Ciclista c=entry.getKey();
             double tiempoTotal=Math.round((c.tiempoTotalAcumulado())*100d) / 100d;
-            System.out.println("@@@ Posicion("+pos+"): " +c.getName()+ " -Tiempo Total: "+tiempoTotal+" @@@");
+            System.out.println("@@@ Posición("+pos+"): " +c.getName()+ " -Tiempo Total: "+tiempoTotal+" @@@");
             c.mostrarResultadosCiclista();
             System.out.println(" ");
             pos++;
@@ -416,6 +403,7 @@ public class Organizacion
             System.out.println("****************************************************");
             System.out.println("********** CICLISTAS QUE ABANDONARON **********");
             System.out.println("****************************************************");
+            ordenarCiclistasAbandonados();
             for(Map.Entry<Ciclista, Equipo> entry: ciclistasAbandonadosMap.entrySet()){
                 double tiempoTotalAnulado=Math.round((entry.getKey().tiempoTotalAcumulado())*100d) / 100d;
                 System.out.println("--- ciclistas Abandonado: "+entry.getKey().getName()+ " - Puntos Totales Anulados: "+ tiempoTotalAnulado + " ---");
